@@ -16,8 +16,6 @@ navbar:
       href: workshops.html
     - text: "CV"
       href: CV.pdf
-    - text: "Español"
-      href: espanol.html
     - icon: fa fa-twitter
       href: https://twitter.com/guadag12
     - icon: fa fa-github
