@@ -1,0 +1,24 @@
+---
+title: "Guada Gonzalez"
+site: distill::distill_website
+image: "guada_photo_.png"
+links:
+  - label: '<i class="fab fa-twitter"></i> Twitter'
+    url: "https://twitter.com/guadag12"
+  - label: '<i class="fab fa-github"></i> GitHub'
+    url: "https://github.com/guadag12"
+  - label: '<i class="fab fa-linkedin"></i> LinkedIn'
+    url: "https://www.linkedin.com/in/guadag12/"
+  - label: '<i class="fas fa-envelope"></i> Email'
+    url: "mailto:guadagonz12@gmail.com"
+base_url: https://www.pipinghotdata.com
+preview: guada_photo_.png
+twitter:
+  creator: "@guadag12"
+  site: "@guadag12"
+output:
+  postcards::trestles
+---
+
+ 
+Hola soy Guada!

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:distill="https://distill.pub/journal/" version="2.0">
+  <channel>
+    <title>Guada Gonzalez</title>
+    <link>www.github.com/guadag12</link>
+    <atom:link href="www.github.com/guadag12/blog.xml" rel="self" type="application/rss+xml"/>
+    <description>Exploring reproducible Political Science with the R statistical 
+computing environment.
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Wed, 05 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Welcome to reproducible Political Science with R!</title>
+      <dc:creator>Guadalupe Gonzalez</dc:creator>
+      <link>www.github.com/guadag12/posts/welcome</link>
+      <description>Welcome to my new blog. I hope you enjoy reading what I have to say!</description>
+      <guid>www.github.com/guadag12/posts/welcome</guid>
+      <pubDate>Wed, 05 Apr 2023 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

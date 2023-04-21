@@ -1,0 +1,8 @@
+---
+title: "CV"
+twitter:
+  creator: '@guadag12'
+---
+
+
+Download my [cv here](https://github.com/guadag12/cv/raw/main/cv.pdf)

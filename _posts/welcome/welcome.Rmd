@@ -1,0 +1,40 @@
+---
+title: "Welcome to reproducible Political Science with R!"
+description: |
+  Welcome to my new blog. I hope you enjoy reading what I have to say!
+author:
+  - name: Guadalupe Gonzalez
+    url: https://github.com/guadag12
+    affiliation: Observatorio de Redes
+    affiliation_url: https://github.com/guadag12
+date: 04-05-2023
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+```
+
+
+Welcome to my blog! 👋 I'm excited to share our passion for quantitative methods, political science, 
+and public opinion research with you 🔍. My goal is to provide a space where researchers, academics,
+and students can learn and discuss the developments in these fields.
+
+One of the core aspects of my blog is the commitment to reproducibility ♻️. I believe that research should be 
+transparent and accessible to everyone, and one way to achieve this is by ensuring that our analyses can be easily replicated. That's why I will be offering step-by-step tutorials on how to reproduce published studies using R .
+
+I will cover a broad range of topics, including **statistical analysis, social network, public opinion analysis, text mining, deep learning**, and much more 📊. Whether you're an experienced researcher or just starting out, we hope that our blog will provide you with valuable insights and practical tips for your work.
+
+I encourage you to engage through comments and discussions 📥. My blog is a collaborative space where we can learn from each other and exchange ideas. **Feel free to DM me** about feedback, question or even new ideas suggestions for future blog posts! 
+
+Thank you for joining me on this journey 🙏. I am excited to share my expertise and learn from you! 
+  
+Best ❤️,
+
+Guada

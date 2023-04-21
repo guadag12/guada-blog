@@ -1,0 +1,6 @@
+---
+title: "Reproducible PolSci with R's blog"
+twitter:
+  creator: "@guadag12"
+listing: posts
+---

@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to reproducible Political Science with R!",
+    "description": "Welcome to my new blog. I hope you enjoy reading what I have to say!",
+    "author": [
+      {
+        "name": "Guadalupe Gonzalez",
+        "url": "https://github.com/guadag12"
+      }
+    ],
+    "date": "2023-04-05",
+    "categories": [],
+    "contents": "\r\nWelcome to my blog! 👋 I’m excited to share our passion for quantitative methods, political science,\r\nand public opinion research with you 🔍. My goal is to provide a space where researchers, academics,\r\nand students can learn and discuss the developments in these fields.\r\nOne of the core aspects of my blog is the commitment to reproducibility ♻️. I believe that research should be\r\ntransparent and accessible to everyone, and one way to achieve this is by ensuring that our analyses can be easily replicated. That’s why I will be offering step-by-step tutorials on how to reproduce published studies using R .\r\nI will cover a broad range of topics, including statistical analysis, social network, public opinion analysis, text mining, deep learning, and much more 📊. Whether you’re an experienced researcher or just starting out, we hope that our blog will provide you with valuable insights and practical tips for your work.\r\nI encourage you to engage through comments and discussions 📥. My blog is a collaborative space where we can learn from each other and exchange ideas. Feel free to DM me about feedback, question or even new ideas suggestions for future blog posts!\r\nThank you for joining me on this journey 🙏. I am excited to share my expertise and learn from you!\r\nBest ❤️,\r\nGuada\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2023-04-14T18:43:46+01:00",
+    "input_file": {}
+  }
+]
