@@ -11,7 +11,7 @@ links:
     url: "https://www.linkedin.com/in/guadag12/"
   - label: '<i class="fas fa-envelope"></i> Email'
     url: "mailto:guadagonz12@gmail.com"
-base_url: https://www.pipinghotdata.com
+base_url: https://www.guadagonzalez.com
 preview: guada_photo_.png
 twitter:
   creator: "@guadag12"
@@ -21,10 +21,10 @@ output:
 ---
 
  
-Hi! <span class="wave">👋</span> I am a Computational Social Scientist who specializes in political science, and statistical analysis, social network analysis and data visualization. I am a Political Scientist and am currently pursuing a Master's degree in [Social Data Science](https://www.essex.ac.uk/courses/pg01314/1/msc-social-data-science) at the [University of Essex](essex.ac.uk) in the UK, thanks to my receipt of the prestigious [Chevening Scholarship](https://www.chevening.org/). 
+Hi! <span class="wave">👋</span> I am a Computational Social Scientist who specializes in political science, and statistical analysis, social network analysis and data visualization. I am a Political Scientist and am currently pursuing a Master's degree in [Social Data Science](https://www.essex.ac.uk/courses/pg01314/1/msc-social-data-science) at the [University of Essex](essex.ac.uk) in the UK, thanks to my receipt of [Chevening Scholarship](https://www.chevening.org/). 
 
 I've had a number of exciting roles over the years, including being a research assistant at Columbia University,  coordinated the [Network Observatory research Group](https://twitter.com/O_de_R) at the University of Buenos Aires, worked as a data analyst consultant at UNESCO, and being an advisor for the National Direction of Access to Public Information in Argentina. 
 
-I'm also a passionate educator and have taught and coordinated several courses, including Introduction to R for Social Scientists, Machine Learning with R, and Introduction to Python. And even gave a R-ladies talk! (check it in the [workshop's section](#workshops) ! )
+I'm also a passionate educator and have taught and coordinated several courses, including Introduction to R for Social Scientists, Machine Learning with R, and Introduction to Python. And even gave a R-ladies talk! (check it in the [workshop's section](https://guadagonzalez.com/workshops.html)!)
 
-I have a keen interest in conducting reproducible and transparent data analysis in R. For more information, please feel free to peruse my blog.
+I have a keen interest in conducting reproducible and transparent data analysis in R. For more information, please feel free to peruse my [blog](https://guadagonzalez.com/blog.html).
