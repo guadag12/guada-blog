@@ -1,8 +1,217 @@
 ---
-title: "CV"
-twitter:
-  creator: '@guadag12'
+name: Guadalupe Andrea Gonzalez
+date: "`r format(Sys.time(), '%B, %Y')`"
+qualifications: MSc Social Data Science, BSc Political Science
+position: Computational Social Scientist
+address: London, United Kingdom
+www: www.guadagonzalez.com
+email: guadagonz12@gmail.com
+github: guadag12
+linkedin: guadag12
+headcolor: '414141'
+output:
+  vitae::awesomecv:
+    keep_tex: yes
 ---
 
+```{r setup, include=FALSE}
+library(tidyverse)
+library(vitae)
+library(emojifont)
+library(fontawesome)
+knitr::opts_chunk$set(echo = FALSE)
+```
 
-Download my [cv here](https://github.com/guadag12/cv/raw/main/cv.pdf)
+# Education
+
+```{r education}
+tribble(
+  ~ degree, ~ uni, ~ loc, ~ dates,
+  "MSc in Social Data Science (in progress)", "University of Essex", "Colchester, United Kingdom", "Oct. 2022 - Present",
+  "Bachelor in Political Science", "University of Buenos Aires", "Buenos Aires, Argentina", "Mar 2013 - Nov. 2018", 
+) %>% 
+  detailed_entries(degree, dates, uni, loc
+                   )
+```
+
+# Academic Positions
+
+```{r academic}
+
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Research Assistant", "Institute of Latin American Studies, University of Columbia", "", "Aug 2021 - Aug 2022", 
+    list("Collaborate with Professor Maria Victoria Murillo and Professor Gabriel Kessler to manage the design and construction of methodology for applied text mining analysis of scientific networks in R. The investigation is based on 645 papers created by CONICET’s researchers and analyzed sub-communities and how political scientists and sociologists connect with each other. "
+    ),
+  "Tech Leader", "Network Observatory Research Group, University of Buenos Aires", "Buenos Aires, Argentina", "Mar 2018 - Mar 2022", 
+    list("Developed “politicxsentwitteR”, the first R package in the Faculty of Social Science at University of Buenos Aires.", 
+         "Analyzed bot behavior during COVID-19; project financed by the European Union (UE), 100 Por Cierto and Argentine Journalism Forum (FOPEA).")
+) %>% 
+  detailed_entries(role, dates, company, loc, details)
+
+```
+
+# Awards
+
+```{r}
+tribble(
+  ~ award, ~ from, ~ year,
+  "Chevening Scholarship to  study MSc at the University of Essex (full scholarship)", "British Embassy", "2022/2023"
+) %>%
+  brief_entries(award, year, from)
+```
+
+
+# Relevant Work Experience
+
+```{r consulting}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Data scientist", "Ualá", "Buenos Aires, Argentina", "Sep. 2021 - Aug 2022", 
+    list("Informed key decision-making at the company through robust statistical analysis and models using programming language as well as cloud services, like Amazon Web Services. ",
+         "Identified more than 600 users from 6+ communities that have a high probability to commit fraud and designed a plan of action based on cut transactionality of the authorities of every community.",
+         "Maintained fluid conversations with multiple stakeholders and produced reports on digital advocacy for the CEO on the impact of the company’s social media to assist negotiation with different investors and politicians."
+    ),
+  "Data Analyst Consultant", "UNESCO", "Buenos Aires, Argentina", "May 2020 - Jun 2020", 
+    list("Collaborated with Dr. Marcos Mendiburu to analyze and report the results of the annual worldwide survey for SDG Indicator 16.10.2. (“Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information”).", 
+         "Over a month-long period, processed data and produced metrics and a report on compliance and public information in 65+ countries across 5 continents. "),
+  "Advisor on Public Innovation", "National Direction of Access to Public Information, National Executive Power", "Buenos Aires, Argentina", "Apr 2020 - Aug 2020", 
+  list("Advice on using technology to increase the agility of the government’s decision-making process; as member of the National Table for Open Government, worked with the Open Data department to build a more transparent space; and generated two new databases to increase the amount of data available.",
+       "Automated the previous paper-based data entry system through Python."),
+    "Data Analyst", "General Direction of Institutional Quality and Open Government, Buenos Aires City Council", "Buenos Aires, Argentina", "Mar 2019 - Dec 2020", 
+  list("Responsible for data visualization for the department, produced and compiled 50+ visualizations related to climate change, transport and gender equality.",
+       "Improved access to open data as an Open Government Partnership member and contributed to the creation and implementation of the open data standards established by the Open Knowledge Foundation."),
+   "Volunteer", "Center for the Implementation of Public Policies for Equity and Growth (CIPPEC)", "Buenos Aires, Argentina", "Jun 2017 - Dec 2017", 
+  list("Assisted PI Maria Page with the measurement and visualization of vote transfers in the 2017 Argentina national election and helped build the database needed for a survey conducted by CIPPEC with Prof. Ernesto Calvo and PI Mara Page."),
+ 
+) %>% 
+  detailed_entries(role, dates, company, loc, details)
+```
+
+
+# Teaching Experience
+
+
+## Coordinator & Instructor
+
+```{r}
+tribble(
+  ~ course, ~ organisation, ~ when, ~ url,
+"Introduction to R for Social Scientists", 
+"Argentine School of New Technologies",  
+"Mar 2020 - Jul 2021",
+"\\textit{https://eant.tech/escuela-de-ciencias-de-datos/programas/social-data-analytics}") %>% 
+  
+  brief_entries(glue::glue("\\textbf{<course>}, <organisation> \\newline <url>", .open = "<", .close = ">"), paste0(when), .protect = FALSE)
+```
+
+
+## Graduate Teaching Assitant
+
+```{r}
+tribble(
+ ~ course, ~ organisation, ~ when, ~ url,
+  "Laboratory of Public Policy", "University of Buenos Aires", "Mar 2020 - Jul 2021", "\\textit{http://labpoliticasuba.com/}",
+ "Introduction to Political Science", "University of el Salvador (Argentina)", "Mar 2020 - Jul 2021", ""
+)%>% 
+  
+  brief_entries(glue::glue("\\textbf{<course>}, <organisation> \\newline <url>", .open = "<", .close = ">"), when, .protect = FALSE)
+
+```
+
+
+## Intructor
+
+```{r workshops}
+tribble(
+   ~ course, ~ organisation, ~ when,~ url,
+    "Machine Learning with R", "Argentine School of New Technologies",  "Jun 2020 - Aug 2021", "\\textit{ https://eant.tech/escuela-de-ciencias-de-datos/cursos/machine-learning-con-R}",
+   "Introduction to Python", "Argentine School of New Technologies",  "Jun 2020 - Aug 2021", "\\textit{ https://eant.tech/escuela-de-ciencias-de-datos/cursos/introduccion-a-la-programacion-con-python}",
+  "Statistics and R for the work life: tools of 21 century to solve everyday problems", "Santa Fé Capacita", "Apr 2021", ""
+) %>% 
+  brief_entries(glue::glue("\\textbf{<course>}, <organisation> \\newline <url>", .open = "<", .close = ">"), when, .protect = FALSE)
+```
+
+# Additional Projects
+
+```{r projects}
+
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Author and Maintainer", "politicxsentwitteR (R package)", "Buenos Aires, Argentina", "Jun 2021 - Present", 
+    list("Created an R package called 'politicxsentwitteR' that gives access without credentials to the Twitter data of public servants in order to generate greater transparency on political discourse discuss on social media.",
+         "So far, 'politicxsentwitteR' has received 1000+ views on Github.",
+         "URL: \\textit{https://github.com/guadag12/politicxsentwitteR}"
+    ),
+  "Developer", "Politicians on Twitter (Shiny App)", "Buenos Aires, Argentina", "Jun 2021 - Present", 
+    list("Developed a digital platform containing the Twitter data of more than 700 accounts of politicians and public figures, that is having a direct impact on combating misinformation and improving the communication strategy of consultants and political communication teams in Argentina.", 
+         "Obtained funding grants from the National Democratic Institute and Democracia en Red.",
+         "Thus far, this platform has stored 4.1 million tweets and achieved 30,000+ views in just 3 months.",
+         "URL: \\textit{https://oderedes.shinyapps.io/politicosentwitter/}"),
+  
+   "Data Architect", "MeRepresenta", "Buenos Aires, Argentina", "Aug 2021 - Nov 2021", 
+   list("Served as data architect for 'Me representa', an interactive platform where citizens can find comprehensive information on candidates, parties and political party platforms.",
+        "The platform gained 50,000+ views in the first two months.", 
+        "URL: \\textit{https://merepresenta.info/}")
+) %>% 
+  detailed_entries(role, dates, company, loc, details,  .protect=FALSE) 
+
+```
+
+\newpage
+
+
+# Presentations
+
+```{r talks}
+tribble(
+  ~ when, ~ title, ~ details, ~ where, ~ url,
+  "Nov 2021", "Analyzing national politics with 'PoliticxsentwitteR'", "Presentation of the package and shiny app of 'PoliticxsentwitteR'", "XV National Congress of Political Science, National University of Rosario",
+  "\\textit{https://guadag12.github.io/polentwitter-presentation/}",
+  "Oct 2021", "Introduction to social network analysis with R", "Social Network Analysis in R using 'politicxsentwitteR'", "Rladies Buenos Aires", "\\textit{https://guadag12.github.io/socialnetwork-rladies-talk/}",
+  "Sep 2021", "Introduction to text mining", "Importance of text analytics in social science", "University of Buenos Aires", "\\textit{https://guadag12.github.io/talk-textmining-uba/}",
+  "Jul 2020", "Introduction to R for social scientists", "Workshop about basic coding in R and statistics", "Argentine School of New Technologies", "\\textit{https://eant.tech/escuela-de-ciencias-de-datos/cursos/taller-data-analytics-para-ciencias-sociales}",
+  "Jul 2020", "Analyzing Argentine politics with twitter data",
+  "Open Class to learn how to use 'twitteR' and 'rtweet' package in R", "University of Buenos Aires", "\\textit{https://github.com/labpoliticasuba/Taller-de-Twitter}"
+  
+) %>% 
+  brief_entries(glue::glue("\\textbf{<title>}: <details> \\newline <url>", .open = "<", .close = ">"), when, .protect = FALSE)
+```
+
+# Courses
+
+```{r courses}
+tribble(
+  ~ course, ~ org, ~ loc, ~ dates,
+  "Spring School in Advanced Research Method (Machine Learning's course)", "University of Oxford", "Oxford, United Kingdom", "Mar 2023",
+  "Course of Public Policy and Data Science", "Buenos Aires City Council", "Buenos Aires, Argentina", "Jun 2019"
+) %>% 
+  detailed_entries(course, dates, org, loc)
+```
+
+
+# Languages
+
+```{r}
+tribble(
+  ~ language, ~ knowledge,
+    "Spanish", "Native",
+    "English", "Advanced (C1)", 
+    "Portuguese", "Limited Proficiency (A1)"
+)  %>% 
+  brief_entries(glue::glue("\\textbf{<language>}: <knowledge>", .open = "<", .close = ">"), .protect = FALSE
+                )
+```
+
+
+# Memberships
+
+```{r org}
+tribble(
+  ~ org, ~ uni, ~ date, ~ link,
+  "Interdisciplinary Laboratory of Computational Social Science", "University of Maryland" , "since 2021", "\\href{https://ilcss.umd.edu/}{[link]}",
+  "Network Observatory", "University of Buenos Aires",  "since 2017",
+  "\\href{https://oderedes.medium.com/}{[link]}"
+) %>%
+  brief_entries(what = glue::glue("\\textbf{<org>}, <uni> <link>", .open = "<", .close = ">"), when = date, .protect = F)
+```
