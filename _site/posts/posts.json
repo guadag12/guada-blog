@@ -1,5 +1,29 @@
 [
   {
+    "path": "posts/2023-05-03-politicxs-en-twitter-again-online/",
+    "title": "Analyzing political candidates with politicxsentwitteR!",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Guadalupe Gonzalez",
+        "url": "https://guadagonzalez.com/"
+      }
+    ],
+    "date": "2023-05-09",
+    "categories": [
+      "R",
+      "STATS",
+      "Network Analysis",
+      "politicxsentwitteR"
+    ],
+    "contents": "\r\nFrom the Network Observatory together with Democracia en Red and the National Democratic Institute we are excited to announce the relaunch of our PoliticxsentwitteR website, now with updated data up to June 2022!\r\n\r\nThe app that I have the honor to develop analyzes tweets from politicians in Argentina  and provides insights into their engagement, the words and emojis that they use, and also who retweets who. It also provides the opportunity to free download the tweets so they can be analyzed and give users a more comprehensive view of political discourse on Twitter.\r\nWe hope that this update will provide valuable insights into political discourse in Argentina, and we encourage you to give it a try. You can access the app by visiting this link\r\n\r\nAnother important announcement is that politicxsintwitteR R package is also available to make the data as much accessible as possible. In this post I showed you what opportunities the package bring! Also, you can check this social network tutorial that I present thanks to R ladies Buenos Aires using politicxsintwitteR.\r\nHowever, how if we try to do a little network analysis as a showed up of the possibilities of the package?\r\n\r\n\r\n\r\n",
+    "preview": "posts/2023-05-03-politicxs-en-twitter-again-online/logo.png",
+    "last_modified": "2023-05-10T10:09:20+01:00",
+    "input_file": "politicxs-en-twitter-again-online.knit.md",
+    "preview_width": 1040,
+    "preview_height": 1204
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to my new blog!",
     "description": "I hope you enjoy reading what I have to say!",

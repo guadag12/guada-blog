@@ -1,0 +1,410 @@
+<script>
+  $(document).ready(function() {
+    $head = $('#header');
+    $head.prepend('<div class="knitr source"><img src="https://github.com/Observatorio-de-Redes/politicosentwitter/raw/main/ShinyApp/www/PET_Logo.png" width="220px" align="right"   ></div>')
+  });
+</script>
+
+---
+title: "Analyzing political candidates with politicxsentwitteR!"
+description: |
+  A short description of the post.
+author:
+  - name: Guadalupe Gonzalez
+    url: https://github.com/guadag12
+date: 2023-05-03
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: true
+---
+## Network Analysis with [politicxsintwitteR](https://github.com/guadag12/politicxsentwitteR/)
+
+### 1. Import libraries:
+
+```{r, layout='l-page', code_folding=TRUE}
+options(scipen=9999)
+
+library(politicxsentwitteR)
+library(tidyverse)
+library(ggraph)
+library(igraph)
+library(gt)
+library(stringr)
+library(stringi)
+library(gtExtras)
+library(rmarkdown)
+library(tidygraph)
+
+```
+
+### 2.Import data using "get_network_data()" function
+
+
+```{r, layout='l-page', code_folding=TRUE}
+data <-  get_network_data("all", start_date = "2021-06-01",end_date = "2021-12-31")
+data <- data.frame(lapply(data, as.character), stringsAsFactors=FALSE)
+data$value <- as.numeric(as.character(data$value))
+data <- data[!is.na(data$retweet_user_id), ]
+data <- data[!is.na(data$user_id), ]
+paged_table(head(data))
+```
+
+```{r, layout='l-page', code_folding=TRUE}
+data_colors <- read_csv("https://raw.githubusercontent.com/guadag12/configuration_db/main/data_colors.csv")
+data_colors <- data.frame(lapply(data_colors, as.character), stringsAsFactors=FALSE)
+paged_table(head(data_colors))
+```
+
+```{r, layout='l-page', code_folding=TRUE}
+data <- data %>% group_by(user_id, retweet_user_id) %>% 
+  summarise(sum = sum(value)) 
+data <- data %>% drop_na()
+data <- data %>%
+  left_join(data_colors[, c("user_id", "Color")]) %>%
+  rename(color=Color)
+data$color <- as.factor(data$color)
+paged_table(head(data))
+```
+
+
+```{r, layout='l-page', code_folding=TRUE}
+edges_network <- data[data$user_id %in% unique(data_colors[data_colors$Color == "#fcd201", "user_id"]) &
+                     data$retweet_user_id %in% unique(data_colors[data_colors$Color ==  "#fcd201", "user_id"]), ]
+
+unique_users <- unique(c(unique(edges_network$user_id), 
+                         unique(edges_network$retweet_user_id)))
+unique_users <- data.frame(unique_users)
+unique_users<- rename(unique_users, user_id=unique_users)
+
+vertices_network <- left_join(unique_users, politicxsentwitteR::politicxs_data, by =  "user_id") %>%
+  select(user_id, screen_name, category, followers_count, gender) %>%
+  filter(user_id %in% unique(edges_network$user_id) | user_id %in% unique(edges_network$retweet_user_id))
+vertices_network <- vertices_network[!is.na(vertices_network$user_id), ]
+vertices_network <- vertices_network [!duplicated(vertices_network[c("user_id")]),]
+vertices_network <- vertices_network[vertices_network$user_id %in% unique_users$user_id,  ]
+vertices_network$followers_count <- as.numeric(as.character(vertices_network$followers_count))
+vertices_network$screen_name <- ifelse(substr(vertices_network$screen_name, 1, 1) != "@", paste0("@", vertices_network$screen_name), vertices_network$screen_name)
+```
+
+
+```{r, layout='l-page'}
+color_network <- "#fcd201"
+
+net_party<- graph_from_data_frame(d = edges_network, 
+                                    vertices = vertices_network,
+                                    directed = T)
+    
+g <- as_tbl_graph(net_party) %>% 
+    tidygraph::activate(nodes) %>% 
+    dplyr::mutate(label=screen_name,
+                  color = color_network,
+                  fill = color
+                  )
+V(g)$degree<- degree(g, mode="in")
+
+V(g)$label <- ifelse(V(g)$degree > quantile(V(g)$degree , 0.9), paste0(V(g)$label), "")
+layout <- create_layout(g, layout = 'igraph', algorithm = 'nicely')
+got_palette <- c(color_network)
+
+set.seed(42)
+x <- g %>%
+  ggraph(layout = "fr") +
+  geom_edge_arc(colour= color_network,
+                lineend = "round",
+                strength = .1,
+                alpha = .1) +
+  geom_node_point(aes(size = degree),
+                  col = "white",
+                  show.legend = F)+
+  geom_node_point(aes(size = degree,
+                      alpha = degree,
+                      color = color_network),
+                  show.legend = F) +
+  scale_color_manual(values = got_palette) + 
+  theme_graph(background = "white")
+
+plot(x, caption = "Network de Cambiemos in 2021 election")
+```
+
+```{r, layout='l-page', code_folding=TRUE}
+library(igraph)
+aut <- authority.score(net_party)$vector 
+wc <- walktrap.community(net_party)
+s <- sizes(wc)
+centrality_party <- data.frame(party = "Cambiemos", 
+                         year = "2021",
+                         diameter = diameter(net_party, directed = TRUE),
+                         mean_distance = mean_distance(net_party),
+                         density = edge_density(net_party),
+                         screen_eigenvector = paste0("@", na.omit(politicxs_data[politicxs_data$user_id == names(V(net_party))[ which.max(eigen_centrality(net_party)$vector )] , "screen_name"])[1]),
+                         screen_autority =  paste0("@",na.omit(politicxs_data[politicxs_data$user_id == names(aut)[which.max(aut)] , "screen_name"])[1]),
+                         size_network = gsize(net_party),
+                         amount_communities = length(s[s > 2])+1,
+                         assortative = round(assortativity_degree(net_party),3),
+                         assortative_gender =round(igraph::assortativity_nominal(net_party, as.numeric(as.factor(V(net_party)$gender))),3),
+                         assortative_category=round(igraph::assortativity_nominal(net_party, as.numeric(as.factor(V(net_party)$category))),3), 
+                         farther_nodes = paste0(farthest_vertices(net_party)$vertices[[1]]$screen_name," - ",
+                                                farthest_vertices(net_party)$vertices[[2]]$screen_name),
+                         path = "Cambiemos_2021.png")
+```
+
+```{r, layout='l-page', code_folding=TRUE}
+network_info<- read_csv("C:/Users/User/Documents/GitHub/guada-blog/_posts/2023-05-03-politicxs-en-twitter-again-online/plots/centrality_info.csv")
+
+
+pattern1 <- "^@([[:alnum:]_]+)"
+pattern2 <- "- @([[:alnum:]_]+)"
+
+usernames <- apply(network_info["farther_nodes"], 1, function(x) {
+  matches1 <- str_extract(x, pattern1)
+  matches2 <- str_extract(x, pattern2)
+
+  return(c(matches1, matches2))
+})
+network_info$first_username <- usernames[1,]
+
+network_info$second_username <- gsub("- ", "" , usernames[2,])
+
+network_info$path <- here::here('', paste0(
+    '_posts/2023-05-03-politicxs-en-twitter-again-online/plots/', tolower(network_info$path)
+  ))
+
+network_info <- network_info %>% 
+  filter(party != "Otr@s") %>%
+  mutate(
+  logo = case_when(
+    
+    party == "Cambiemos" ~  here::here('', paste0(
+    '_posts/2023-05-03-politicxs-en-twitter-again-online/plots/JXC.png')) ,
+    party == "Frente de Todos" ~ here::here('', paste0(
+    '_posts/2023-05-03-politicxs-en-twitter-again-online/plots/FDT.png')),
+    party == "Libertarios" ~ here::here('', paste0(
+    '_posts/2023-05-03-politicxs-en-twitter-again-online/plots/Libertarios.png')),
+    party == "Frente de Izquierda" ~ here::here('', paste0(
+    '_posts/2023-05-03-politicxs-en-twitter-again-online/plots/fit.png'))),
+  mean_distance = round(mean_distance, 2), 
+  density = round(density, 2), 
+  assortative = round(assortative, 2), 
+  assortative_gender = round(assortative_gender, 2), 
+  assortative_category = round(assortative_category, 2)
+
+)
+```
+
+
+### Applying this to all the parties and in different years!
+
+
+```{r, layout='l-page', code_folding=TRUE}
+network_info <- data.frame(lapply(network_info, as.character), stringsAsFactors=FALSE)
+
+net_try <- network_info |>
+   mutate(link_eig = gsub("@", "https://twitter.com/",screen_eigenvector ),
+          link_eig = sprintf('<a href = "%s">%s</a>', link_eig, screen_eigenvector), 
+          screen_eigenvector1 = map(link_eig, gt::html),
+          link_aut = gsub("@", "https://twitter.com/",screen_autority ),
+          link_aut = sprintf('<a href = "%s">%s</a>', link_aut, screen_autority), 
+          screen_autority1 = map(link_aut, gt::html),
+          link_first_node = gsub("@", "https://twitter.com/",first_username ),
+          link_first_node = sprintf('<a href = "%s">%s</a> ', link_first_node, first_username), 
+          farther_nodes1= map(link_first_node, gt::html),
+          link_second_node = gsub("@", "https://twitter.com/",second_username ),
+          link_second_node = sprintf('<a href = "%s">%s</a> ', link_second_node, second_username), 
+          farther_nodes2= map(link_second_node, gt::html),
+          farther_nodes_ =paste(map(link_first_node, gt::html), " - ", map(link_second_node, gt::html))
+     ) #|> 
+```
+
+```{r}
+xaringanExtra::use_panelset()
+```
+
+::: {.l-page}
+::: {.panelset}
+::: {.panel}
+
+## Elections 2019 🗳️  {.panel-name}
+
+```{r, out.width="50%",echo=FALSE ,fig.align = 'center',layout='l-page', code_folding=TRUE}
+net_try |>
+#  mutate(assortative = as.numeric(assortative)) |>
+   filter(year == 2019)|> 
+    select(logo, mean_distance,density, #diameter, , 
+        # size_network, amount_communities, farther_nodes_ 
+        assortative,	assortative_gender,	assortative_category,
+        screen_eigenvector1,#, screen_autority1, 
+        path) |>
+    gt() |>
+   tab_spanner(
+    label = "Network Measures",
+    columns = c(mean_distance, density, screen_eigenvector1)
+  ) |>
+     tab_spanner(
+    label = "Degree Correlation",
+    columns = c(assortative, assortative_gender, assortative_category)
+  ) |>
+    gt_add_divider(columns = "logo") |> 
+
+   tab_header(
+    title = "Network Information by Party" ,
+          subtitle = html("<em>Elections 2019</em>") ) |>
+    #    data_color(
+    #    columns = assortative,
+    #  fn = scales::col_numeric(
+    #    palette = "viridis",
+    #    domain = c(-1,1) )
+    # ) |>
+  #fmt_markdown(columns = c(farther_nodes_)) |>
+   text_transform(
+    locations = cells_body(columns = c(path)),
+    fn = function(path) {
+      lapply(path, local_image, height = 200)
+    }
+  ) |>
+  text_transform(
+    locations = cells_body(columns = c(logo)),
+    fn = function(logo) {
+      lapply(logo, local_image, height = 20)
+    }
+  ) |>
+  tab_footnote(
+    footnote = md("From 1 to -1. Between closest to 1 more correlation between nodes degree"),
+    locations = cells_column_labels(
+      columns = assortative
+    )
+  ) |>
+    tab_footnote(
+    footnote =  md("The authority is based on Eigenvector centrality"),
+    locations = cells_column_labels(
+      columns = screen_eigenvector1
+    )
+  ) |>
+
+  tab_source_note(
+    source_note = "Data: politicxsentwitteR from 01/08/2019 to 31/12/2019"
+    ) |>
+  cols_label(
+    logo = "",
+    path = "Network image",
+    mean_distance = "Mean Distance",
+    assortative = "Assortative",
+    assortative_gender = "Assortative (gender)",
+    assortative_category = "Assortative (category)",
+    screen_eigenvector1 = "Authority",
+    density = "Density"
+  ) |>
+    tab_options(
+    column_labels.background.color = "white",
+    table.border.top.width = px(3),
+    table.border.top.color = "transparent",
+    table.border.bottom.color = "transparent",
+    table.border.bottom.width = px(3),
+    column_labels.border.top.width = px(3),
+    column_labels.border.top.color = "transparent",
+    column_labels.border.bottom.width = px(3),
+    column_labels.border.bottom.color = "black",
+    data_row.padding = px(3),
+    source_notes.font.size = 12,
+    table.font.size = 16,
+    heading.align = "left") 
+```
+:::
+
+::: {.panel}
+
+## Elections 2021 🗳️ {.panel-name}
+
+```{r, out.width="50%",echo=FALSE , fig.align = 'center', layout='l-page', code_folding=TRUE}
+net_try |>
+#  mutate(assortative = as.numeric(assortative)) |>
+   filter(year == 2021)|> 
+    select(logo, mean_distance,density, #diameter, , 
+        # size_network, amount_communities, farther_nodes_ 
+        assortative,	assortative_gender,	assortative_category,
+        screen_eigenvector1,#, screen_autority1, 
+        path) |>
+    gt() |>
+   tab_spanner(
+    label = "Network Measures",
+    columns = c(mean_distance, density, screen_eigenvector1)
+  ) |>
+     tab_spanner(
+    label = "Degree Correlation",
+    columns = c(assortative, assortative_gender, assortative_category)
+  ) |>
+    gt_add_divider(columns = "logo") |> 
+
+   tab_header(
+    title = "Network Information by Party" ,
+          subtitle = html("<em>Elections 2019</em>") ) |>
+    #    data_color(
+    #    columns = assortative,
+    #  fn = scales::col_numeric(
+    #    palette = "viridis",
+    #    domain = c(-1,1) )
+    # ) |>
+  #fmt_markdown(columns = c(farther_nodes_)) |>
+   text_transform(
+    locations = cells_body(columns = c(path)),
+    fn = function(path) {
+      lapply(path, local_image, height = 200)
+    }
+  ) |>
+  text_transform(
+    locations = cells_body(columns = c(logo)),
+    fn = function(logo) {
+      lapply(logo, local_image, height = 20)
+    }
+  ) |>
+  tab_footnote(
+    footnote = md("From 1 to -1. Between closest to 1 more correlation between nodes degree"),
+    locations = cells_column_labels(
+      columns = assortative
+    )
+  ) |>
+    tab_footnote(
+    footnote =  md("The authority is based on Eigenvector centrality"),
+    locations = cells_column_labels(
+      columns = screen_eigenvector1
+    )
+  ) |>
+
+  tab_source_note(
+    source_note = "Data: politicxsentwitteR from 01/08/2019 to 31/12/2019"
+    ) |>
+  cols_label(
+    logo = "",
+    path = "Network image",
+    mean_distance = "Mean Distance",
+    assortative = "Assortative",
+    assortative_gender = "Assortative (gender)",
+    assortative_category = "Assortative (category)",
+    screen_eigenvector1 = "Authority",
+    density = "Density"
+  ) |>
+    tab_options(
+    column_labels.background.color = "white",
+    table.border.top.width = px(3),
+    table.border.top.color = "transparent",
+    table.border.bottom.color = "transparent",
+    table.border.bottom.width = px(3),
+    column_labels.border.top.width = px(3),
+    column_labels.border.top.color = "transparent",
+    column_labels.border.bottom.width = px(3),
+    column_labels.border.bottom.color = "black",
+    data_row.padding = px(3),
+    source_notes.font.size = 12,
+    table.font.size = 16,
+    heading.align = "left") 
+
+```
+
+:::
+:::
+:::
+
+## Contacts ✉
+
+Guadalupe Gonzalez, [Linkedin](https://www.linkedin.com/in/guadag12/), [Twitter](https://twitter.com/guadag12), [Github](https://github.com/guadag12), [Blogpost](https://www.guadagonzalez.com/).
+
