@@ -1,7 +1,7 @@
 ---
 title: "Analyzing political candidates with politicxsentwitteR!"
 description: |
-  A short description of the post.
+  Discover the revamped PoliticxsentwitteR website! Analyze political tweets, uncover engagement, words, emojis, and retweet dynamics in Argentina. Download data for deeper insights. Explore it! 🚀💻
 author:
   - name: Guadalupe Gonzalez
     url: https://guadagonzalez.com/
@@ -14,7 +14,6 @@ twitter:
 output:
   distill::distill_article:
     self_contained: false
-    code_folding: true
     toc: true
     toc_depth: 5
 categories: 
@@ -31,6 +30,8 @@ knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE)
 ```
 
+
+
 ```{r echo=FALSE,  include=FALSE}
 #knitr::include_graphics('https://github.com/Observatorio-de-Redes/politicosentwitter/raw/main/ShinyApp/www/PET_Logo.png')
 ```
@@ -43,19 +44,26 @@ knitr::opts_chunk$set(echo = TRUE,
 </script>
 
 
-From the [Network Observatory](https://twitter.com/O_de_R) together with [Democracia en Red](https://twitter.com/fundacionDER) and the [National Democratic Institute](https://twitter.com/NDI) we are excited to announce the relaunch of our [PoliticxsentwitteR website](https://oderedes.shinyapps.io/PoliticxsentwitteR/), now with updated data up to June 2022! 
+From the [Network Observatory](https://twitter.com/O_de_R) together with [Democracia en Red](https://twitter.com/fundacionDER) and the [National Democratic Institute](https://twitter.com/NDI) we are excited to announce the relaunch of our **[PoliticxsentwitteR website](https://oderedes.shinyapps.io/PoliticxsentwitteR/)** 🐦📊, now with updated data up to June 2022! 🎉
 
 <img src="https://github.com/Observatorio-de-Redes/politicosentwitter/raw/main/ShinyApp/www/gif2_def.gif" alt="Alt text" style="float:right; margin:0px 0px 10px 10px; clear:right;">
 
 
-The app that I have the honor to develop analyzes tweets from **politicians in Argentina** ![](https://em-content.zobj.net/thumbs/120/twitter/322/flag-argentina_1f1e6-1f1f7.png){width=3% align=right} and provides insights into their **engagement, the words and emojis** that they use, and also **who retweets who**. It also provides the opportunity to **free download the tweets** so they can be analyzed and give users a more comprehensive view of political discourse on Twitter.
+📢 The app that I have the honor to develop analyzes tweets from **politicians in Argentina** ![](https://em-content.zobj.net/thumbs/120/twitter/322/flag-argentina_1f1e6-1f1f7.png){width=3% align=right} and provides insights into their **engagement, the words and emojis** that they use, and also **who retweets who**. It also provides the opportunity to **free download the tweets** so they can be analyzed and give users a more comprehensive view of political discourse on Twitter.
 
 
-We hope that this update will provide valuable insights into political discourse in Argentina, and we encourage you to give it a try. You can access the app by visiting [this link](https://oderedes.shinyapps.io/PoliticxsentwitteR/)
+We hope that this update will provide valuable insights into political discourse in Argentina, and we encourage you to give it a try 🤩. You can **access the app by visiting [this link🔗](https://oderedes.shinyapps.io/PoliticxsentwitteR/)**. 
 
 
-<img align="left" width=100 height=100 src="https://github.com/guadag12/politicxsentwitteR/raw/main/man/figures/logo.png"> 
- Another important announcement is that **[politicxsintwitteR R package](https://github.com/guadag12/politicxsentwitteR/) is also available** to make the data as much accessible as possible. In this [post](https://guadag12.github.io/politicxsentwitteR/articles/Instalacion-y-funciones.html) I showed you what opportunities the package bring! Also, you can check this [social network tutorial](https://www.youtube.com/watch?v=BSU82auREmw&ab_channel=RLadiesBuenosAires) that I present thanks to [R ladies Buenos Aires](https://twitter.com/RLadiesBA) using [politicxsintwitteR](https://github.com/guadag12/politicxsentwitteR/).
 
-However, how if we try to do a little network analysis as a showed up of the possibilities of the package?  
+::: {.floatting}
+
+```{r out.width='30%', out.extra='style="float:left; padding:10px"', echo = FALSE}
+image_path <- "https://github.com/guadag12/politicxsentwitteR/raw/main/man/figures/logo.png"
+knitr::include_graphics(image_path)
+```
+
+ Another important announcement is that **[politicxsintwitteR R package](https://github.com/guadag12/politicxsentwitteR/) 📦 is also available** to make the data as much accessible as possible. In this [post](https://guadag12.github.io/politicxsentwitteR/articles/Instalacion-y-funciones.html) I showed you what opportunities the package bring! Also, you can check this [social network tutorial](https://www.youtube.com/watch?v=BSU82auREmw&ab_channel=RLadiesBuenosAires) that I present thanks to [R ladies Buenos Aires](https://twitter.com/RLadiesBA) using [politicxsintwitteR](https://github.com/guadag12/politicxsentwitteR/).
+
+::: 
 
