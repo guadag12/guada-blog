@@ -8,115 +8,12 @@
 computing environment.
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 09 May 2023 00:00:00 +0000</lastBuildDate>
     <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Introduction to Selenium with Twitter Data</title>
       <dc:creator>Guada Gonzalez</dc:creator>
       <link>www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data</link>
-      <description>
-
-
-&lt;p&gt;Scraping means ‘to gather, collect’ and it’s a very important tool
-that we social scientists have to acquire innovative and valuable
-information that not everyone has access to.&lt;/p&gt;
-&lt;p&gt;In general, we scrape web pages using two methods. One is based on
-HTML code, which is simpler, and the other is based on Javascript, which
-is a bit more complex. For scraping HTML, there are very good tutorials
-like this, this, and this, using packages like Beautifulsoup in Python
-and rvest in R. In this case, we will use Selenium in Python to obtain
-the number of followers and followings that legislators have in
-Argentina.&lt;/p&gt;
-&lt;p&gt;It’s not necessary to know Javascript to use Selenium, but it is
-necessary to be able to identify, in this case, classes within the
-source codes of the websites. That is, to understand a little bit of
-HTML and CSS.&lt;/p&gt;
-&lt;p&gt;Disclaimer to expand the issue:&lt;/p&gt;
-&lt;p&gt;In HTML, elements have an ID and a class. An “ID” is ___ and a class
-is “__“. In this case, IDs are indicated with”#” in front and classes
-with a dot “.” in front.&lt;/p&gt;
-&lt;p&gt;Downloading the number of followers and followings of legislators.
-For this, we will first try with a single account and then incorporate
-it into a loop.&lt;/p&gt;
-&lt;p&gt;For this, the following packages are necessary:&lt;/p&gt;
-&lt;pre class="python"&gt;&lt;code&gt;import random
-import BeautifulSoup
-from time import sleep
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
-import re
-import json&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Thirdly, we call the driver. What is this?_&lt;strong&gt; &lt;/strong&gt; When we
-run it automatically, we’ll see that an internet tab opens: [Image]&lt;/p&gt;
-&lt;p&gt;Then we specify the URL we want to scrape together with the get()
-function that will send us to the web. In this case, for example, we
-want to scrape my Twitter account.&lt;/p&gt;
-&lt;pre class="python"&gt;&lt;code&gt;driver_ = webdriver.Chrome()
-
-url = &amp;#39;https://twitter.com/guadag12&amp;#39;
-driver_.get(url)
-sleep(2)  # Adding sleep to ensure page loads. Consider using WebDriverWait for better practice.
-
-WebDriverWait(driver_, 10).until(
-    EC.presence_of_all_elements_located((By.CSS_SELECTOR, &amp;quot;.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1loqt21&amp;quot;))
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Once we run it, we need to see how it opens the new tab. ! Warning:
-It’s always good practice to give seconds of rest between visiting a
-website and scraping it, so we give the browser time to load and
-likewise, we don’t overload the website. Using the “sleep()” function
-implies being responsible with scraping use because ultimately, it’s a
-tool that forces the extraction of information in a context where we
-don’t necessarily ask the company for information. So let’s be
-responsible and respectful and put a sleep occasionally.&lt;/p&gt;
-&lt;p&gt;Then we search on the web for the id/class of the element we want to
-scrape. In this case, as we want the number of followers and followings,
-we use this:&lt;/p&gt;
-&lt;p&gt;We use the “find_elements()” function and ask it to bring us an
-element determined by a CSS feature such as class, and we specify the
-class as a string: [Image]&lt;/p&gt;
-&lt;p&gt;What it will automatically do is bring that data, and then we ask it
-to print it, and it will return something like this.&lt;/p&gt;
-&lt;pre class="python"&gt;&lt;code&gt;h4_elements = driver_.find_elements(By.CSS_SELECTOR, &amp;quot;.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1loqt21&amp;quot;)
-type_projects = [element.text.strip() for element in h4_elements]
-print(type_projects)
-
-parsed_numbers = [parse_number(num) for num in type_projects]
-
-following = parsed_numbers[0]
-followers = parsed_numbers[1]
-
-user_data_new = {
-    &amp;quot;User&amp;quot;: url,
-    &amp;quot;Following&amp;quot;: following,
-    &amp;quot;Followers&amp;quot;: followers
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Once we finish, we close the session:&lt;/p&gt;
-&lt;pre class="python"&gt;&lt;code&gt;driver_.quit()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;LOOP with Twitter accounts of Argentine legislators:&lt;/p&gt;
-&lt;p&gt;What if we want to extract data from a large number of accounts? We
-need to Bring the dataset with the accounts of Argentine legislators
-Create an empty list to fill in later and Perform a for loop where in
-each iteration the information of each user is obtained&lt;/p&gt;
-&lt;p&gt;But before showing how the code would look like to do this, it’s
-important to know first that there are cases where legislators appear
-with “1.1k followers” or “1.3M followers” (millions). What we want to do
-is replace those “k” or “M” with the corresponding number of zeros. In
-this regard, this function is created to be used within the loop:&lt;/p&gt;
-&lt;p&gt;Now, this is how the final loop would look like:&lt;/p&gt;
-&lt;p&gt;And in this file, you can observe the final data:&lt;/p&gt;
-&lt;p&gt;For example, if we want to see which block has the highest number of
-followers on Twitter according to the number of block members, we see
-that:&lt;/p&gt;
-&lt;p&gt;This has been everything. Thank you for getting here and reading to
-the end,&lt;/p&gt;
-&lt;p&gt;Leave comments for any questions,&lt;/p&gt;
-&lt;p&gt;Guada&lt;/p&gt;
-&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
-      <distill:md5>caef7b671bdde0f550abc1db2f03a166</distill:md5>
+      <description>Let's scrape Twitter data using Selenium</description>
       <guid>www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data</guid>
       <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
     </item>
@@ -125,52 +22,6 @@ the end,&lt;/p&gt;
       <dc:creator>Guadalupe Gonzalez</dc:creator>
       <link>www.github.com/guadag12/posts/2023-05-03-politicxs-en-twitter-again-online</link>
       <description>Discover the revamped PoliticxsentwitteR website! Analyze political tweets, uncover engagement, words, emojis, and retweet dynamics in Argentina. Download data for deeper insights. Explore it! 🚀💻</description>
-      <description>
-
-
-&lt;script&gt;
-  $(document).ready(function() {
-    $head = $('#header');
-    $head.prepend('&lt;div class="knitr source"&gt;&lt;img src="https://github.com/Observatorio-de-Redes/politicosentwitter/raw/main/ShinyApp/www/PET_Logo.png" width="220px" align="right"   &gt;&lt;/div&gt;')
-  });
-&lt;/script&gt;
-&lt;p&gt;From the &lt;a href="https://twitter.com/O_de_R"&gt;Network Observatory&lt;/a&gt;
-together with &lt;a href="https://twitter.com/fundacionDER"&gt;Democracia en
-Red&lt;/a&gt; and the &lt;a href="https://twitter.com/NDI"&gt;National Democratic
-Institute&lt;/a&gt; we are excited to announce the relaunch of our &lt;strong&gt;&lt;a
-href="https://oderedes.shinyapps.io/PoliticxsentwitteR/"&gt;PoliticxsentwitteR
-website&lt;/a&gt;&lt;/strong&gt; 🐦📊, now with updated data up to June 2022! 🎉&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://github.com/Observatorio-de-Redes/politicosentwitter/raw/main/ShinyApp/www/gif2_def.gif" alt="Alt text" style="float:right; margin:0px 0px 10px 10px; clear:right;"&gt;&lt;/p&gt;
-&lt;p&gt;📢 The app that I have the honor to develop analyzes tweets from
-&lt;strong&gt;politicians in Argentina&lt;/strong&gt; &lt;img
-src="https://em-content.zobj.net/thumbs/120/twitter/322/flag-argentina_1f1e6-1f1f7.png"
-style="width:3.0%" align="right" /&gt; and provides insights into their
-&lt;strong&gt;engagement, the words and emojis&lt;/strong&gt; that they use, and
-also &lt;strong&gt;who retweets who&lt;/strong&gt;. It also provides the opportunity
-to &lt;strong&gt;free download the tweets&lt;/strong&gt; so they can be analyzed and
-give users a more comprehensive view of political discourse on
-Twitter.&lt;/p&gt;
-&lt;p&gt;We hope that this update will provide valuable insights into
-political discourse in Argentina, and we encourage you to give it a try
-🤩. You can &lt;strong&gt;access the app by visiting &lt;a
-href="https://oderedes.shinyapps.io/PoliticxsentwitteR/"&gt;this
-link🔗&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class="floatting"&gt;
-&lt;p&gt;&lt;img src="https://github.com/guadag12/politicxsentwitteR/raw/main/man/figures/logo.png" width="30%" style="float:left; padding:10px" /&gt;&lt;/p&gt;
-&lt;p&gt;Another important announcement is that &lt;strong&gt;&lt;a
-href="https://github.com/guadag12/politicxsentwitteR/"&gt;politicxsintwitteR
-R package&lt;/a&gt; 📦 is also available&lt;/strong&gt; to make the data as much
-accessible as possible. In this &lt;a
-href="https://guadag12.github.io/politicxsentwitteR/articles/Instalacion-y-funciones.html"&gt;post&lt;/a&gt;
-I showed you what opportunities the package bring! Also, you can check
-this &lt;a
-href="https://www.youtube.com/watch?v=BSU82auREmw&amp;amp;ab_channel=RLadiesBuenosAires"&gt;social
-network tutorial&lt;/a&gt; that I present thanks to &lt;a
-href="https://twitter.com/RLadiesBA"&gt;R ladies Buenos Aires&lt;/a&gt; using &lt;a
-href="https://github.com/guadag12/politicxsentwitteR/"&gt;politicxsintwitteR&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
-      <distill:md5>3d3a5f0accf32405161d40965ce36b8e</distill:md5>
       <category>R</category>
       <category>STATS</category>
       <category>Network Analysis</category>
