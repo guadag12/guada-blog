@@ -35,7 +35,6 @@ library(stringi)
 library(gtExtras)
 library(rmarkdown)
 library(tidygraph)
-
 ```
 
 ### 2.Import data using "get_network_data()" function

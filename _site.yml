@@ -12,14 +12,18 @@ navbar:
       href: index.html
     - text: "Workshops"
       href: workshops.html
+    - text: "Blog"
+      href: blog.html
     - text: "CV"
-      href: CV.pdf
+      href: cv.pdf
     - icon: fa fa-twitter
       href: https://twitter.com/guadag12
     - icon: fa fa-github
       href: https://github.com/guadag12
     - icon: fa fa-linkedin
       href: https://www.linkedin.com/in/guadag12/
+    - text: ""
+      href: static/index.html
 output: distill::distill_article
 twitter:
   site: "@guadag12"

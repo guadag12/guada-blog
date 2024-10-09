@@ -1,0 +1,186 @@
+---
+title: "CORRUPTION AND INEQUALITY AT THE CROSSROAD"
+subtitle: "A Multimethod Study of Bribery and Discrimination in Latin America"
+author: "Brian J. Fried, Paul Lagunes, Atheendar Venkataramani"
+institute: "*Latin American Research Review*"
+bibliography: bibliography.bib
+format: 
+  revealjs: 
+    theme: white
+    slide-number: false
+    incremental: true
+    transition: slide
+    backgroundTransition: fade
+    css: 888D.scss
+    citation-style: apa.csl
+---
+
+
+## Motivation
+
+![](img/police-officers-bribe.jpg)
+
+------------------------------------------------------------------------
+
+## Literature Review
+
+-   bribery assist the poor ( @Nye1967, @Scott1969)
+
+-   inequality of influence (@Kaufmann1997, @HellmanKaufman2002, @GlaeserEtAl2003, @DeFerranti2004):
+
+    -   bribery and socioeconomic status (@RoseAckerman1978, @Svensson2003, @Nielsen2006, @FadahunsiRosa2002, @Lagunes2009, @GuerreroRodriguezOreggia2005, @Hunt2007, @HuntLaszlo2006)
+
+------------------------------------------------------------------------
+
+##  {auto-animate="true"}
+
+::: {style="margin-top: 200px; font-size: 3em;"}
+Research Question
+:::
+
+##  {auto-animate="true"}
+
+Research Question
+
+::: {style="margin-top: 200px; font-size: 3em; color: red;"}
+How does corruption interact with inequality?
+:::
+
+##  {auto-animate="true"}
+
+Research Question
+
+How does corruption interact with inequality?
+
+::: {style="margin-top: 200px; font-size: 1.5em; color: red;"}
+How do traffic police officers respond to drivers of different income levels?
+:::
+
+##  {auto-animate="true"}
+
+Research Question
+
+How does corruption interact with inequality?
+
+How do traffic police officers respond to drivers of different income levels?
+
+::: {style="margin-top: 200px; font-size: 1.5em; color: red;"}
+Why to they respond that way?
+:::
+
+------------------------------------------------------------------------
+
+## Research Design
+
+-   **X Variable**: Socioeconomic status of the drivers
+
+    1.  ::: {.fragment .fade-in-then-semi-out}
+        upper vs. lower class
+        :::
+
+-   **Y Variable**: The response of the police officers
+
+    1.  ::: {.fragment .fade-in-then-semi-out}
+        Stopped the driver
+        :::
+
+    2.  ::: {.fragment .fade-in-then-semi-out}
+        Demanded a bribe
+        :::
+
+    3.  ::: {.fragment .fade-in-then-semi-out}
+        Gave a warning
+        :::
+
+<br>
+
+::: fragment
+**Multimethods approach:** experiment & interviews
+:::
+
+------------------------------------------------------------------------
+
+## Argument
+
+-   Corruption disproportionately affects the poor
+-   Police officers' bribe tendencies:
+    -   More likely with lower-class individuals
+    -   Often let wealthier individuals off
+-   Fear of repercussions from wealthier individuals
+
+------------------------------------------------------------------------
+
+## Experiment
+
+::: columns
+::: {.column width="60%"}
+-   4 drivers (two upper class, two lower class)
+-   Mexico City
+-   Traffic violations in a randomized sequence of intersections
+:::
+
+::: {.column width="40%"}
+::: r-stack
+![](img/map_mx.png){.fragment} <!-- Map appears as a fragment -->
+
+::: fragment
+![](img/merged.gif){.fragment} <!-- Gif appears as a fragment -->
+:::
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Results
+
+![](img/table_def.png)
+
+------------------------------------------------------------------------
+
+## Results
+
+::: r-stack
+![](img/canva/1.png){.fragment}
+
+![](img/canva/2.png){.fragment}
+
+![](img/canva/3.png){.fragment} 
+
+![](img/canva/4.png){.fragment}
+
+![](img/canva/5.png){.fragment}
+
+![](img/canva/6.png){.fragment}
+:::
+
+------------------------------------------------------------------------
+
+## Interviews: why they might treat individuals differently?
+
+-   10 officers interviewed by a Spanish speaker with American accent:
+    -   lack of judiciary support
+    -   rich has better connections and better understand of the law
+    -   warning vs. bribe
+
+------------------------------------------------------------------------
+
+## Conclusions & Implications
+
+- Mixed methods instead of surveys offer a more precise and context-rich means.
+
+- Perverse institutions creates environment that promotes corruption. 
+
+- Selective enforcement of the law.
+
+
+------------------------------------------------------------------------
+
+## References
+
+::: {#refs}
+:::
+
+------------------------------------------------------------------------
+
+![](img/first_slide.png)

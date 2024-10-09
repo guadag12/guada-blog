@@ -18,8 +18,8 @@
     ],
     "contents": "\r\nFrom the Network Observatory together with Democracia en Red and the National Democratic Institute we are excited to announce the relaunch of our PoliticxsentwitteR website 🐦📊, now with updated data up to June 2022! 🎉\r\n\r\n📢 The app that I have the honor to develop analyzes tweets from politicians in Argentina  and provides insights into their engagement, the words and emojis that they use, and also who retweets who. It also provides the opportunity to free download the tweets so they can be analyzed and give users a more comprehensive view of political discourse on Twitter.\r\nWe hope that this update will provide valuable insights into political discourse in Argentina, and we encourage you to give it a try 🤩. You can access the app by visiting this link🔗.\r\n\r\n\r\n\r\n\r\nAnother important announcement is that politicxsintwitteR R package 📦 is also available to make the data as much accessible as possible. In this post I showed you what opportunities the package bring! Also, you can check this social network tutorial that I present thanks to R ladies Buenos Aires using politicxsintwitteR.\r\n\r\n\r\n\r\n\r\n",
     "preview": "posts/2023-05-03-politicxs-en-twitter-again-online/logo.png",
-    "last_modified": "2023-05-10T17:06:49+01:00",
-    "input_file": "politicxs-en-twitter-again-online.knit.md",
+    "last_modified": "2023-05-10T13:06:50-03:00",
+    "input_file": {},
     "preview_width": 1040,
     "preview_height": 1204
   },
@@ -35,9 +35,9 @@
     ],
     "date": "2023-04-05",
     "categories": [],
-    "contents": "\nWelcome to my blog! 👋 I’m excited to share our passion for quantitative methods, political science,\nand public opinion research with you 🔍. My goal is to provide a space where researchers, academics,\nand students can learn and discuss the developments in these fields.\nOne of the core aspects of my blog is the commitment to reproducibility ♻️. I believe that research should be\ntransparent and accessible to everyone, and one way to achieve this is by ensuring that our analyses can be easily replicated. That’s why I will be offering step-by-step tutorials on how to reproduce published studies using R .\nI will cover a broad range of topics, including statistical analysis, social network, public opinion analysis, text mining, deep learning, and much more 📊. Whether you’re an experienced researcher or just starting out, we hope that our blog will provide you with valuable insights and practical tips for your work.\nI encourage you to engage through comments and discussions 📥. My blog is a collaborative space where we can learn from each other and exchange ideas. Feel free to DM me about feedback, question or even new ideas suggestions for future blog posts!\nThank you for joining me on this journey 🙏. I am excited to share my expertise and learn from you!\nBest ❤️,\nGuada\n\n\n\n",
+    "contents": "\r\nWelcome to my blog! 👋 I’m excited to share our passion for quantitative methods, political science,\r\nand public opinion research with you 🔍. My goal is to provide a space where researchers, academics,\r\nand students can learn and discuss the developments in these fields.\r\nOne of the core aspects of my blog is the commitment to reproducibility ♻️. I believe that research should be\r\ntransparent and accessible to everyone, and one way to achieve this is by ensuring that our analyses can be easily replicated. That’s why I will be offering step-by-step tutorials on how to reproduce published studies using R .\r\nI will cover a broad range of topics, including statistical analysis, social network, public opinion analysis, text mining, deep learning, and much more 📊. Whether you’re an experienced researcher or just starting out, we hope that our blog will provide you with valuable insights and practical tips for your work.\r\nI encourage you to engage through comments and discussions 📥. My blog is a collaborative space where we can learn from each other and exchange ideas. Feel free to DM me about feedback, question or even new ideas suggestions for future blog posts!\r\nThank you for joining me on this journey 🙏. I am excited to share my expertise and learn from you!\r\nBest ❤️,\r\nGuada\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2023-04-21T14:34:07+01:00",
+    "last_modified": "2023-05-12T07:14:44-03:00",
     "input_file": {}
   }
 ]

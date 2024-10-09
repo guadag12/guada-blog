@@ -6,6 +6,11 @@ twitter:
 
 Looking to learn R for the first time or dive deeper into social network analysis? Join me in these workshops! 👇👇
 
+### [Web Scraping and Data Collection Using RSelenium](https://github.com/guadag12/selenium-r-workshop)
+
+During the workshop, we covered key topics such as the connection with the WebDriver, HTML sintaxis, CSS sintaxis, main functions of **Rvest** and **RSelenium* to scrape data, and how to collect that data into a data.frame. 
+
+* [Materials here](https://github.com/guadag12/selenium-r-workshop)
 
 ### [Introduction to Data Science for Social Scientists (in spanish)](https://eant.tech/escuela-de-ciencias-de-datos/cursos/taller-data-analytics-para-ciencias-sociales)
 
