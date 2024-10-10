@@ -128,7 +128,7 @@ How does corruption interact with inequality?
 How do traffic police officers respond to drivers of different income levels?
 
 ::: {style="margin-top: 200px; font-size: 1.5em; color: red;"}
-Why to they respond that way?
+Why?
 :::
 
 ------------------------------------------------------------------------
@@ -144,16 +144,20 @@ Why to they respond that way?
 -   **Y Variable**: The response of the police officers
 
     1.  ::: {.fragment .fade-in-then-semi-out}
-        Stopped the driver
+        Stopped the driver:
         :::
 
-    2.  ::: {.fragment .fade-in-then-semi-out}
-        Demanded a bribe
-        :::
-
-    3.  ::: {.fragment .fade-in-then-semi-out}
-        Gave a warning
-        :::
+      a.  ::: {.fragment .fade-in-then-semi-out}
+          Demanded a bribe
+          :::
+  
+      b.  ::: {.fragment .fade-in-then-semi-out}
+          Gave a warning
+          :::
+          
+      c.  ::: {.fragment .fade-in-then-semi-out}
+          Issue a ticket
+          :::
 
 <br>
 
