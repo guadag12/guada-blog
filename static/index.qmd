@@ -14,6 +14,8 @@ format:
     citation-style: apa.csl
 ---
 
+## Motivation
+
 <style>
 .reveal {
 	 --slide-background: white;
@@ -54,9 +56,32 @@ format:
 }
 </style>
 
-## Motivation
 
-![](img/police-officers-bribe.jpg)
+:::{.r-stack}
+![](img/news/news_2.png){.fragment}
+
+![](img/news/news_4.PNG){.fragment}
+
+![](img/news/news_3.png){.fragment}
+
+![](img/news/news_6_.png){.fragment}
+
+![](img/news/news_7.png){.fragment width="680" height="500"}
+
+
+![](img/news/news_9.png){.fragment width="680" height="500"}
+
+![](img/news/news_10.png){.fragment width="680" height="500"}
+
+![](img/news/news_11.png){.fragment width="680" height="500"}
+
+![](img/news/news_12.png){.fragment width="680" height="500"}
+![](img/news/news_13.png){.fragment width="680" height="500"}
+
+![](img/news/news_14.png){.fragment width="680" height="500"}
+
+![](img/news/news_1.png){.fragment width="680" height="500"}
+:::
 
 ------------------------------------------------------------------------
 
