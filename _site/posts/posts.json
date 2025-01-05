@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2025-01-05-visualizing-national-parks/",
+    "title": "Visualizing National Parks",
+    "description": "Ever wondered how our visits to national parks fulfill deep-seated desires for adventure, tranquility, and a return to nature? Let’s explore this question with my visualizations for the 2025 Data Viz Championship.",
+    "author": [
+      {
+        "name": "Guada Gonzalez",
+        "url": "https://guadagonzalez.com/"
+      }
+    ],
+    "date": "2025-01-05",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2025-01-05T09:45:52-03:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2024-03-03-introduction-to-selenium-with-twitter-data/",
     "title": "Introduction to Selenium with Twitter Data",
     "description": "Let's scrape Twitter data using Selenium",

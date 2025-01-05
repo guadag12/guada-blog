@@ -8,7 +8,15 @@
 computing environment.
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Visualizing National Parks</title>
+      <dc:creator>Guada Gonzalez</dc:creator>
+      <link>www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks</link>
+      <description>Ever wondered how our visits to national parks fulfill deep-seated desires for adventure, tranquility, and a return to nature? Let’s explore this question with my visualizations for the 2025 Data Viz Championship.</description>
+      <guid>www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks</guid>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Introduction to Selenium with Twitter Data</title>
       <dc:creator>Guada Gonzalez</dc:creator>
