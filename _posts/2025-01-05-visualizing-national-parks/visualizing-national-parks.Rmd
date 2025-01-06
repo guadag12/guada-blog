@@ -2,6 +2,7 @@
 title: "Mapping Visitor Trends in U.S. National Parks"
 description: |
   Ever wondered how our visits to national parks fulfill deep-seated desires for adventure, tranquility, and a return to nature? Let’s explore this question with my visualizations for the 2025 Data Viz Championship.
+preview: plots/intro.png
 author:
   - name: Guada Gonzalez
     url: https://guadagonzalez.com/
@@ -80,8 +81,10 @@ theme_update(
   
   axis.title.x          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
                                        color = text_col, family = "text", face = "bold", hjust = 0.5),
-  axis.title.y          = element_blank(),  
-  axis.text.y           = element_blank(),
+  axis.title.y          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
+                                       color = text_col, family = "text", face = "bold", hjust = 0.5,
+                                       angle = 90),  
+  axis.text.y           =  element_text(color = text_col, family = "text", size = rel(0.9)),
   axis.text.x           = element_text(color = text_col, family = "text", size = rel(0.9)),
   axis.ticks.x          = element_line(color = text_col),  # Show x-axis ticks
   panel.grid            = element_blank(),
@@ -233,10 +236,12 @@ theme_update(
   panel.background      = element_rect(fill = bkg_col, color = bkg_col),
   plot.margin           = margin(t = 10, r = 20, b = 10, l = 20),
   
-  axis.title.x          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
+   axis.title.x         = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
                                        color = text_col, family = "text", face = "bold", hjust = 0.5),
-  axis.title.y          = element_blank(),  
-  axis.text.y           = element_blank(),
+  axis.title.y          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
+                                       color = text_col, family = "text", face = "bold", hjust = 0.5,
+                                       angle = 90),  
+  axis.text.y           =  element_text(color = text_col, family = "text", size = rel(0.9)),
   axis.text.x           = element_text(color = text_col, family = "text", size = rel(0.9)),
   axis.ticks.x          = element_line(color = text_col),  # Show x-axis ticks
   panel.grid            = element_blank(),
@@ -289,7 +294,7 @@ plot <- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
   
   # Scales
   scale_x_continuous() +
-  scale_y_continuous() +
+  scale_y_continuous( labels = label_number(suffix = " M", scale = 1e-6)) +
   scale_fill_manual(values = col_palette) +
   scale_color_manual(values = col_palette) +
   coord_cartesian(clip = "off") +

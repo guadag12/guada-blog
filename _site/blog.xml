@@ -91,8 +91,10 @@ theme_update(
   
   axis.title.x          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
                                        color = text_col, family = &amp;quot;text&amp;quot;, face = &amp;quot;bold&amp;quot;, hjust = 0.5),
-  axis.title.y          = element_blank(),  
-  axis.text.y           = element_blank(),
+  axis.title.y          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
+                                       color = text_col, family = &amp;quot;text&amp;quot;, face = &amp;quot;bold&amp;quot;, hjust = 0.5,
+                                       angle = 90),  
+  axis.text.y           =  element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
   axis.text.x           = element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
   axis.ticks.x          = element_line(color = text_col),  # Show x-axis ticks
   panel.grid            = element_blank(),
@@ -249,10 +251,12 @@ theme_update(
   panel.background      = element_rect(fill = bkg_col, color = bkg_col),
   plot.margin           = margin(t = 10, r = 20, b = 10, l = 20),
   
-  axis.title.x          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
+   axis.title.x         = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
                                        color = text_col, family = &amp;quot;text&amp;quot;, face = &amp;quot;bold&amp;quot;, hjust = 0.5),
-  axis.title.y          = element_blank(),  
-  axis.text.y           = element_blank(),
+  axis.title.y          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
+                                       color = text_col, family = &amp;quot;text&amp;quot;, face = &amp;quot;bold&amp;quot;, hjust = 0.5,
+                                       angle = 90),  
+  axis.text.y           =  element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
   axis.text.x           = element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
   axis.ticks.x          = element_line(color = text_col),  # Show x-axis ticks
   panel.grid            = element_blank(),
@@ -305,7 +309,7 @@ plot &amp;lt;- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
   
   # Scales
   scale_x_continuous() +
-  scale_y_continuous() +
+  scale_y_continuous( labels = label_number(suffix = &amp;quot; M&amp;quot;, scale = 1e-6)) +
   scale_fill_manual(values = col_palette) +
   scale_color_manual(values = col_palette) +
   coord_cartesian(clip = &amp;quot;off&amp;quot;) +
@@ -355,6 +359,7 @@ Meiling Refuge&lt;/a&gt; in Nahuel Huapi National Park, Argentina:&lt;/p&gt;
       <distill:md5>2fc9b05f43bbf07559834ac53ca5b163</distill:md5>
       <guid>www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks</guid>
       <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
+      <media:content url="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks/plots/intro.png" medium="image" type="image/png" width="880" height="544"/>
     </item>
     <item>
       <title>Introduction to Selenium with Twitter Data</title>
