@@ -28,8 +28,8 @@ Chasers&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img
 src="https://i0.wp.com/www.parkchasers.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-15-at-6.17.26-AM.png?fit=791%2C602&amp;amp;ssl=1" /&gt;&lt;/p&gt;
 &lt;p&gt;Now that we can identify regions on the map, let’s start with a pie
-chart. I know the data science community might disapprove—pie charts &lt;a
-href="https://medium.com/analytics-vidhya/dont-use-pie-charts-in-data-analysis-6c005723e657"&gt;1&lt;/a&gt;,
+chart. I know the data science community might disapprove—pie charts (&lt;a
+href="https://medium.com/analytics-vidhya/dont-use-pie-charts-in-data-analysis-6c005723e657"&gt;1&lt;/a&gt;),
 but I wanted to experiment with inserting an image as a background and
 overlaying a plot on it. The compass seems perfect for this. The first
 plot shows that the most visited parks in 2023 were in the Intermountain
@@ -163,14 +163,14 @@ visualization&lt;/a&gt;, the second plot includes this information but with a
 twist: the names of the parks appear in gigantic letters on the
 plot.&lt;/p&gt;
 &lt;p&gt;&lt;img src="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parksplots/plot_2.PNG" /&gt;&lt;/p&gt;
-&lt;p&gt;This second plot displays the trends in recreational visits to
-National Parks across various U.S. regions from 1980 to 2023. Each line
-represents a region and shows how visitation has changed over 40 years.
-Notably, all regions have seen an increase in the number of visitors
-over the decades, particularly around 2010 and just before the pandemic.
-The pandemic led to a significant reduction in visits, followed by a
-rebound, possibly as lockdowns increased people’s desire to spend more
-time in nature.&lt;/p&gt;
+&lt;p&gt;This second plot displays the trends in recreational visits (in
+millions) to National Parks across various U.S. regions from 1980 to
+2023. Each line represents a region and shows how visitation has changed
+over 40 years. Notably, all regions have seen an increase in the number
+of visitors over the decades, particularly around 2010 and just before
+the pandemic. The pandemic led to a significant reduction in visits,
+followed by a rebound, possibly as lockdowns increased people’s desire
+to spend more time in nature.&lt;/p&gt;
 &lt;p&gt;Here’s the code for replication:&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;options(scipen = 999)
 rm(list =ls())
@@ -256,7 +256,7 @@ theme_update(
   axis.title.y          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
                                        color = text_col, family = &amp;quot;text&amp;quot;, face = &amp;quot;bold&amp;quot;, hjust = 0.5,
                                        angle = 90),  
-  axis.text.y           =  element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
+  axis.text.y           = element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
   axis.text.x           = element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
   axis.ticks.x          = element_line(color = text_col),  # Show x-axis ticks
   panel.grid            = element_blank(),
@@ -346,11 +346,10 @@ plot &amp;lt;- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
       margin = margin(t = 5, b = 5)
     )
   )&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In conclusion, it’s wonderful to see that more people are spending
-their time outdoors. In conclusion, it is wonderful to see that more
-people are spending their time outside and this exploration is critical
-during 2010 and after the pandemic, as it created a new necessity of
-connecting more with nature.&lt;/p&gt;
+&lt;p&gt;In conclusion, it is wonderful to see that more people are spending
+their time outside and this exploration is critical during 2010 and
+after the pandemic, as it created a new necessity of connecting more
+with nature.&lt;/p&gt;
 &lt;p&gt;Last but not least, I want to share with you a a photo of me after a
 4-hour, 14-km trek at the &lt;a href="https://refugiomeiling.com/"&gt;Otto
 Meiling Refuge&lt;/a&gt; in Nahuel Huapi National Park, Argentina:&lt;/p&gt;

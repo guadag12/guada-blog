@@ -19,12 +19,12 @@ twitter:
 output:
   postcards::trestles
 ---
-
  
-Hi! <span class="wave">👋</span> I am a Computational Social Scientist who specializes in political science, and statistical analysis, social network analysis and data visualization. I am a Political Scientist and am currently pursuing a Master's degree in [Social Data Science](https://www.essex.ac.uk/courses/pg01314/1/msc-social-data-science) at the [University of Essex](essex.ac.uk) in the UK, thanks to my receipt of [Chevening Scholarship](https://www.chevening.org/). 
+Hi! <span class="wave">👋</span> I am a Computational Social Scientist specializing in political science, statistical analysis, social network analysis, and data visualization. I am currently pursuing my PhD at the [University of Maryland - College Park](https://gvpt.umd.edu/gradprofile/gonzalez/guadalupe-andrea), where I am part of the [Interdisciplinary Laboratory of Computational Social Science (iLCSS)](https://ilcss.umd.edu/). Previously, I completed my Master’s degree in [Social Data Science](https://www.essex.ac.uk/courses/pg01314/1/msc-social-data-science) at the [University of Essex](https://essex.ac.uk) in the UK, supported by a [Chevening Scholarship](https://www.chevening.org/).
 
-I've had a number of exciting roles over the years, including being a research assistant at Columbia University,  coordinated the [Network Observatory research Group](https://twitter.com/O_de_R) at the University of Buenos Aires, worked as a data analyst consultant at UNESCO, and being an advisor for the National Direction of Access to Public Information in Argentina. 
+Throughout my career, I have held various exciting roles, including research assistant at Columbia University, coordinator of the [Network Observatory Research Group](https://twitter.com/O_de_R) at the University of Buenos Aires, data analyst consultant at UNESCO, and advisor for the National Direction of Access to Public Information in Argentina. I am also proudly affiliated with [Red de Politólogas](https://www.nosinmujeres.com/).
 
-I'm also a passionate educator and have taught and coordinated several courses, including Introduction to R for Social Scientists, Machine Learning with R, and Introduction to Python. And even gave a R-ladies talk! (check it in the [workshop's section](https://guadagonzalez.com/workshops.html)!)
+As a passionate educator, I have taught and coordinated several courses, such as Introduction to R for Social Scientists, Machine Learning with R, and Introduction to Python. I have also given a talk for R-Ladies, which you can find in the [workshops section](https://guadagonzalez.com/workshops.html) of my website.
 
-I have a keen interest in conducting reproducible and transparent data analysis in R. For more information, please feel free to peruse my [blog](https://guadagonzalez.com/blog.html).
+I am dedicated to conducting reproducible and transparent data analysis in R. For more information, please visit my [blog](https://guadagonzalez.com/blog.html).
+
