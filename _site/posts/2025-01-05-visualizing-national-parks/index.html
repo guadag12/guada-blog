@@ -125,12 +125,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Visualizing National Parks"]},{"type":"character","attributes":{},"value":["Ever wondered how our visits to national parks fulfill deep-seated desires for adventure, tranquility, and a return to nature? Let’s explore this question with my visualizations for the 2025 Data Viz Championship."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Guada Gonzalez"]},{"type":"character","attributes":{},"value":["https://guadagonzalez.com/"]}]}]},{"type":"character","attributes":{},"value":["2025-01-05"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks/"]},{"type":"character","attributes":{},"value":["www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Visualizing National Parks"]},{"type":"character","attributes":{},"value":["Ever wondered how our visits to national parks fulfill deep-seated desires for adventure, tranquility, and a return to nature? Let’s explore this question with my visualizations for the 2025 Data Viz Championship."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Guada Gonzalez"]},{"type":"character","attributes":{},"value":["https://guadagonzalez.com/"]}]}]},{"type":"character","attributes":{},"value":["2025-01-05"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks/"]},{"type":"character","attributes":{},"value":["www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["plots/plot_1.PNG","plots/plot_2.PNG","visualizing-national-parks_files/anchor-4.2.2/anchor.min.js","visualizing-national-parks_files/bowser-1.9.3/bowser.min.js","visualizing-national-parks_files/distill-2.2.21/template.v2.js","visualizing-national-parks_files/header-attrs-2.28/header-attrs.js","visualizing-national-parks_files/jquery-3.6.0/jquery-3.6.0.js","visualizing-national-parks_files/jquery-3.6.0/jquery-3.6.0.min.js","visualizing-national-parks_files/jquery-3.6.0/jquery-3.6.0.min.map","visualizing-national-parks_files/popper-2.6.0/popper.min.js","visualizing-national-parks_files/tippy-6.2.7/tippy-bundle.umd.min.js","visualizing-national-parks_files/tippy-6.2.7/tippy-light-border.css","visualizing-national-parks_files/tippy-6.2.7/tippy.css","visualizing-national-parks_files/tippy-6.2.7/tippy.umd.min.js","visualizing-national-parks_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["plots/Meiling.jpg","plots/plot_1.PNG","plots/plot_2.PNG","visualizing-national-parks_files/anchor-4.2.2/anchor.min.js","visualizing-national-parks_files/bowser-1.9.3/bowser.min.js","visualizing-national-parks_files/distill-2.2.21/template.v2.js","visualizing-national-parks_files/header-attrs-2.28/header-attrs.js","visualizing-national-parks_files/jquery-3.6.0/jquery-3.6.0.js","visualizing-national-parks_files/jquery-3.6.0/jquery-3.6.0.min.js","visualizing-national-parks_files/jquery-3.6.0/jquery-3.6.0.min.map","visualizing-national-parks_files/popper-2.6.0/popper.min.js","visualizing-national-parks_files/tippy-6.2.7/tippy-bundle.umd.min.js","visualizing-national-parks_files/tippy-6.2.7/tippy-light-border.css","visualizing-national-parks_files/tippy-6.2.7/tippy.css","visualizing-national-parks_files/tippy-6.2.7/tippy.umd.min.js","visualizing-national-parks_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2580,8 +2580,321 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 
 <div class="d-article">
-<p><img src="plots/plot_2.PNG" /></p>
+<p>I’ve always been intrigued by how people use their spare time. The contest from the Big Ten Academic Alliance greatly helped me explore this topic using R. I took this opportunity to learn more about time use and discover what I had been missing in terms of visualization techniques.</p>
+<p>The plots I created are organized by region, so let’s review which regions belong where on the US Map from the website of <a href="https://www.parkchasers.com/find-your-park/parks-by-region/">Park Chasers</a>:</p>
+<p><img src="https://i0.wp.com/www.parkchasers.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-15-at-6.17.26-AM.png?fit=791%2C602&amp;ssl=1" /></p>
+<p>Now that we can identify regions on the map, let’s start with a pie chart. I know the data science community might disapprove—pie charts <a href="https://medium.com/analytics-vidhya/dont-use-pie-charts-in-data-analysis-6c005723e657">1</a>, but I wanted to experiment with inserting an image as a background and overlaying a plot on it. The compass seems perfect for this. The first plot shows that the most visited parks in 2023 were in the Intermountain (34.8%) and Pacific West (23.32%) regions, which is logical since they include Yellowstone, Grand Canyon, Yosemite, and Olympic National Park. Conversely, the Alaska region, with only 1.5%, features fascinating wilderness areas but is remote, less accessible, and has harsher climates than other continental parks. Let’s look at the plot:</p>
 <p><img src="plots/plot_1.PNG" /></p>
+<p>Here’s the code for replication:</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span>list <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ls.html'>ls</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Load Libraries ------------------------------------------------------------</span></span>
+<span></span>
+<span><span class='fu'>pacman</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pacman/man/p_load.html'>p_load</a></span><span class='op'>(</span></span>
+<span>  <span class='va'>ggplot2</span>,         <span class='co'># Easily Install and Load the 'Tidyverse'</span></span>
+<span>  <span class='va'>grid</span>,            <span class='co'># Improved Text Rendering Support for 'ggplot2'</span></span>
+<span>  <span class='va'>ggpath</span>,          <span class='co'># Using Fonts More Easily in R Graphs</span></span>
+<span>  <span class='va'>jpeg</span>,           <span class='co'># Simple Tools for Examining and Cleaning Dirty Data</span></span>
+<span>  <span class='va'>magick</span>,             <span class='co'># Compact and Flexible Summaries of Data</span></span>
+<span>  <span class='va'>ggimage</span>,            <span class='co'># Scale Functions for Visualization</span></span>
+<span>  <span class='va'>gganimate</span>,         <span class='co'># Make Dealing with Dates a Little Easier</span></span>
+<span>  <span class='va'>ggtext</span>,              <span class='co'># Interpreted String Literals</span></span>
+<span>  <span class='va'>stringr</span>,               <span class='co'># Pixel Filters for 'ggplot2' and 'grid' # Pixel Filters for 'ggplot2' and 'grid' </span></span>
+<span>  <span class='va'>glue</span>,</span>
+<span>  <span class='va'>htmlwidgets</span>,</span>
+<span>  <span class='va'>webshot</span></span>
+<span>  <span class='op'>)</span>  </span>
+<span></span>
+<span><span class='co'># Configuration Plot ------------------------------------------------------</span></span>
+<span></span>
+<span><span class='fu'>font_add_google</span><span class='op'>(</span><span class='st'>"Oswald"</span>, <span class='st'>"title"</span><span class='op'>)</span></span>
+<span><span class='fu'>font_add_google</span><span class='op'>(</span><span class='st'>"Merriweather Sans"</span>, <span class='st'>"subtitle"</span><span class='op'>)</span></span>
+<span><span class='fu'>font_add_google</span><span class='op'>(</span><span class='st'>"Merriweather Sans"</span>, <span class='st'>"text"</span><span class='op'>)</span></span>
+<span><span class='fu'>font_add_google</span><span class='op'>(</span><span class='st'>"Noto Sans"</span>, <span class='st'>"caption"</span><span class='op'>)</span></span>
+<span><span class='fu'>showtext_auto</span><span class='op'>(</span>enable <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>img</span> <span class='op'>=</span> <span class='st'>"C:/Users/User/Documents/GitHub/2025_Data_Viz_Championship/compass2.jpg"</span></span>
+<span></span>
+<span><span class='va'>fa_path</span> <span class='op'>&lt;-</span> <span class='fu'>systemfonts</span><span class='fu'>::</span><span class='fu'><a href='https://systemfonts.r-lib.org/reference/font_info.html'>font_info</a></span><span class='op'>(</span>family <span class='op'>=</span> <span class='st'>"Font Awesome 6 Brands Regular"</span><span class='op'>)</span><span class='op'>[[</span><span class='st'>"path"</span><span class='op'>]</span><span class='op'>]</span></span>
+<span><span class='fu'>font_add</span><span class='op'>(</span>family <span class='op'>=</span> <span class='st'>"fa-brands"</span>, regular <span class='op'>=</span> <span class='va'>fa_path</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>subtitle_text</span> <span class='op'>&lt;-</span> <span class='fu'>str_glue</span><span class='op'>(</span><span class='st'>"Although visits started as early as 1904, the NPS has been tracking them monthly since 1979 \n in 63 parks across the USA. In 2023 alone, the different parks received more than 9.2 million visits, \n distributed as shown in the plot."</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>caption_text</span>  <span class='op'>&lt;-</span> <span class='fu'>str_glue</span><span class='op'>(</span><span class='st'>"{tt} &lt;span style='font-family:fa6-brands'&gt;&amp;#xf08c;&lt;/span&gt; guadag12 &amp;bull; {tw} @guadag12 ; {gi} @guadag12"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>region_colors</span> <span class='op'>&lt;-</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Alaska"</span> <span class='op'>=</span> <span class='st'>"#B0C4DE"</span>, <span class='st'>"Intermountain"</span> <span class='op'>=</span> <span class='st'>"#EDC9AF"</span>, </span>
+<span>                    <span class='st'>"Midwest"</span> <span class='op'>=</span> <span class='st'>"#6B8E23"</span>, <span class='st'>"Northeast"</span> <span class='op'>=</span> <span class='st'>"#708090"</span>, </span>
+<span>                    <span class='st'>"Pacific West"</span> <span class='op'>=</span> <span class='st'>"#DEB887"</span>, <span class='st'>"Southeast"</span> <span class='op'>=</span> <span class='st'>"#5F9EA0"</span><span class='op'>)</span></span>
+<span></span>
+<span></span>
+<span><span class='fu'>theme_update</span><span class='op'>(</span></span>
+<span>  plot.title.position   <span class='op'>=</span> <span class='st'>"plot"</span>,</span>
+<span>  plot.caption.position <span class='op'>=</span> <span class='st'>"plot"</span>,</span>
+<span>  legend.position       <span class='op'>=</span> <span class='st'>'plot'</span>,</span>
+<span>  plot.background       <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>bkg_col</span>, color <span class='op'>=</span> <span class='va'>bkg_col</span><span class='op'>)</span>,</span>
+<span>  panel.background      <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>bkg_col</span>, color <span class='op'>=</span> <span class='va'>bkg_col</span><span class='op'>)</span>,</span>
+<span>  plot.margin           <span class='op'>=</span> <span class='fu'>margin</span><span class='op'>(</span>t <span class='op'>=</span> <span class='fl'>10</span>, r <span class='op'>=</span> <span class='fl'>20</span>, b <span class='op'>=</span> <span class='fl'>10</span>, l <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span>,</span>
+<span>  </span>
+<span>  axis.title.x          <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>margin <span class='op'>=</span> <span class='fu'>margin</span><span class='op'>(</span><span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fu'>rel</span><span class='op'>(</span><span class='fl'>1.1</span><span class='op'>)</span>, </span>
+<span>                                       color <span class='op'>=</span> <span class='va'>text_col</span>, family <span class='op'>=</span> <span class='st'>"text"</span>, face <span class='op'>=</span> <span class='st'>"bold"</span>, hjust <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>,</span>
+<span>  axis.title.y          <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,  </span>
+<span>  axis.text.y           <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>  axis.text.x           <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>text_col</span>, family <span class='op'>=</span> <span class='st'>"text"</span>, size <span class='op'>=</span> <span class='fu'>rel</span><span class='op'>(</span><span class='fl'>0.9</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>  axis.ticks.x          <span class='op'>=</span> <span class='fu'>element_line</span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>text_col</span><span class='op'>)</span>,  <span class='co'># Show x-axis ticks</span></span>
+<span>  panel.grid            <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>  strip.text            <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span> <span class='co'># Remove strip text </span></span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>region_colors</span> <span class='op'>&lt;-</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Alaska"</span> <span class='op'>=</span> <span class='st'>"#B0C4DE"</span>, <span class='st'>"Intermountain"</span> <span class='op'>=</span> <span class='st'>"#EDC9AF"</span>, </span>
+<span>                    <span class='st'>"Midwest"</span> <span class='op'>=</span> <span class='st'>"#6B8E23"</span>, <span class='st'>"Northeast"</span> <span class='op'>=</span> <span class='st'>"#708090"</span>, </span>
+<span>                    <span class='st'>"Pacific West"</span> <span class='op'>=</span> <span class='st'>"#DEB887"</span>, <span class='st'>"Southeast"</span> <span class='op'>=</span> <span class='st'>"#5F9EA0"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Plot --------------------------------------------------------------------</span></span>
+<span></span>
+<span><span class='va'>p</span> <span class='op'>&lt;-</span><span class='va'>NPData</span> <span class='op'>%&gt;%</span></span>
+<span>  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>Region</span><span class='op'>)</span> <span class='op'>%&gt;%</span></span>
+<span>  <span class='fu'>summarise</span><span class='op'>(</span>total_visit <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>RecreationVisits</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span></span>
+<span>  <span class='fu'>mutate</span><span class='op'>(</span>prop <span class='op'>=</span> <span class='va'>total_visit</span> <span class='op'>/</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>total_visit</span><span class='op'>)</span> <span class='op'>*</span> <span class='fl'>100</span><span class='op'>)</span> <span class='op'>%&gt;%</span></span>
+<span>  <span class='fu'>mutate</span><span class='op'>(</span>ypos <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/cumsum.html'>cumsum</a></span><span class='op'>(</span><span class='va'>prop</span><span class='op'>)</span> <span class='op'>-</span> <span class='fl'>0.7</span> <span class='op'>*</span> <span class='va'>prop</span><span class='op'>)</span> <span class='op'>%&gt;%</span></span>
+<span>  <span class='fu'>mutate</span><span class='op'>(</span>ypos_mod <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span></span>
+<span>    <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>ypos</span>, <span class='fl'>1</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>0.450</span> <span class='op'>~</span> <span class='op'>-</span><span class='fl'>10</span>,</span>
+<span>    <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>ypos</span>, <span class='fl'>1</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>87.1</span> <span class='op'>~</span> <span class='fl'>12.9</span> ,</span>
+<span>    <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>ypos</span>, <span class='fl'>1</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>65.3</span> <span class='op'>~</span> <span class='fl'>28.7</span> ,</span>
+<span>    <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>ypos</span>, <span class='fl'>1</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>53.0</span> <span class='op'>~</span> <span class='fl'>45.0</span>,</span>
+<span>    <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>ypos</span>, <span class='fl'>1</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>40.7</span> <span class='op'>~</span> <span class='fl'>58.3</span>,</span>
+<span>    <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>ypos</span>, <span class='fl'>1</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>11.9</span>  <span class='op'>~</span> <span class='fl'>80.1</span>,</span>
+<span>    <span class='cn'>TRUE</span> <span class='op'>~</span> <span class='va'>ypos</span></span>
+<span>  <span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span></span>
+<span>  <span class='fu'>ggplot</span><span class='op'>(</span> <span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span><span class='st'>""</span>, y<span class='op'>=</span><span class='va'>prop</span>, fill<span class='op'>=</span><span class='va'>Region</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'>with_inner_glow</span><span class='op'>(</span></span>
+<span>  <span class='fu'>geom_bar</span><span class='op'>(</span>stat<span class='op'>=</span><span class='st'>"identity"</span>, width<span class='op'>=</span><span class='fl'>0.01</span>, alpha <span class='op'>=</span><span class='fl'>.95</span><span class='op'>)</span> ,</span>
+<span>  color <span class='op'>=</span> <span class='st'>"gray10"</span>, sigma <span class='op'>=</span> <span class='fl'>15</span></span>
+<span>  <span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'>coord_polar</span><span class='op'>(</span><span class='st'>"y"</span>, start<span class='op'>=</span><span class='fl'>0</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'>theme_void</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'>labs</span><span class='op'>(</span></span>
+<span>    title <span class='op'>=</span> <span class='st'>"The Story of Recreation Visits"</span>,</span>
+<span>    subtitle <span class='op'>=</span> <span class='va'>subtitle_text</span>,</span>
+<span>    caption <span class='op'>=</span> <span class='st'>"Source: National Park Service | Graphics by @guadag12"</span></span>
+<span>  <span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'>scale_fill_manual</span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>region_colors</span><span class='op'>)</span> <span class='op'>+</span>  </span>
+<span>  <span class='fu'>force_panelsizes</span><span class='op'>(</span>rows <span class='op'>=</span> <span class='fu'>unit</span><span class='op'>(</span><span class='fl'>2</span>, <span class='st'>"in"</span><span class='op'>)</span>, cols <span class='op'>=</span> <span class='fu'>unit</span><span class='op'>(</span><span class='fl'>3.5</span>, <span class='st'>"in"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'>theme</span><span class='op'>(</span></span>
+<span>    plot.background <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"transparent"</span>, colour <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>,</span>
+<span>    panel.background <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"transparent"</span>, colour <span class='op'>=</span> <span class='cn'>NA</span><span class='op'>)</span>, </span>
+<span>    plot.margin <span class='op'>=</span> <span class='fu'>unit</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>1.3</span>, <span class='fl'>1.7</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>, <span class='st'>"cm"</span><span class='op'>)</span>,</span>
+<span>    panel.spacing <span class='op'>=</span> <span class='fu'>unit</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.5</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>, <span class='st'>"cm"</span><span class='op'>)</span>,</span>
+<span>    legend.position <span class='op'>=</span> <span class='st'>"none"</span>,</span>
+<span>    plot.title <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>family <span class='op'>=</span> <span class='st'>"title"</span>, size <span class='op'>=</span> <span class='fl'>20</span>, face <span class='op'>=</span> <span class='st'>"bold"</span>, vjust <span class='op'>=</span> <span class='fl'>13</span>,hjust <span class='op'>=</span> <span class='op'>-</span><span class='fl'>10</span><span class='op'>)</span>,</span>
+<span>    plot.subtitle <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>family <span class='op'>=</span> <span class='st'>"subtitle"</span>, size <span class='op'>=</span> <span class='fl'>9</span>, vjust <span class='op'>=</span> <span class='fl'>20</span>, hjust <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>,</span>
+<span>    plot.caption <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>family <span class='op'>=</span> <span class='st'>"caption"</span>, size <span class='op'>=</span> <span class='fl'>10</span>, vjust <span class='op'>=</span> <span class='op'>-</span><span class='fl'>15</span><span class='op'>)</span>,</span>
+<span>  <span class='op'>)</span></span>
+<span><span class='fu'>ggbackground</span><span class='op'>(</span><span class='va'>p</span> <span class='op'>+</span> <span class='fu'>geom_text</span><span class='op'>(</span></span>
+<span>  <span class='fu'>aes</span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>ypos_mod</span>,  label <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='va'>Region</span>, <span class='st'>"\n ("</span>, <span class='fu'><a href='https://rdrr.io/r/base/sprintf.html'>sprintf</a></span><span class='op'>(</span><span class='st'>"%.1f%%"</span>, <span class='va'>prop</span><span class='op'>)</span>, <span class='st'>")"</span><span class='op'>)</span>, group <span class='op'>=</span> <span class='va'>Region</span>, angle <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>, </span>
+<span>  size <span class='op'>=</span> <span class='fl'>2.5</span>,</span>
+<span>  check_overlap <span class='op'>=</span> <span class='cn'>F</span>, </span>
+<span>  color <span class='op'>=</span> <span class='st'>"#2F4F4F"</span>, family <span class='op'>=</span> <span class='st'>"text"</span><span class='op'>)</span> , <span class='va'>img</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'>#webshot::install_phantomjs(force = T)</span></span>
+<span><span class='fu'>webshot</span><span class='op'>(</span><span class='st'>"http://localhost:31220/session/preview.html"</span>, file <span class='op'>=</span> <span class='st'>"viewer_screenshot.png"</span><span class='op'>)</span></span></code></pre>
+</div>
+</details>
+</div>
+<p>However, knowing which National Parks were most visited in 2023 is not enough to understand how people spend their time. What if we use a line plot to observe the evolution of recreational visits to National Parks, differentiated by region?</p>
+<p>Inspired by <a href="https://x.com/sponce1/status/1838881981351821547">this visualization</a>, the second plot includes this information but with a twist: the names of the parks appear in gigantic letters on the plot.</p>
+<p><img src="plots/plot_2.PNG" /></p>
+<p>This second plot displays the trends in recreational visits to National Parks across various U.S. regions from 1980 to 2023. Each line represents a region and shows how visitation has changed over 40 years. Notably, all regions have seen an increase in the number of visitors over the decades, particularly around 2010 and just before the pandemic. The pandemic led to a significant reduction in visits, followed by a rebound, possibly as lockdowns increased people’s desire to spend more time in nature.</p>
+<p>Here’s the code for replication:</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span><span class='op'>(</span>scipen <span class='op'>=</span> <span class='fl'>999</span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/rm.html'>rm</a></span><span class='op'>(</span>list <span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/ls.html'>ls</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'>pacman</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pacman/man/p_load.html'>p_load</a></span><span class='op'>(</span></span>
+<span>  <span class='va'>tidyverse</span>,         <span class='co'># Easily Install and Load the 'Tidyverse'</span></span>
+<span>  <span class='va'>ggtext</span>,            <span class='co'># Improved Text Rendering Support for 'ggplot2'</span></span>
+<span>  <span class='va'>showtext</span>,          <span class='co'># Using Fonts More Easily in R Graphs</span></span>
+<span>  <span class='va'>janitor</span>,           <span class='co'># Simple Tools for Examining and Cleaning Dirty Data</span></span>
+<span>  <span class='va'>skimr</span>,             <span class='co'># Compact and Flexible Summaries of Data</span></span>
+<span>  <span class='va'>scales</span>,            <span class='co'># Scale Functions for Visualization</span></span>
+<span>  <span class='va'>lubridate</span>,         <span class='co'># Make Dealing with Dates a Little Easier</span></span>
+<span>  <span class='va'>glue</span>,              <span class='co'># Interpreted String Literals</span></span>
+<span>  <span class='va'>ggfx</span>               <span class='co'># Pixel Filters for 'ggplot2' and 'grid' # Pixel Filters for 'ggplot2' and 'grid' </span></span>
+<span><span class='op'>)</span>  </span>
+<span><span class='fu'>camcorder</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/camcorder/man/Recording.html'>gg_record</a></span><span class='op'>(</span></span>
+<span>  dir    <span class='op'>=</span> <span class='fu'>here</span><span class='fu'>::</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"temp_plots"</span><span class='op'>)</span>,</span>
+<span>  device <span class='op'>=</span> <span class='st'>"png"</span>,</span>
+<span>  width  <span class='op'>=</span>  <span class='fl'>7.5</span>,</span>
+<span>  height <span class='op'>=</span>  <span class='fl'>5</span>,</span>
+<span>  units  <span class='op'>=</span> <span class='st'>"in"</span>,</span>
+<span>  dpi    <span class='op'>=</span> <span class='fl'>320</span></span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'>### |- resolution ----</span></span>
+<span><span class='fu'>showtext_opts</span><span class='op'>(</span>dpi <span class='op'>=</span> <span class='fl'>320</span>, regular.wt <span class='op'>=</span> <span class='fl'>300</span>, bold.wt <span class='op'>=</span> <span class='fl'>800</span><span class='op'>)</span></span>
+<span></span>
+<span></span>
+<span><span class='co'># Transformation ----------------------------------------------------------</span></span>
+<span></span>
+<span><span class='va'>NPData</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv"</span><span class='op'>)</span></span>
+<span><span class='va'>NPData_groupby</span> <span class='op'>&lt;-</span> <span class='va'>NPData</span> <span class='op'>%&gt;%</span></span>
+<span>  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>Region</span>, <span class='va'>Year</span><span class='op'>)</span> <span class='op'>%&gt;%</span></span>
+<span>  <span class='fu'>summarise</span><span class='op'>(</span>total_visits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>RecreationVisits</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>NPData_groupby</span><span class='op'>$</span><span class='va'>Region</span><span class='op'>)</span></span>
+<span><span class='va'>labels</span> <span class='op'>&lt;-</span> <span class='fu'>tibble</span><span class='op'>(</span></span>
+<span>  label <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Alaska"</span>, <span class='st'>"Intermountain"</span>, <span class='st'>"Midwest"</span>, <span class='st'>"Northeast"</span>, <span class='st'>"Pacific West"</span>,</span>
+<span>            <span class='st'>"Southeast"</span><span class='op'>)</span>,</span>
+<span>  player <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Alaska"</span>, <span class='st'>"Intermountain"</span>, <span class='st'>"Midwest"</span>, <span class='st'>"Northeast"</span>, <span class='st'>"Pacific West"</span>,</span>
+<span>             <span class='st'>"Southeast"</span><span class='op'>)</span>,</span>
+<span>  x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2000</span>, <span class='fl'>2000</span>, <span class='fl'>2000</span>, <span class='fl'>2000</span>, <span class='fl'>2000</span>, <span class='fl'>2000</span><span class='op'>)</span>, </span>
+<span>  y <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.0001</span>, <span class='fl'>0.0001</span>, <span class='fl'>0.0001</span>, <span class='fl'>0.0001</span>, <span class='fl'>0.0001</span>, <span class='fl'>0.0001</span><span class='op'>)</span> </span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Configuration Plot -----------------------------------------------------------</span></span>
+<span></span>
+<span><span class='fu'>loadfonts</span><span class='op'>(</span>device <span class='op'>=</span> <span class='st'>"win"</span><span class='op'>)</span>  <span class='co'># Usa device = "win" para Windows, "quartz" para Mac, y "cairo" para Linux</span></span>
+<span></span>
+<span><span class='va'>bkg_col</span>      <span class='op'>&lt;-</span> <span class='fu'>colorspace</span><span class='fu'>::</span><span class='fu'><a href='https://colorspace.R-Forge.R-project.org/reference/lighten.html'>lighten</a></span><span class='op'>(</span><span class='st'>'#ffffff'</span>, <span class='fl'>0.05</span><span class='op'>)</span>    </span>
+<span><span class='va'>title_col</span>    <span class='op'>&lt;-</span> <span class='st'>"gray20"</span>           </span>
+<span><span class='va'>subtitle_col</span> <span class='op'>&lt;-</span> <span class='st'>"gray20"</span>     </span>
+<span><span class='va'>caption_col</span>  <span class='op'>&lt;-</span> <span class='st'>"gray30"</span>   </span>
+<span><span class='va'>text_col</span>     <span class='op'>&lt;-</span> <span class='st'>"gray20"</span>    </span>
+<span><span class='va'>col_palette</span>  <span class='op'>&lt;-</span> <span class='fu'>paletteer</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/paletteer/man/paletteer_d.html'>paletteer_d</a></span><span class='op'>(</span><span class='st'>"peRReo::don"</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>6</span><span class='op'>)</span><span class='op'>]</span></span>
+<span></span>
+<span><span class='co'>### |-  titles and caption ----</span></span>
+<span><span class='co'># text</span></span>
+<span><span class='va'>title_text</span>    <span class='op'>&lt;-</span> <span class='fu'>str_glue</span><span class='op'>(</span><span class='st'>"The evolution of Recreational Visits to National Parks"</span><span class='op'>)</span></span>
+<span><span class='va'>subtitle_text</span> <span class='op'>&lt;-</span> <span class='fu'>str_glue</span><span class='op'>(</span><span class='st'>"How the number of visits to national parks has evolved over the last 45 years in the US"</span><span class='op'>)</span></span>
+<span><span class='va'>caption_text</span> <span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"Source: National Park Service | Graphics by @guadag12"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'>### fonts ----</span></span>
+<span><span class='fu'>font_add_google</span><span class='op'>(</span><span class='st'>"Oswald"</span>, <span class='st'>"title"</span><span class='op'>)</span></span>
+<span><span class='fu'>font_add_google</span><span class='op'>(</span><span class='st'>"Merriweather Sans"</span>, <span class='st'>"subtitle"</span><span class='op'>)</span></span>
+<span><span class='fu'>font_add_google</span><span class='op'>(</span><span class='st'>"Merriweather Sans"</span>, <span class='st'>"text"</span><span class='op'>)</span></span>
+<span><span class='fu'>font_add_google</span><span class='op'>(</span><span class='st'>"Noto Sans"</span>, <span class='st'>"caption"</span><span class='op'>)</span></span>
+<span><span class='fu'>showtext_auto</span><span class='op'>(</span>enable <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'>### plot theme ----</span></span>
+<span><span class='fu'>theme_set</span><span class='op'>(</span><span class='fu'>theme_minimal</span><span class='op'>(</span>base_size <span class='op'>=</span> <span class='fl'>14</span>, base_family <span class='op'>=</span> <span class='st'>"text"</span><span class='op'>)</span><span class='op'>)</span>                </span>
+<span></span>
+<span><span class='fu'>theme_update</span><span class='op'>(</span></span>
+<span>  plot.title.position   <span class='op'>=</span> <span class='st'>"plot"</span>,</span>
+<span>  plot.caption.position <span class='op'>=</span> <span class='st'>"plot"</span>,</span>
+<span>  legend.position       <span class='op'>=</span> <span class='st'>'plot'</span>,</span>
+<span>  plot.background       <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>bkg_col</span>, color <span class='op'>=</span> <span class='va'>bkg_col</span><span class='op'>)</span>,</span>
+<span>  panel.background      <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>bkg_col</span>, color <span class='op'>=</span> <span class='va'>bkg_col</span><span class='op'>)</span>,</span>
+<span>  plot.margin           <span class='op'>=</span> <span class='fu'>margin</span><span class='op'>(</span>t <span class='op'>=</span> <span class='fl'>10</span>, r <span class='op'>=</span> <span class='fl'>20</span>, b <span class='op'>=</span> <span class='fl'>10</span>, l <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span>,</span>
+<span>  </span>
+<span>  axis.title.x          <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>margin <span class='op'>=</span> <span class='fu'>margin</span><span class='op'>(</span><span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fu'>rel</span><span class='op'>(</span><span class='fl'>1.1</span><span class='op'>)</span>, </span>
+<span>                                       color <span class='op'>=</span> <span class='va'>text_col</span>, family <span class='op'>=</span> <span class='st'>"text"</span>, face <span class='op'>=</span> <span class='st'>"bold"</span>, hjust <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>,</span>
+<span>  axis.title.y          <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,  </span>
+<span>  axis.text.y           <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>  axis.text.x           <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>text_col</span>, family <span class='op'>=</span> <span class='st'>"text"</span>, size <span class='op'>=</span> <span class='fu'>rel</span><span class='op'>(</span><span class='fl'>0.9</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span>  axis.ticks.x          <span class='op'>=</span> <span class='fu'>element_line</span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>text_col</span><span class='op'>)</span>,  <span class='co'># Show x-axis ticks</span></span>
+<span>  panel.grid            <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span>  strip.text            <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span> <span class='co'># Remove strip text </span></span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span><span class='co'># Plot --------------------------------------------------------------------</span></span>
+<span></span>
+<span><span class='va'>region_colors</span> <span class='op'>&lt;-</span>  <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Alaska"</span> <span class='op'>=</span> <span class='st'>"#B0C4DE"</span>, <span class='st'>"Intermountain"</span> <span class='op'>=</span> <span class='st'>"#EDC9AF"</span>, </span>
+<span>                   <span class='st'>"Midwest"</span> <span class='op'>=</span> <span class='st'>"#6B8E23"</span>, <span class='st'>"Northeast"</span> <span class='op'>=</span> <span class='st'>"#708090"</span>, </span>
+<span>                    <span class='st'>"Pacific West"</span> <span class='op'>=</span> <span class='st'>"#DEB887"</span>, <span class='st'>"Southeast"</span> <span class='op'>=</span> <span class='st'>"#5F9EA0"</span><span class='op'>)</span></span>
+<span><span class='va'>NPData_groupby</span> <span class='op'>&lt;-</span> <span class='va'>NPData_groupby</span> <span class='op'>%&gt;%</span></span>
+<span>  <span class='fu'>rename</span><span class='op'>(</span>player<span class='op'>=</span><span class='va'>Region</span><span class='op'>)</span></span>
+<span><span class='va'>plot</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>NPData_groupby</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Year</span>, y <span class='op'>=</span> <span class='va'>total_visits</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='co'># Reference text layer</span></span>
+<span>  <span class='fu'>as_reference</span><span class='op'>(</span></span>
+<span>    <span class='fu'>geom_text</span><span class='op'>(</span></span>
+<span>      data <span class='op'>=</span> <span class='va'>labels</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>x</span>, y <span class='op'>=</span> <span class='va'>y</span>, label <span class='op'>=</span> <span class='va'>label</span><span class='op'>)</span>,</span>
+<span>      inherit.aes <span class='op'>=</span> <span class='cn'>FALSE</span>,</span>
+<span>      family <span class='op'>=</span> <span class='st'>"title"</span>, colour <span class='op'>=</span> <span class='st'>"gray10"</span>, size <span class='op'>=</span> <span class='fu'>rel</span><span class='op'>(</span><span class='fl'>10</span><span class='op'>)</span>, hjust <span class='op'>=</span> <span class='fl'>0.5</span>, vjust <span class='op'>=</span> <span class='fl'>0</span>,</span>
+<span>        </span>
+<span>    <span class='op'>)</span>,</span>
+<span>    id <span class='op'>=</span> <span class='st'>"text"</span></span>
+<span>  <span class='op'>)</span> <span class='op'>+</span></span>
+<span>  </span>
+<span>  <span class='co'># Blending the text with the density plot</span></span>
+<span>  <span class='fu'>with_inner_glow</span><span class='op'>(</span></span>
+<span>    <span class='fu'>with_blend</span><span class='op'>(</span></span>
+<span>      <span class='fu'>geom_area</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>player</span>, color <span class='op'>=</span> <span class='va'>player</span><span class='op'>)</span>,</span>
+<span>                   alpha <span class='op'>=</span> <span class='fl'>1</span>, show.legend <span class='op'>=</span> <span class='cn'>FALSE</span><span class='co'>#,</span></span>
+<span>                  <span class='co'># bw = 25,</span></span>
+<span>                  <span class='co'># kernel = "epanechnikov"</span></span>
+<span>      <span class='op'>)</span>,</span>
+<span>      bg_layer <span class='op'>=</span> <span class='st'>"text"</span>, blend_type <span class='op'>=</span> <span class='st'>"xor"</span></span>
+<span>    <span class='op'>)</span>,</span>
+<span>    color <span class='op'>=</span> <span class='st'>"gray10"</span>, sigma <span class='op'>=</span> <span class='fl'>15</span></span>
+<span>  <span class='op'>)</span> <span class='op'>+</span></span>
+<span>  </span>
+<span>  <span class='co'># Labs</span></span>
+<span>  <span class='fu'>labs</span><span class='op'>(</span></span>
+<span>    x <span class='op'>=</span> <span class='st'>"Year"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"Total Visits"</span>,</span>
+<span>    title <span class='op'>=</span> <span class='va'>title_text</span>,</span>
+<span>    subtitle <span class='op'>=</span> <span class='va'>subtitle_text</span>,</span>
+<span>    caption <span class='op'>=</span> <span class='va'>caption_text</span></span>
+<span>  <span class='op'>)</span> <span class='op'>+</span></span>
+<span>  </span>
+<span>  <span class='co'># Scales</span></span>
+<span>  <span class='fu'>scale_x_continuous</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'>scale_y_continuous</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'>scale_fill_manual</span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_palette</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'>scale_color_manual</span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_palette</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'>coord_cartesian</span><span class='op'>(</span>clip <span class='op'>=</span> <span class='st'>"off"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'>scale_fill_manual</span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>region_colors</span><span class='op'>)</span> <span class='op'>+</span>  </span>
+<span></span>
+<span>  </span>
+<span>  <span class='co'># Facet</span></span>
+<span>  <span class='fu'>facet_wrap</span><span class='op'>(</span><span class='op'>~</span><span class='va'>player</span>, ncol <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  </span>
+<span>  <span class='co'># Facet</span></span>
+<span>  <span class='fu'>theme</span><span class='op'>(</span></span>
+<span>    plot.title <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span></span>
+<span>      size <span class='op'>=</span> <span class='fu'>rel</span><span class='op'>(</span><span class='fl'>1.55</span><span class='op'>)</span>,</span>
+<span>      family <span class='op'>=</span> <span class='st'>"title"</span>,</span>
+<span>      face <span class='op'>=</span> <span class='st'>"bold"</span>,</span>
+<span>      color <span class='op'>=</span> <span class='va'>title_col</span>,</span>
+<span>      lineheight <span class='op'>=</span> <span class='fl'>1.1</span>,</span>
+<span>      margin <span class='op'>=</span> <span class='fu'>margin</span><span class='op'>(</span>t <span class='op'>=</span> <span class='fl'>5</span>, b <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span></span>
+<span>    <span class='op'>)</span>,</span>
+<span>    plot.subtitle <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span></span>
+<span>      size <span class='op'>=</span> <span class='fu'>rel</span><span class='op'>(</span><span class='fl'>0.85</span><span class='op'>)</span>,</span>
+<span>      family <span class='op'>=</span> <span class='st'>"subtitle"</span>,</span>
+<span>      color <span class='op'>=</span> <span class='va'>subtitle_col</span>,</span>
+<span>      lineheight <span class='op'>=</span> <span class='fl'>1.1</span>,</span>
+<span>      margin <span class='op'>=</span> <span class='fu'>margin</span><span class='op'>(</span>t <span class='op'>=</span> <span class='fl'>5</span>, b <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span></span>
+<span>    <span class='op'>)</span>,</span>
+<span>    plot.caption <span class='op'>=</span> <span class='fu'>element_markdown</span><span class='op'>(</span></span>
+<span>      size <span class='op'>=</span> <span class='fu'>rel</span><span class='op'>(</span><span class='fl'>0.50</span><span class='op'>)</span>,</span>
+<span>      family <span class='op'>=</span> <span class='st'>"caption"</span>,</span>
+<span>      color <span class='op'>=</span> <span class='va'>caption_col</span>,</span>
+<span>      lineheight <span class='op'>=</span> <span class='fl'>1.1</span>,</span>
+<span>      hjust <span class='op'>=</span> <span class='fl'>0.5</span>,</span>
+<span>      halign <span class='op'>=</span> <span class='fl'>1</span>,</span>
+<span>      margin <span class='op'>=</span> <span class='fu'>margin</span><span class='op'>(</span>t <span class='op'>=</span> <span class='fl'>5</span>, b <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span></span>
+<span>    <span class='op'>)</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
+</div>
+</details>
+</div>
+<p>In conclusion, it’s wonderful to see that more people are spending their time outdoors. In conclusion, it is wonderful to see that more people are spending their time outside and this exploration is critical during 2010 and after the pandemic, as it created a new necessity of connecting more with nature.</p>
+<p>Last but not least, I want to share with you a a photo of me after a 4-hour, 14-km trek at the <a href="https://refugiomeiling.com/">Otto Meiling Refuge</a> in Nahuel Huapi National Park, Argentina:</p>
+<p><img src="plots/Meiling.jpg" /></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
