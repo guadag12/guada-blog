@@ -1,5 +1,5 @@
 ---
-title: "Visualizing National Parks"
+title: "Mapping Visitor Trends in U.S. National Parks"
 description: |
   Ever wondered how our visits to national parks fulfill deep-seated desires for adventure, tranquility, and a return to nature? Let’s explore this question with my visualizations for the 2025 Data Viz Championship.
 author:
