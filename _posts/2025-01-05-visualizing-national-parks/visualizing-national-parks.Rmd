@@ -2,7 +2,7 @@
 title: "Mapping Visitor Trends in U.S. National Parks"
 description: |
   Ever wondered how our visits to national parks fulfill deep-seated desires for adventure, tranquility, and a return to nature? Let’s explore this question with my visualizations for the 2025 Data Viz Championship.
-preview: plots/intro.png
+preview: plots/final_plot_number_2.png
 author:
   - name: Guada Gonzalez
     url: https://guadagonzalez.com/
@@ -25,7 +25,7 @@ The plots I created are organized by region, so let's review which regions belon
 
 Now that we can identify regions on the map, let's start with a pie chart. I know the data science community might disapprove—pie charts ([1](https://medium.com/analytics-vidhya/dont-use-pie-charts-in-data-analysis-6c005723e657)), but I wanted to experiment with inserting an image as a background and overlaying a plot on it. The compass seems perfect for this. The first plot shows that the most visited parks in 2023 were in the Intermountain (34.8%) and Pacific West (23.32%) regions, which is logical since they include Yellowstone, Grand Canyon, Yosemite, and Olympic National Park. Conversely, the Alaska region, with only 1.5%, features fascinating wilderness areas but is remote, less accessible, and has harsher climates than other continental parks. Let's look at the plot:
 
-![](plots/plot_1.PNG)
+![](plots/plot_compass_final.PNG)
 
 Here's the code for replication:
 
@@ -57,19 +57,18 @@ font_add_google("Merriweather Sans", "text")
 font_add_google("Noto Sans", "caption")
 showtext_auto(enable = TRUE)
 
-img = "C:/Users/User/Documents/GitHub/2025_Data_Viz_Championship/compass2.jpg"
+img = "C:/Users/User/Documents/GitHub/guada-blog/_posts/2025-01-05-visualizing-national-parks/plots/compass2.jpg"
 
 fa_path <- systemfonts::font_info(family = "Font Awesome 6 Brands Regular")[["path"]]
 font_add(family = "fa-brands", regular = fa_path)
 
 subtitle_text <- str_glue("Although visits started as early as 1904, the NPS has been tracking them monthly since 1979 \n in 63 parks across the USA. In 2023 alone, the different parks received more than 9.2 million visits, \n distributed as shown in the plot.")
 
-caption_text  <- str_glue("{tt} <span style='font-family:fa6-brands'>&#xf08c;</span> guadag12 &bull; {tw} @guadag12 ; {gi} @guadag12")
+caption_text <-paste0("\n \n \n \n  Source: National Park Service | Graphics by @guadag12")
 
 region_colors <-  c("Alaska" = "#B0C4DE", "Intermountain" = "#EDC9AF", 
                     "Midwest" = "#6B8E23", "Northeast" = "#708090", 
                     "Pacific West" = "#DEB887", "Southeast" = "#5F9EA0")
-
 
 theme_update(
   plot.title.position   = "plot",
@@ -96,6 +95,10 @@ region_colors <-  c("Alaska" = "#B0C4DE", "Intermountain" = "#EDC9AF",
                     "Pacific West" = "#DEB887", "Southeast" = "#5F9EA0")
 
 # Plot --------------------------------------------------------------------
+
+NPData$Region <- factor(NPData$Region, levels = c( "Alaska","Pacific West",
+                                                  "Intermountain",  
+                                                  "Southeast", "Northeast", "Midwest"))
 
 p <-NPData %>%
   group_by(Region) %>%
@@ -141,20 +144,28 @@ ggbackground(p + geom_text(
   check_overlap = F, 
   color = "#2F4F4F", family = "text") , img)
 
-#webshot::install_phantomjs(force = T)
+webshot::install_phantomjs(force = T)
 webshot("http://localhost:31220/session/preview.html", file = "viewer_screenshot.png")
 
 ```
+In addition to incorporating a compass into the background, creating this visualization posed a unique challenge: I needed the regions displayed on the compass to align with their actual geographic coordinates. Fortunately, this is a well-known issue, and it can be resolved by setting the correct order for the 'Region' variable and converting it into a factor. This method ensures that each region is accurately positioned according to real-world directions:
 
-However, knowing which National Parks were most visited in 2023 is not enough to understand how people spend their time. What if we use a line plot to observe the evolution of recreational visits to National Parks, differentiated by region?
+```{r, eval=FALSE, code_folding=FALSE}
+NPData$Region <- factor(NPData$Region, levels = c( "Alaska","Pacific West",
+                                                  "Intermountain",  
+                                                  "Southeast", "Northeast", "Midwest"))
+```
 
-Inspired by [this visualization](https://x.com/sponce1/status/1838881981351821547), the second plot includes this information but with a twist: the names of the parks appear in gigantic letters on the plot.
 
-![](plots/plot_2.PNG)
+This first plot helps us to know which National Parks were most visited in 2023. However, it is not enough to understand how people spend their time. What if we use a line plot to observe the evolution of recreational visits to National Parks, differentiated by region?
+
+Inspired by [this visualization](https://x.com/sponce1/status/1838881981351821547), the second plot includes this information but with a twist: the names of the parks appear in gigantic letters on the plot and have beautiful images that represents better each region:
+
+![](plots/final_plot_number_2.PNG)
 
 This second plot displays the trends in recreational visits (in millions) to National Parks across various U.S. regions from 1980 to 2023. Each line represents a region and shows how visitation has changed over 40 years. Notably, all regions have seen an increase in the number of visitors over the decades, particularly around 2010 and just before the pandemic. The pandemic led to a significant reduction in visits, followed by a rebound, possibly as lockdowns increased people's desire to spend more time in nature.
 
-Here's the code for replication:
+For this second visualization, the initial plot was created using R. Afterwards, it was exported to Inkscape, a graphic design software, to add images and enhance its visual appeal. If you are interesting to know, the original plot generated in R looks like this. Here's the code for replication:
 
 ```{r, code_folding=TRUE, eval=FALSE}
 options(scipen = 999)
@@ -193,17 +204,20 @@ NPData_groupby <- NPData %>%
 
 unique(NPData_groupby$Region)
 labels <- tibble(
-  label = c("Alaska", "Intermountain", "Midwest", "Northeast", "Pacific West",
-            "Southeast"),
-  player = c("Alaska", "Intermountain", "Midwest", "Northeast", "Pacific West",
-             "Southeast"),
+    label =  c("", "", "", "", "",""),
+  player = c("", "", "", "", "",
+             ""),
+  #label = c("Alaska", "Intermountain", "Midwest", "Northeast", "Pacific West",
+  #          "Southeast"),
+  #player = c("Alaska", "Intermountain", "Midwest", "Northeast", "Pacific West",
+  #           "Southeast"),
   x = c(2000, 2000, 2000, 2000, 2000, 2000), 
   y = c(0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001) 
 )
 
 # Configuration Plot -----------------------------------------------------------
 
-loadfonts(device = "win")  # Usa device = "win" para Windows, "quartz" para Mac, y "cairo" para Linux
+#loadfonts(device = "win")  # Usa device = "win" para Windows, "quartz" para Mac, y "cairo" para Linux
 
 bkg_col      <- colorspace::lighten('#ffffff', 0.05)    
 title_col    <- "gray20"           
@@ -256,32 +270,35 @@ theme_update(
 region_colors <-  c("Alaska" = "#B0C4DE", "Intermountain" = "#EDC9AF", 
                    "Midwest" = "#6B8E23", "Northeast" = "#708090", 
                     "Pacific West" = "#DEB887", "Southeast" = "#5F9EA0")
-NPData_groupby <- NPData_groupby %>%
-  rename(player=Region)
+NPData_groupby <- NPData_groupby %>% rename(player=Region)
 plot <- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
-  # Reference text layer
+  Reference text layer
   as_reference(
-    geom_text(
-      data = labels, aes(x = x, y = y, label = label),
-      inherit.aes = FALSE,
-      family = "title", colour = "gray10", size = rel(10), hjust = 0.5, vjust = 0,
-        
-    ),
+     geom_text(
+       data = labels, aes(x = x, y = y, label = label),
+       inherit.aes = FALSE,
+       family = "title", colour = "gray10", size = rel(10), hjust = 0.5, vjust = 0,
+
+   ),
     id = "text"
-  ) +
-  
+   ) +
+  geom_area(aes(fill = player, color = player),
+                     alpha = 1, show.legend = FALSE#,
+                    # bw = 25,
+                    # kernel = "epanechnikov"
+        )+ 
   # Blending the text with the density plot
-  with_inner_glow(
-    with_blend(
-      geom_area(aes(fill = player, color = player),
-                   alpha = 1, show.legend = FALSE#,
-                  # bw = 25,
-                  # kernel = "epanechnikov"
-      ),
-      bg_layer = "text", blend_type = "xor"
-    ),
-    color = "gray10", sigma = 15
-  ) +
+   with_inner_glow(
+     with_blend(
+       geom_area(aes(fill = player, color = player),
+                    alpha = 1, show.legend = FALSE#,
+                   # bw = 25,
+                   # kernel = "epanechnikov"
+       ),
+       bg_layer = "text", blend_type = "xor"
+     ),
+     color = "gray10", sigma = 15
+   ) +
   
   # Labs
   labs(
@@ -298,11 +315,11 @@ plot <- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
   scale_fill_manual(values = col_palette) +
   scale_color_manual(values = col_palette) +
   coord_cartesian(clip = "off") +
-    scale_fill_manual(values = region_colors) +  
+  scale_fill_manual(values = region_colors) +  
 
   
   # Facet
-  facet_wrap(~player, ncol = 2) +
+  facet_wrap(~player, ncol = 2, scales = "free") +
   
   # Facet
   theme(
@@ -331,7 +348,10 @@ plot <- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
       margin = margin(t = 5, b = 5)
     )
   )
+
+plot
 ```
+
 
 In conclusion, it is wonderful to see that more people are spending their time outside and this exploration is critical during 2010 and after the pandemic, as it created a new necessity of connecting more with nature. 
 

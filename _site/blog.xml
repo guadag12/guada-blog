@@ -38,7 +38,7 @@ include Yellowstone, Grand Canyon, Yosemite, and Olympic National Park.
 Conversely, the Alaska region, with only 1.5%, features fascinating
 wilderness areas but is remote, less accessible, and has harsher
 climates than other continental parks. Let’s look at the plot:&lt;/p&gt;
-&lt;p&gt;&lt;img src="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parksplots/plot_1.PNG" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parksplots/plot_compass_final.PNG" /&gt;&lt;/p&gt;
 &lt;p&gt;Here’s the code for replication:&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;rm(list = ls())
 
@@ -67,19 +67,18 @@ font_add_google(&amp;quot;Merriweather Sans&amp;quot;, &amp;quot;text&amp;quot;)
 font_add_google(&amp;quot;Noto Sans&amp;quot;, &amp;quot;caption&amp;quot;)
 showtext_auto(enable = TRUE)
 
-img = &amp;quot;C:/Users/User/Documents/GitHub/2025_Data_Viz_Championship/compass2.jpg&amp;quot;
+img = &amp;quot;C:/Users/User/Documents/GitHub/guada-blog/_posts/2025-01-05-visualizing-national-parks/plots/compass2.jpg&amp;quot;
 
 fa_path &amp;lt;- systemfonts::font_info(family = &amp;quot;Font Awesome 6 Brands Regular&amp;quot;)[[&amp;quot;path&amp;quot;]]
 font_add(family = &amp;quot;fa-brands&amp;quot;, regular = fa_path)
 
 subtitle_text &amp;lt;- str_glue(&amp;quot;Although visits started as early as 1904, the NPS has been tracking them monthly since 1979 \n in 63 parks across the USA. In 2023 alone, the different parks received more than 9.2 million visits, \n distributed as shown in the plot.&amp;quot;)
 
-caption_text  &amp;lt;- str_glue(&amp;quot;{tt} &amp;lt;span style=&amp;#39;font-family:fa6-brands&amp;#39;&amp;gt;&amp;amp;#xf08c;&amp;lt;/span&amp;gt; guadag12 &amp;amp;bull; {tw} @guadag12 ; {gi} @guadag12&amp;quot;)
+caption_text &amp;lt;-paste0(&amp;quot;\n \n \n \n  Source: National Park Service | Graphics by @guadag12&amp;quot;)
 
 region_colors &amp;lt;-  c(&amp;quot;Alaska&amp;quot; = &amp;quot;#B0C4DE&amp;quot;, &amp;quot;Intermountain&amp;quot; = &amp;quot;#EDC9AF&amp;quot;, 
                     &amp;quot;Midwest&amp;quot; = &amp;quot;#6B8E23&amp;quot;, &amp;quot;Northeast&amp;quot; = &amp;quot;#708090&amp;quot;, 
                     &amp;quot;Pacific West&amp;quot; = &amp;quot;#DEB887&amp;quot;, &amp;quot;Southeast&amp;quot; = &amp;quot;#5F9EA0&amp;quot;)
-
 
 theme_update(
   plot.title.position   = &amp;quot;plot&amp;quot;,
@@ -106,6 +105,10 @@ region_colors &amp;lt;-  c(&amp;quot;Alaska&amp;quot; = &amp;quot;#B0C4DE&amp;qu
                     &amp;quot;Pacific West&amp;quot; = &amp;quot;#DEB887&amp;quot;, &amp;quot;Southeast&amp;quot; = &amp;quot;#5F9EA0&amp;quot;)
 
 # Plot --------------------------------------------------------------------
+
+NPData$Region &amp;lt;- factor(NPData$Region, levels = c( &amp;quot;Alaska&amp;quot;,&amp;quot;Pacific West&amp;quot;,
+                                                  &amp;quot;Intermountain&amp;quot;,  
+                                                  &amp;quot;Southeast&amp;quot;, &amp;quot;Northeast&amp;quot;, &amp;quot;Midwest&amp;quot;))
 
 p &amp;lt;-NPData %&amp;gt;%
   group_by(Region) %&amp;gt;%
@@ -151,18 +154,25 @@ ggbackground(p + geom_text(
   check_overlap = F, 
   color = &amp;quot;#2F4F4F&amp;quot;, family = &amp;quot;text&amp;quot;) , img)
 
-#webshot::install_phantomjs(force = T)
+webshot::install_phantomjs(force = T)
 webshot(&amp;quot;http://localhost:31220/session/preview.html&amp;quot;, file = &amp;quot;viewer_screenshot.png&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;However, knowing which National Parks were most visited in 2023 is
-not enough to understand how people spend their time. What if we use a
-line plot to observe the evolution of recreational visits to National
-Parks, differentiated by region?&lt;/p&gt;
+&lt;p&gt;In addition to incorporating a compass into the background, creating
+this visualization posed a unique challenge: I needed the regions
+displayed on the compass to align with their actual geographic
+coordinates. Fortunately, this is a well-known issue, and it can be
+resolved by setting the correct order for the ‘Region’ variable and
+converting it into a factor. This method ensures that each region is
+accurately positioned according to real-world directions:&lt;/p&gt;
+&lt;p&gt;This first plot helps us to know which National Parks were most
+visited in 2023. However, it is not enough to understand how people
+spend their time. What if we use a line plot to observe the evolution of
+recreational visits to National Parks, differentiated by region?&lt;/p&gt;
 &lt;p&gt;Inspired by &lt;a
 href="https://x.com/sponce1/status/1838881981351821547"&gt;this
 visualization&lt;/a&gt;, the second plot includes this information but with a
-twist: the names of the parks appear in gigantic letters on the
-plot.&lt;/p&gt;
-&lt;p&gt;&lt;img src="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parksplots/plot_2.PNG" /&gt;&lt;/p&gt;
+twist: the names of the parks appear in gigantic letters on the plot and
+have beautiful images that represents better each region:&lt;/p&gt;
+&lt;p&gt;&lt;img src="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parksplots/final_plot_number_2.PNG" /&gt;&lt;/p&gt;
 &lt;p&gt;This second plot displays the trends in recreational visits (in
 millions) to National Parks across various U.S. regions from 1980 to
 2023. Each line represents a region and shows how visitation has changed
@@ -171,7 +181,11 @@ of visitors over the decades, particularly around 2010 and just before
 the pandemic. The pandemic led to a significant reduction in visits,
 followed by a rebound, possibly as lockdowns increased people’s desire
 to spend more time in nature.&lt;/p&gt;
-&lt;p&gt;Here’s the code for replication:&lt;/p&gt;
+&lt;p&gt;For this second visualization, the initial plot was created using R.
+Afterwards, it was exported to Inkscape, a graphic design software, to
+add images and enhance its visual appeal. If you are interesting to
+know, the original plot generated in R looks like this. Here’s the code
+for replication:&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;options(scipen = 999)
 rm(list =ls())
 
@@ -208,17 +222,20 @@ NPData_groupby &amp;lt;- NPData %&amp;gt;%
 
 unique(NPData_groupby$Region)
 labels &amp;lt;- tibble(
-  label = c(&amp;quot;Alaska&amp;quot;, &amp;quot;Intermountain&amp;quot;, &amp;quot;Midwest&amp;quot;, &amp;quot;Northeast&amp;quot;, &amp;quot;Pacific West&amp;quot;,
-            &amp;quot;Southeast&amp;quot;),
-  player = c(&amp;quot;Alaska&amp;quot;, &amp;quot;Intermountain&amp;quot;, &amp;quot;Midwest&amp;quot;, &amp;quot;Northeast&amp;quot;, &amp;quot;Pacific West&amp;quot;,
-             &amp;quot;Southeast&amp;quot;),
+    label =  c(&amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;,&amp;quot;&amp;quot;),
+  player = c(&amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;,
+             &amp;quot;&amp;quot;),
+  #label = c(&amp;quot;Alaska&amp;quot;, &amp;quot;Intermountain&amp;quot;, &amp;quot;Midwest&amp;quot;, &amp;quot;Northeast&amp;quot;, &amp;quot;Pacific West&amp;quot;,
+  #          &amp;quot;Southeast&amp;quot;),
+  #player = c(&amp;quot;Alaska&amp;quot;, &amp;quot;Intermountain&amp;quot;, &amp;quot;Midwest&amp;quot;, &amp;quot;Northeast&amp;quot;, &amp;quot;Pacific West&amp;quot;,
+  #           &amp;quot;Southeast&amp;quot;),
   x = c(2000, 2000, 2000, 2000, 2000, 2000), 
   y = c(0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001) 
 )
 
 # Configuration Plot -----------------------------------------------------------
 
-loadfonts(device = &amp;quot;win&amp;quot;)  # Usa device = &amp;quot;win&amp;quot; para Windows, &amp;quot;quartz&amp;quot; para Mac, y &amp;quot;cairo&amp;quot; para Linux
+#loadfonts(device = &amp;quot;win&amp;quot;)  # Usa device = &amp;quot;win&amp;quot; para Windows, &amp;quot;quartz&amp;quot; para Mac, y &amp;quot;cairo&amp;quot; para Linux
 
 bkg_col      &amp;lt;- colorspace::lighten(&amp;#39;#ffffff&amp;#39;, 0.05)    
 title_col    &amp;lt;- &amp;quot;gray20&amp;quot;           
@@ -271,32 +288,35 @@ theme_update(
 region_colors &amp;lt;-  c(&amp;quot;Alaska&amp;quot; = &amp;quot;#B0C4DE&amp;quot;, &amp;quot;Intermountain&amp;quot; = &amp;quot;#EDC9AF&amp;quot;, 
                    &amp;quot;Midwest&amp;quot; = &amp;quot;#6B8E23&amp;quot;, &amp;quot;Northeast&amp;quot; = &amp;quot;#708090&amp;quot;, 
                     &amp;quot;Pacific West&amp;quot; = &amp;quot;#DEB887&amp;quot;, &amp;quot;Southeast&amp;quot; = &amp;quot;#5F9EA0&amp;quot;)
-NPData_groupby &amp;lt;- NPData_groupby %&amp;gt;%
-  rename(player=Region)
+NPData_groupby &amp;lt;- NPData_groupby %&amp;gt;% rename(player=Region)
 plot &amp;lt;- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
-  # Reference text layer
+  Reference text layer
   as_reference(
-    geom_text(
-      data = labels, aes(x = x, y = y, label = label),
-      inherit.aes = FALSE,
-      family = &amp;quot;title&amp;quot;, colour = &amp;quot;gray10&amp;quot;, size = rel(10), hjust = 0.5, vjust = 0,
-        
-    ),
+     geom_text(
+       data = labels, aes(x = x, y = y, label = label),
+       inherit.aes = FALSE,
+       family = &amp;quot;title&amp;quot;, colour = &amp;quot;gray10&amp;quot;, size = rel(10), hjust = 0.5, vjust = 0,
+
+   ),
     id = &amp;quot;text&amp;quot;
-  ) +
-  
+   ) +
+  geom_area(aes(fill = player, color = player),
+                     alpha = 1, show.legend = FALSE#,
+                    # bw = 25,
+                    # kernel = &amp;quot;epanechnikov&amp;quot;
+        )+ 
   # Blending the text with the density plot
-  with_inner_glow(
-    with_blend(
-      geom_area(aes(fill = player, color = player),
-                   alpha = 1, show.legend = FALSE#,
-                  # bw = 25,
-                  # kernel = &amp;quot;epanechnikov&amp;quot;
-      ),
-      bg_layer = &amp;quot;text&amp;quot;, blend_type = &amp;quot;xor&amp;quot;
-    ),
-    color = &amp;quot;gray10&amp;quot;, sigma = 15
-  ) +
+   with_inner_glow(
+     with_blend(
+       geom_area(aes(fill = player, color = player),
+                    alpha = 1, show.legend = FALSE#,
+                   # bw = 25,
+                   # kernel = &amp;quot;epanechnikov&amp;quot;
+       ),
+       bg_layer = &amp;quot;text&amp;quot;, blend_type = &amp;quot;xor&amp;quot;
+     ),
+     color = &amp;quot;gray10&amp;quot;, sigma = 15
+   ) +
   
   # Labs
   labs(
@@ -313,11 +333,11 @@ plot &amp;lt;- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
   scale_fill_manual(values = col_palette) +
   scale_color_manual(values = col_palette) +
   coord_cartesian(clip = &amp;quot;off&amp;quot;) +
-    scale_fill_manual(values = region_colors) +  
+  scale_fill_manual(values = region_colors) +  
 
   
   # Facet
-  facet_wrap(~player, ncol = 2) +
+  facet_wrap(~player, ncol = 2, scales = &amp;quot;free&amp;quot;) +
   
   # Facet
   theme(
@@ -345,7 +365,9 @@ plot &amp;lt;- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
       halign = 1,
       margin = margin(t = 5, b = 5)
     )
-  )&lt;/code&gt;&lt;/pre&gt;
+  )
+
+plot&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In conclusion, it is wonderful to see that more people are spending
 their time outside and this exploration is critical during 2010 and
 after the pandemic, as it created a new necessity of connecting more
@@ -358,7 +380,7 @@ Meiling Refuge&lt;/a&gt; in Nahuel Huapi National Park, Argentina:&lt;/p&gt;
       <distill:md5>2fc9b05f43bbf07559834ac53ca5b163</distill:md5>
       <guid>www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks</guid>
       <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
-      <media:content url="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks/plots/intro.png" medium="image" type="image/png" width="880" height="544"/>
+      <media:content url="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks/plots/final_plot_number_2.png" medium="image" type="image/png" width="1119" height="736"/>
     </item>
     <item>
       <title>Introduction to Selenium with Twitter Data</title>
