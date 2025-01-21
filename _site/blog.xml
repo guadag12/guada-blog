@@ -184,8 +184,9 @@ to spend more time in nature.&lt;/p&gt;
 &lt;p&gt;For this second visualization, the initial plot was created using R.
 Afterwards, it was exported to Inkscape, a graphic design software, to
 add images and enhance its visual appeal. If you are interesting to
-know, the original plot generated in R looks like this. Here’s the code
-for replication:&lt;/p&gt;
+know, the original plot generated in R &lt;a
+href="https://github.com/guadag12/guada-blog/raw/main/_posts/2025-01-05-visualizing-national-parks/plots/plot_2.PNG"&gt;looks
+like this&lt;/a&gt;. Here’s the code for replication:&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;options(scipen = 999)
 rm(list =ls())
 
