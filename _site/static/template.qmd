@@ -144,6 +144,32 @@ To what extent do politically interested moderates consume more diverse politica
 
 :::
 
+---
+
+## {auto-animate=true}
+
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+
+But how we identify a 'moderate' voter?
+
+:::
+
+---
+
+
+![](img/1.png){.center}
+---
+
+
+![](img/2.png)
+--- 
+
+
+![](img/3.png)
+
+
+---
+
 
 
 ---
@@ -185,30 +211,6 @@ So I:
 :::
 
 :::
-
-
----
-
-## {auto-animate=true}
-
-:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
-
-But how we identify a 'moderate' voter?
-
-:::
-
----
-
-
-![](img/1.png){.center}
----
-
-
-![](img/2.png)
---- 
-
-
-![](img/3.png)
 
 
 ---
@@ -375,7 +377,7 @@ $$
 
 :::  {style="margin-top: 200px; font-size: 3em; color: red;"}
 
-Some (parcial) results...
+Some (preliminary) results...
 
 :::
 
@@ -383,7 +385,7 @@ Some (parcial) results...
 
 :::  {style="font-size: 1em;"}
 
-Some (parcial) results...
+Some (preliminary) results...
 
 :::
 
