@@ -1,253 +1,469 @@
 ---
-title: "CORRUPTION AND INEQUALITY AT THE CROSSROAD"
-subtitle: "A Multimethod Study of Bribery and Discrimination in Latin America"
-author: "Brian J. Fried, Paul Lagunes, Atheendar Venkataramani"
-institute: "*Latin American Research Review*"
-bibliography: bibliography.bib
+title: "Not All Moderates Are Equal"
+subtitle: "Clickstream Evidence from Argentina’s 2021 Election"
+author: 
+  - name: "<h4><strong>Guadalupe González</strong></h4>"
+    email: "guadag12@umd.edu<br></br>"
+date: 05/06/2024
+date-format: "MMM D, YYYY"
+bibliography: references.bib
+execute: 
+  echo: true
 format: 
-  revealjs: 
-    theme: white
-    slide-number: false
+  revealjs:
+    favicon: "selenium.png" 
+    width: 1600
+    height: 900
     incremental: true
-    transition: slide
-    backgroundTransition: fade
-    citation-style: apa.csl
+    footer: "<div class='custom-footer'><span>Not All Moderates Are Equal</span><img src='https://github.com/guadag12/repo_datasets/raw/master/logo-umd/umd.png' class='footer-logo' /></div>"
+    theme: [style.scss]
+    link-external-newwindow: true
+    df-print: kable
+    footer-logo-link: "https://umd.edu/"
+    chalkboard: true
+    smaller: true
+    code-fold: true
+    code-tools: true
+    title-slide-attributes:
+      data-background-color: "#e21833"
+from: markdown+emoji
 ---
 
-## Motivation
-
-<style>
-.reveal {
-	 --slide-background: white;
-	 --text-color: black;
-	 --primary-color: gray;
-	 --accent-color: blue;
-}
- .reveal h1, .reveal h2, .reveal h3 {
-	 color: black;
-}
- .reveal p, .reveal li {
-	 color: #4a90e2;
-}
- .reveal a {
-	 color: blue;
-}
- .reveal .slide-number {
-	 color: grey;
-}
- .citation {
-	 color: grey;
-	/* A soft blue */
-}
- a[role="doc-biblioref"] {
-	 color: grey;
-	/* Example: a subtle green */
-}
- .reveal .fade-in-then-semi-out {
-	 transition: opacity 0.8s ease-in-out;
-}
- .reveal .fade-in-then-semi-out.fragment:not(.visible) {
-	 opacity: 0.3;
-	/* Semi-transparent when not active */
-}
- .reveal .fade-in-then-semi-out.fragment.current-fragment {
-	 opacity: 1;
-	/* Fully visible when active */
-}
-</style>
-
-
-:::{.r-stack}
-![](img/news/news_2.png){.fragment}
-
-![](img/news/news_4.PNG){.fragment}
-
-![](img/news/news_3.png){.fragment}
-
-![](img/news/news_6_.png){.fragment}
-
-![](img/news/news_7.png){.fragment width="680" height="500"}
-
-
-![](img/news/news_9.png){.fragment width="680" height="500"}
-
-![](img/news/news_10.png){.fragment width="680" height="500"}
-
-![](img/news/news_11.png){.fragment width="680" height="500"}
-
-![](img/news/news_12.png){.fragment width="680" height="500"}
-![](img/news/news_13.png){.fragment width="680" height="500"}
-
-![](img/news/news_14.png){.fragment width="680" height="500"}
-
-![](img/news/news_1.png){.fragment width="680" height="500"}
+::: {.columns}
+::: {.column width="50%"}
+![](img/23.jpeg){.middle}
+:::
+::: {.column width="50%"}
+<!-- leave empty so the width is preserved -->
+:::
 :::
 
-------------------------------------------------------------------------
+---
 
-## Literature Review
-
--   bribery assist the poor ( @Nye1967, @Scott1969)
-
--   inequality of influence (@Kaufmann1997, @HellmanKaufman2002, @GlaeserEtAl2003, @DeFerranti2004):
-
-    -   bribery and socioeconomic status (@RoseAckerman1978, @Svensson2003, @Nielsen2006, @FadahunsiRosa2002, @Lagunes2009, @GuerreroRodriguezOreggia2005, @Hunt2007, @HuntLaszlo2006)
-
-------------------------------------------------------------------------
-
-##  {auto-animate="true"}
-
-::: {style="margin-top: 200px; font-size: 3em;"}
-Research Question
+::: {.columns}
+::: {.column width="50%"}
+![](img/23.jpeg){.middle}
+:::
+::: {.column width="50%"}
+![](img/22.png){.middle}
+:::
 :::
 
-##  {auto-animate="true"}
+---
 
-Research Question
+## {auto-animate=true}
 
-::: {style="margin-top: 200px; font-size: 3em; color: red;"}
-How does corruption interact with inequality?
+## What the literature said so far?
+
+## {auto-animate=true}
+
+## What the literature said so far?
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.incremental}
+
+::: {style="font-size: 1.3em;"}
+
+- @campbell1960american establish that *Moderates and independents* tend to *show lower political interest*, less information, and more *unstable attitudes*...
+
+- @klar2016independent shows that *not all moderates are equal* and *we can distinguish* between *moderates* that are *interested in politics* and moderates that are not.
+
 :::
 
-##  {auto-animate="true"}
-
-Research Question
-
-How does corruption interact with inequality?
-
-::: {style="margin-top: 200px; font-size: 1.5em; color: red;"}
-How do traffic police officers respond to drivers of different income levels?
 :::
 
-##  {auto-animate="true"}
-
-Research Question
-
-How does corruption interact with inequality?
-
-How do traffic police officers respond to drivers of different income levels?
-
-::: {style="margin-top: 200px; font-size: 1.5em; color: red;"}
-Why?
 :::
 
-------------------------------------------------------------------------
+:::{.column width="50%"}
 
-## Research Design
+:::
 
--   **X Variable**: Socioeconomic status of the drivers
+::::
 
-    1.  ::: {.fragment .fade-in-then-semi-out}
-        upper vs. lower class
-        :::
+---
 
--   **Y Variable**: The response of the police officers
+## What the literature said so far?
 
-    1.  ::: {.fragment .fade-in-then-semi-out}
-        Stopped the driver:
-        :::
+:::: {.columns}
 
-      a.  ::: {.fragment .fade-in-then-semi-out}
-          Demanded a bribe
-          :::
-  
-      b.  ::: {.fragment .fade-in-then-semi-out}
-          Gave a warning
-          :::
-          
-      c.  ::: {.fragment .fade-in-then-semi-out}
-          Issue a ticket
-          :::
+::: {.column width="50%"}
+
+::: {style="font-size: 1.3em;"}
+
+- @campbell1960american establish that *Moderates and independents* tend to *show lower political interest*, less information, and more *unstable attitudes*...
+
+- @klar2016independent shows that *not all moderates are equal* and *we can distinguish* between *moderates* that are *interested in politics* and moderates that are not.
+
+:::
+
+:::
+
+:::{.column width="50%"}
+
+![](img/18.png)
+
+:::
+
+::::
+
+---
+
+## {auto-animate=true}
+
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+Research question
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+Research question
+:::
+
+::: {style="margin-top: 200px; font-size: 2.1em; color: red;"}
+
+To what extent do politically interested moderates consume more diverse political information than uninterested moderates, as measured by entropy in clickstream data during Argentina’s 2021 election?
+
+:::
+
+
+
+---
+
+## Clickstream Data (Browsing History)
+
+![](img/19.png)
+
+---
+
+## Clickstream Data (Browsing History)
+
+![](img/20.png)
+
+---
+
+## Clickstream Data (Browsing History)
+
+![](img/21.png)
+
+---
+
+## How was the process?:
+
+::: {style="font-size: 1.5em;"}
+
+::: {.incremental}
+
+So I:
+
+1. Filter the ones that are news portal
+
+2. Scrape each url to get the title, description and the body of the news
+
+3. Calculate information gain from all of them and,
+
+4. Merge with my moderates data.
+
+:::
+
+:::
+
+
+---
+
+## {auto-animate=true}
+
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+
+But how we identify a 'moderate' voter?
+
+:::
+
+---
+
+
+![](img/1.png){.center}
+---
+
+
+![](img/2.png)
+--- 
+
+
+![](img/3.png)
+
+
+---
+
+# How can we measure how much informative it is a text?
+
+![](img/entropy.png){fig-align="center"}
+
+    
+---
+
+## {auto-animate=true}
+
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+What is entropy?
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+What is entropy?
+
+:::
+
+::: {style="margin-top: 200px; font-size: 2.1em; color: red;"}
+
+
+Entropy is a way to **measure how predictable or uncertain** something is. In the context of news consumption, it tells us **how diverse or concentrated the information exposure** is.
+
+:::
+
+
+
+---
+
+![](img/4.png) 
+
+---
+
+![](img/5.png)
+
+---
+
+## How can we measure entropy?
 
 <br>
+<br>
+<br>
+ 
 
-::: fragment
-**Multimethods approach:** experiment & interviews
+:::: {.columns}
+
+::: {.column width="50%"}
+
+$$
+Entropy = - \sum_{i=1}^{n} p_i log_2(p_i)
+$$
+Where:
+
+- $p_i$  is the proportion of attention or consumption to source/topic $i$.
+
+
 :::
 
-------------------------------------------------------------------------
+:::{.column width="50%"}
 
-## Argument
 
--   Corruption disproportionately affects the poor
--   Police officers' bribe tendencies:
-    -   More likely with lower-class individuals
-    -   Often let wealthier individuals off
--   Fear of repercussions from wealthier individuals
+```{python, eval = FALSE}
+def shannon_entropy(text):
+    # Tokenize the text
+    words = text.split()
+    word_counts = Counter(words)
+    total_words = len(words)
+    
+    entropy = 0.0
+    for count in word_counts.values():
+        p = count / total_words
+        entropy -= p * math.log2(p)
+    return entropy
+```
 
-------------------------------------------------------------------------
-
-## Experiment
-
-::: columns
-::: {.column width="60%"}
--   4 drivers (two upper class, two lower class)
--   Mexico City
--   Traffic violations in a randomized sequence of intersections
 :::
 
-::: {.column width="40%"}
-::: r-stack
-![](img/map_mx.png){.fragment} <!-- Map appears as a fragment -->
+::::
 
-::: fragment
-![](img/merged.gif){.fragment} <!-- Gif appears as a fragment -->
-:::
-:::
-:::
-:::
+---
 
-------------------------------------------------------------------------
+## {auto-animate=true}
 
-## Results
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
 
-![](img/table_def.png)
+For Example...
 
-------------------------------------------------------------------------
-
-## Results
-
-::: r-stack
-![](img/canva/1.png){.fragment}
-
-![](img/canva/2.png){.fragment}
-
-![](img/canva/3.png){.fragment} 
-
-![](img/canva/4.png){.fragment}
-
-![](img/canva/5.png){.fragment}
-
-![](img/canva/6.png){.fragment}
 :::
 
-------------------------------------------------------------------------
+## {auto-animate=true}
 
-## Interviews: why they might treat individuals differently?
+:::  {style="font-size: 1em;"}
 
--   10 officers interviewed by a Spanish speaker with American accent:
-    -   lack of judiciary support
-    -   rich has better connections and better understand of the law
-    -   warning vs. bribe
+For Example...
 
-------------------------------------------------------------------------
+:::
 
-## Conclusions & Implications
+![](img/8.png)
 
-- Mixed methods instead of surveys offer a more precise and context-rich means.
-
-- Perverse institutions creates environment that promotes corruption. 
-
-- Selective enforcement of the law.
+---
 
 
-------------------------------------------------------------------------
+![](img/9.png)
+---
+
+![](img/10.png)
+---
+
+![](img/11.png)
+
+---
+
+## {auto-animate=true}
+
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+
+So, we can expect that...
+
+:::
+
+## {auto-animate=true}
+
+:::  {style="font-size: 1em;"}
+
+So, we can expect that...
+
+:::
+
+![](img/6.png)
+---
+
+:::  {style="font-size: 1em;"}
+
+So, we can expect that...
+
+:::
+
+![](img/7.png)
+
+---
+
+## Linear Regression
+
+<br>
+<br>
+<br>
+
+
+
+$$
+\log(\text{entropy}_i) = \beta_0 + \beta_1 \cdot \text{political interest}_i + \beta_2 \cdot \text{Age}_i + \\ \beta_3 \cdot \text{Gender}_i + \beta_4 \cdot \text{Education}_i + \beta_5 \cdot \text{Work}_i + \varepsilon_i
+$$
+
+
+---
+
+## {auto-animate=true}
+
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+
+Some (parcial) results...
+
+:::
+
+## {auto-animate=true}
+
+:::  {style="font-size: 1em;"}
+
+Some (parcial) results...
+
+:::
+
+
+![](img/13.png)
+---
+
+![](img/14.png)
+---
+
+![](img/15.png)
+
+---
+
+## Regression in a plot
+
+![](img/16.png)
+
+---
+
+## Regression in a plot
+
+![](img/17.png)
+
+
+---
+
+## Conclusions 
+
+
+::: {.incremental}
+
+:::  {style="font-size: 1.5em;"}
+
+
+1. Use clickstream data to measure political interest and information it is a possibility.
+
+2. There are moderates that are interest in politics.
+
+3. There is a difference in the consumption of news by moderates with political interest and without.
+
+4. Moderates with high political interest tend to review news with more information / diversity of information on
+
+:::
+
+:::
+
+---
+
+## Limitations & next steps
+
+:::  {style="font-size: 1.5em;"}
+
+::: {.incremental}
+
+1. 'Moderates' as category that reflects ideological autoperception it is not the best approach.
+
+2. 'Entropy' as indicator has some flaws: what about repeat information or quality of information?
+
+3. Correlation it is not causation.. is it possible to make causal claim that political interest decrease the effect on looking for information?
+
+:::
+
+:::
+
+---
+
+## Appendix
+
+![](img/12.png)
+
+---
 
 ## References
 
 ::: {#refs}
+
 :::
 
-------------------------------------------------------------------------
+::: {.center .middle}
 
-![](img/first_slide.png)
+## Thank You for Your Attention! Questions?
+
+</br>
+
+[`r fontawesome::fa("envelope")` guadag12\@umd.edu](mailto:guadag12@umd.edu)
+
+[`r fontawesome::fa("link")` https://guadagonzalez.com/](https://guadagonzalez.com/)
+
+[`r fontawesome::fa("github")` \@guadag12](http://github.com/guadag12)
+:::
+
+
+
+  
+
+
