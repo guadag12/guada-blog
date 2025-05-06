@@ -534,20 +534,6 @@
 <h2>Clickstream Data (Browsing History)</h2>
 
 <img data-src="img/21.png" class="r-stretch"></section>
-<section id="how-was-the-process" class="slide level2">
-<h2>How was the process?:</h2>
-<div style="font-size: 1.5em;">
-<div>
-<p>So I:</p>
-<ol type="1">
-<li class="fragment"><p>Filter the ones that are news portal</p></li>
-<li class="fragment"><p>Scrape each url to get the title, description and the body of the news</p></li>
-<li class="fragment"><p>Calculate information gain from all of them and,</p></li>
-<li class="fragment"><p>Merge with my moderates data.</p></li>
-</ol>
-</div>
-</div>
-</section>
 <section class="slide level2">
 
 </section>
@@ -591,7 +577,7 @@ Entropy = - \sum_{i=1}^{n} p_i log_2(p_i)
 <li class="fragment"><span class="math inline">\(p_i\)</span> is the proportion of attention or consumption to source/topic <span class="math inline">\(i\)</span>.</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="7ed97c49" class="cell" data-execution_count="1">
+<div id="1d107937" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="kw">def</span> shannon_entropy(text):</span>
@@ -634,6 +620,20 @@ Entropy = - \sum_{i=1}^{n} p_i log_2(p_i)
 
 
 <img data-src="img/11.png" class="r-stretch"></section>
+<section id="how-was-the-process" class="slide level2">
+<h2>How was the process?:</h2>
+<div style="font-size: 1.5em;">
+<div>
+<p>So I:</p>
+<ol type="1">
+<li class="fragment"><p>Filter the ones that are news portal</p></li>
+<li class="fragment"><p>Scrape each url to get the title, description and the body of the news</p></li>
+<li class="fragment"><p>Calculate information gain from all of them and,</p></li>
+<li class="fragment"><p>Merge with my moderates data.</p></li>
+</ol>
+</div>
+</div>
+</section>
 <section id="section-7" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div style="margin-top: 200px; font-size: 3em; color: red;">

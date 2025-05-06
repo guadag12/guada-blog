@@ -190,28 +190,6 @@ But how we identify a 'moderate' voter?
 
 ![](img/21.png)
 
----
-
-## How was the process?:
-
-::: {style="font-size: 1.5em;"}
-
-::: {.incremental}
-
-So I:
-
-1. Filter the ones that are news portal
-
-2. Scrape each url to get the title, description and the body of the news
-
-3. Calculate information gain from all of them and,
-
-4. Merge with my moderates data.
-
-:::
-
-:::
-
 
 ---
 
@@ -326,6 +304,29 @@ For Example...
 ---
 
 ![](img/11.png)
+
+---
+
+
+## How was the process?:
+
+::: {style="font-size: 1.5em;"}
+
+::: {.incremental}
+
+So I:
+
+1. Filter the ones that are news portal
+
+2. Scrape each url to get the title, description and the body of the news
+
+3. Calculate information gain from all of them and,
+
+4. Merge with my moderates data.
+
+:::
+
+:::
 
 ---
 
