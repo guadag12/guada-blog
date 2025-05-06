@@ -31,33 +31,47 @@ from: markdown+emoji
 
 ::: {.columns}
 ::: {.column width="50%"}
-![](img/23.jpeg){.middle}
+
+<br>
+<br>
+
+![](img/infor.jpg){.middle}
 :::
+
 ::: {.column width="50%"}
 <!-- leave empty so the width is preserved -->
 :::
 :::
 
+
 ---
 
+
+
 ::: {.columns}
+
 ::: {.column width="50%"}
-![](img/23.jpeg){.middle}
+
+<br>
+<br>
+
+![](img/infor.jpg){.middle}
 :::
 ::: {.column width="50%"}
+
+<br>
+
 ![](img/22.png){.middle}
 :::
 :::
 
 ---
 
-## {auto-animate=true}
+## What has literature said so far?
 
-## What the literature said so far?
+---
 
-## {auto-animate=true}
-
-## What the literature said so far?
+## What has literature said so far?
 
 
 :::: {.columns}
@@ -70,7 +84,7 @@ from: markdown+emoji
 
 - @campbell1960american establish that *Moderates and independents* tend to *show lower political interest*, less information, and more *unstable attitudes*...
 
-- @klar2016independent shows that *not all moderates are equal* and *we can distinguish* between *moderates* that are *interested in politics* and moderates that are not.
+- @klar2016independent show that *not all moderates are equal* and *we can distinguish* between *moderates* that are *interested in politics* and moderates that are not.
 
 :::
 
@@ -86,7 +100,7 @@ from: markdown+emoji
 
 ---
 
-## What the literature said so far?
+## What has literature said so far?
 
 :::: {.columns}
 
@@ -199,7 +213,7 @@ But how we identify a 'moderate' voter?
 
 ---
 
-# How can we measure how much informative it is a text?
+# How can we measure how much informative a text is?
 
 ![](img/entropy.png){fig-align="center"}
 
@@ -411,7 +425,7 @@ Some (parcial) results...
 
 3. There is a difference in the consumption of news by moderates with political interest and without.
 
-4. Moderates with high political interest tend to review news with more information / diversity of information on
+4. Moderates with high political interest tend to consume news that contains more detail information.
 
 :::
 
@@ -425,11 +439,11 @@ Some (parcial) results...
 
 ::: {.incremental}
 
-1. 'Moderates' as category that reflects ideological autoperception it is not the best approach.
+1. 'Moderates' as a category that reflects ideological autoperception it is not the best approach.
 
-2. 'Entropy' as indicator has some flaws: what about repeat information or quality of information?
+2. 'Entropy' as an indicator has some flaws: what about repeat information or quality of information?
 
-3. Correlation it is not causation.. is it possible to make causal claim that political interest decrease the effect on looking for information?
+3. Correlation it is not causation... is it possible to make causal claim that political interest decrease the effect on looking for information?
 
 :::
 
@@ -453,13 +467,17 @@ Some (parcial) results...
 
 ## Thank You for Your Attention! Questions?
 
-</br>
+:::  {style="font-size: 1.5em; color: black;"}
 
-[`r fontawesome::fa("envelope")` guadag12\@umd.edu](mailto:guadag12@umd.edu)
+<BR>
+**guadag12@umd.edu**
 
-[`r fontawesome::fa("link")` https://guadagonzalez.com/](https://guadagonzalez.com/)
+**https://guadagonzalez.com/**
 
-[`r fontawesome::fa("github")` \@guadag12](http://github.com/guadag12)
+**http://github.com/guadag12**
+
+:::
+
 :::
 
 
