@@ -2,6 +2,8 @@
 title: "Introduction to Selenium with Twitter Data"
 description: |
   Let's scrape Twitter data using Selenium
+preview: selenium_logo.png
+
 author:
   - name: Guada Gonzalez 
     url: https://guadagonzalez.com/
