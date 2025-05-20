@@ -21,7 +21,7 @@ visibility: hidden;
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -32,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -95,8 +95,8 @@ code span.wa { color: #5e5e5e; font-style: italic; }
 <link rel="canonical" href="www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2024-03-03"/>
-<meta property="article:created" itemprop="dateCreated" content="2024-03-03"/>
+<meta property="article:published" itemprop="datePublished" content="2025-05-20"/>
+<meta property="article:created" itemprop="dateCreated" content="2025-05-20"/>
 <meta name="article:author" content="Guada Gonzalez"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -104,28 +104,34 @@ code span.wa { color: #5e5e5e; font-style: italic; }
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="Let&#39;s scrape Twitter data using Selenium"/>
 <meta property="og:url" content="www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/"/>
+<meta property="og:image" content="www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/selenium_logo.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="1254"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Guada Gonzalez"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
-<meta property="twitter:card" content="summary"/>
+<meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="Guada Gonzalez: Introduction to Selenium with Twitter Data"/>
 <meta property="twitter:description" content="Let&#39;s scrape Twitter data using Selenium"/>
 <meta property="twitter:url" content="www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/"/>
+<meta property="twitter:image" content="www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/selenium_logo.png"/>
+<meta property="twitter:image:width" content="1200"/>
+<meta property="twitter:image:height" content="1254"/>
 <meta property="twitter:site" content="@guadag12"/>
 <meta property="twitter:creator" content="@guadag12"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
 <meta name="citation_title" content="Guada Gonzalez: Introduction to Selenium with Twitter Data"/>
 <meta name="citation_fulltext_html_url" content="www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/"/>
-<meta name="citation_online_date" content="2024/03/03"/>
-<meta name="citation_publication_date" content="2024/03/03"/>
+<meta name="citation_online_date" content="2025/05/20"/>
+<meta name="citation_publication_date" content="2025/05/20"/>
 <meta name="citation_author" content="Guada Gonzalez"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Introduction to Selenium with Twitter Data"]},{"type":"character","attributes":{},"value":["Let's scrape Twitter data using Selenium"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Guada Gonzalez"]},{"type":"character","attributes":{},"value":["https://guadagonzalez.com/"]}]}]},{"type":"character","attributes":{},"value":["2024-03-03"]},{"type":"character","attributes":{},"value":["distill::distill_article"]},{"type":"character","attributes":{},"value":["www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/"]},{"type":"character","attributes":{},"value":["www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Introduction to Selenium with Twitter Data"]},{"type":"character","attributes":{},"value":["Let's scrape Twitter data using Selenium"]},{"type":"character","attributes":{},"value":["selenium_logo.png"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Guada Gonzalez"]},{"type":"character","attributes":{},"value":["https://guadagonzalez.com/"]}]}]},{"type":"character","attributes":{},"value":["2025-05-20"]},{"type":"character","attributes":{},"value":["distill::distill_article"]},{"type":"character","attributes":{},"value":["www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/"]},{"type":"character","attributes":{},"value":["www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -3546,7 +3552,7 @@ distill-header .nav a {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Introduction to Selenium with Twitter Data","description":"Let's scrape Twitter data using Selenium","authors":[{"author":"Guada Gonzalez","authorURL":"https://guadagonzalez.com/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2024-03-03T00:00:00.000-05:00","citationText":"Gonzalez, 2024"}
+{"title":"Introduction to Selenium with Twitter Data","description":"Let's scrape Twitter data using Selenium","authors":[{"author":"Guada Gonzalez","authorURL":"https://guadagonzalez.com/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-05-20T00:00:00.000-04:00","citationText":"Gonzalez, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -3591,7 +3597,7 @@ distill-header .nav a {
 <div class="d-byline">
   Guada Gonzalez <a href="https://guadagonzalez.com/" class="uri">https://guadagonzalez.com/</a> 
   
-<br />2024-03-03
+<br />2025-05-20
 </div>
 
 <div class="d-article">
@@ -3664,18 +3670,93 @@ Create an empty list to fill in later and
 Perform a for loop where in each iteration the information of each user is obtained</p>
 <p>But before showing how the code would look like to do this, it’s important to know first that there are cases where legislators appear with “1.1k followers” or “1.3M followers” (millions). What we want to do is replace those “k” or “M” with the corresponding number of zeros. In this regard, this function is created to be used within the loop:</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_number(text):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove any non-numeric characters except for comma and dot</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    num_only <span class="op">=</span> <span class="st">&#39;&#39;</span>.join([c <span class="cf">for</span> c <span class="kw">in</span> text <span class="cf">if</span> c.isdigit() <span class="kw">or</span> c <span class="kw">in</span> [<span class="st">&#39;,&#39;</span>, <span class="st">&#39;.&#39;</span>]])</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check for the presence of &#39;mil&#39; or &#39;M&#39; and handle accordingly</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">&#39;mil&#39;</span> <span class="kw">in</span> text:</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If there is a comma, like &#39;127,4&#39;, convert it to &#39;127400&#39;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">&#39;,&#39;</span> <span class="kw">in</span> num_only:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            whole, fraction <span class="op">=</span> num_only.split(<span class="st">&#39;,&#39;</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            num <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>whole<span class="sc">}{</span>fraction<span class="sc">}</span><span class="ss">&quot;</span> <span class="op">+</span> <span class="st">&#39;0&#39;</span><span class="op">*</span>(<span class="dv">3</span> <span class="op">-</span> <span class="bu">len</span>(fraction))  <span class="co"># Add zeros to complete &#39;mil&#39;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>            num <span class="op">=</span> num_only.replace(<span class="st">&#39;.&#39;</span>, <span class="st">&#39;&#39;</span>) <span class="op">+</span> <span class="st">&#39;000&#39;</span>  <span class="co"># Directly add &#39;000&#39; for &#39;mil&#39;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="st">&#39;M&#39;</span> <span class="kw">in</span> text:</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If there is a comma, like &#39;3,5&#39;, convert it to &#39;3500000&#39;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">&#39;,&#39;</span> <span class="kw">in</span> num_only:</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>            whole, fraction <span class="op">=</span> num_only.split(<span class="st">&#39;,&#39;</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            num <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>whole<span class="sc">}{</span>fraction<span class="sc">}</span><span class="ss">&quot;</span> <span class="op">+</span> <span class="st">&#39;0&#39;</span><span class="op">*</span>(<span class="dv">6</span> <span class="op">-</span> <span class="bu">len</span>(fraction))  <span class="co"># Add zeros to complete &#39;M&#39;</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>            num <span class="op">=</span> num_only.replace(<span class="st">&#39;.&#39;</span>, <span class="st">&#39;&#39;</span>) <span class="op">+</span> <span class="st">&#39;000000&#39;</span>  <span class="co"># Directly add &#39;000000&#39; for &#39;M&#39;</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If no &#39;mil&#39; or &#39;M&#39;, just remove comma or dot</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        num <span class="op">=</span> num_only.replace(<span class="st">&#39;.&#39;</span>, <span class="st">&#39;&#39;</span>).replace(<span class="st">&#39;,&#39;</span>, <span class="st">&#39;&#39;</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">int</span>(num)</span></code></pre></div>
 </div>
 <p>Now, this is how the final loop would look like:</p>
-<p>And in this file, you can observe the final data:</p>
-<p>For example, if we want to see which block has the highest number of followers on Twitter according to the number of block members, we see that:</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>users <span class="op">=</span> [<span class="st">&quot;LucilaCrexell&quot;</span>,<span class="st">&quot;romeroxsalta&quot;</span>,<span class="st">&quot;EdithTerenzi&quot;</span>,<span class="st">&quot;JuanManzurOK&quot;</span>,<span class="st">&quot;Florelop&quot;</span>,<span class="st">&quot;jfrejal&quot;</span>,<span class="st">&quot;sergiounac&quot;</span>,<span class="st">&quot;ClaudiaLAZamora&quot;</span>,<span class="st">&quot;josenedersde&quot;</span>,<span class="st">&quot;negrojoao&quot;</span>,<span class="st">&quot;palibensusan&quot;</span>,<span class="st">&quot;LuciaCorpacci&quot;</span>,<span class="st">&quot;marcelewan&quot;</span>,<span class="st">&quot;mendozsandra&quot;</span>,<span class="st">&quot;GerardoSenador&quot;</span>,<span class="st">&quot;pilattivergara&quot;</span>,<span class="st">&quot;marianorecalde&quot;</span>,<span class="st">&quot;antoniorodasok&quot;</span>,<span class="st">&quot;CarmenAlvarezR&quot;</span>,<span class="st">&quot;alfredodeangeli&quot;</span>,<span class="st">&quot;MartinGoerling&quot;</span>,<span class="st">&quot;HualaVictoria&quot;</span>,<span class="st">&quot;ljuez&quot;</span>,<span class="st">&quot;lupetagliaferri&quot;</span>,<span class="st">&quot;Arce_Carlos_&quot;</span>,<span class="st">&quot;decutrojas&quot;</span>,<span class="st">&quot;bartoloabdala&quot;</span>,<span class="st">&quot;brunooliverasj&quot;</span>,<span class="st">&quot;PaoltroniF&quot;</span>,<span class="st">&quot;beatriz_avilaok&quot;</span>,<span class="st">&quot;josemacarambia&quot;</span>,<span class="st">&quot;NataliaGadano&quot;</span>,<span class="st">&quot;AndyCristina07&quot;</span>,<span class="st">&quot;monicasilvarn&quot;</span>,<span class="st">&quot;wadodecorrido&quot;</span>,<span class="st">&quot;ditulliojuli&quot;</span>,<span class="st">&quot;aliciakirchner&quot;</span>,<span class="st">&quot;CarolinaMoises&quot;</span>,<span class="st">&quot;fernandosalino&quot;</span>,<span class="st">&quot;martindonate&quot;</span>,<span class="st">&quot;EugeniaDureTDF&quot;</span>,<span class="st">&quot;anabelfsagasti&quot;</span>,<span class="st">&quot;garcialarraburu&quot;</span>,<span class="st">&quot;noragimenezok&quot;</span>,<span class="st">&quot;ElOsoLeavy&quot;</span>,<span class="st">&quot;LinaresCarlosCR&quot;</span>,<span class="st">&quot;Oscar_Parrilli&quot;</span>,<span class="st">&quot;sapag_silvia&quot;</span>,<span class="st">&quot;espinolacamau&quot;</span>,<span class="st">&quot;EdgardoKueider&quot;</span>,<span class="st">&quot;alevigo&quot;</span>,<span class="st">&quot;GabiValenzuel&quot;</span>,<span class="st">&quot;PeteCoVischi&quot;</span>,<span class="st">&quot;mariana_juri&quot;</span>,<span class="st">&quot;rodysuarez&quot;</span>,<span class="st">&quot;MaxiAbad&quot;</span>,<span class="st">&quot;famaflavio&quot;</span>,<span class="st">&quot;Dkroneberger&quot;</span>,<span class="st">&quot;carolinalosada&quot;</span>,<span class="st">&quot;GugaLusto&quot;</span>,<span class="st">&quot;Senadora_Olalla&quot;</span>,<span class="st">&quot;VZimmermannOK&quot;</span>,<span class="st">&quot;blancopabloda&quot;</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>driver_ <span class="op">=</span> webdriver.Chrome()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>combined_data <span class="op">=</span> []</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> users:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        url <span class="op">=</span> <span class="st">&#39;https://twitter.com/&#39;</span> <span class="op">+</span> i</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        driver_.get(url)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        sleep(<span class="dv">2</span>)  <span class="co"># Adding sleep to ensure page loads. Consider using WebDriverWait for better practice.</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        WebDriverWait(driver_, <span class="dv">10</span>).until(</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            EC.presence_of_all_elements_located((By.CSS_SELECTOR, <span class="st">&quot;.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1loqt21&quot;</span>))</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        h4_elements <span class="op">=</span> driver_.find_elements(By.CSS_SELECTOR, <span class="st">&quot;.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1loqt21&quot;</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        type_projects <span class="op">=</span> [element.text.strip() <span class="cf">for</span> element <span class="kw">in</span> h4_elements]</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(type_projects)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        parsed_numbers <span class="op">=</span> [parse_number(num) <span class="cf">for</span> num <span class="kw">in</span> type_projects]</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        following <span class="op">=</span> parsed_numbers[<span class="dv">0</span>]</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        followers <span class="op">=</span> parsed_numbers[<span class="dv">1</span>]</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        user_data_new <span class="op">=</span> {</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;User&quot;</span>: url,</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Following&quot;</span>: following,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Followers&quot;</span>: followers</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>        combined_data.append(user_data_new)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Finished user </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Error processing user </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    sleep(random.uniform(<span class="fl">3.0</span>, <span class="fl">5.0</span>))</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the driver after finishing the loop</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>driver_.quit()</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving the dictionary as a JSON file</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;C:/Users/User/Documents/GitHub/selenium-scraping-followers/twitter_followers_hsn.json&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> json_file:</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    json.dump(combined_data, json_file)</span></code></pre></div>
+</div>
+<p>And in this file, you can observe the final data:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span><span class="va">data_followers_twitter_hsn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">&quot;~/GitHub/guada-blog/_posts/2024-03-03-introduction-to-selenium-with-twitter-data/data/data_followers_twitter_hsn.csv&quot;</span><span class="op">)</span></span>
+<span><span class="va">data_followers_twitter_hsn</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">data_followers_twitter_hsn</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">data_followers_twitter_hsn</span><span class="op">)</span></span></code></pre>
+</div>
 </div>
 <p>This has been everything. Thank you for getting here and reading to the end,</p>
 <p>Leave comments for any questions,</p>
 <p>Guada</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
   <p class="social_footer">
@@ -3703,13 +3784,13 @@ Perform a for loop where in each iteration the information of each user is obtai
 <div class="appendix-bottom">
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Gonzalez (2024, March 3). Guada Gonzalez: Introduction to Selenium with Twitter Data. Retrieved from www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/</pre>
+  <pre class="citation-appendix short">Gonzalez (2025, May 20). Guada Gonzalez: Introduction to Selenium with Twitter Data. Retrieved from www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/</pre>
   <p>BibTeX citation</p>
-  <pre class="citation-appendix long">@misc{gonzalez2024introduction,
+  <pre class="citation-appendix long">@misc{gonzalez2025introduction,
   author = {Gonzalez, Guada},
   title = {Guada Gonzalez: Introduction to Selenium with Twitter Data},
   url = {www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/},
-  year = {2024}
+  year = {2025}
 }</pre>
 </div>
 <!--/radix_placeholder_appendices-->

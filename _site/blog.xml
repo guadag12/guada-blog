@@ -8,388 +8,197 @@
 computing environment.
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 05 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <item>
-      <title>Mapping Visitor Trends in U.S. National Parks</title>
-      <dc:creator>Guada Gonzalez</dc:creator>
-      <link>www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks</link>
-      <description>
-
-
-&lt;p&gt;I’ve always been intrigued by how people use their spare time. The
-contest from the Big Ten Academic Alliance greatly helped me explore
-this topic using R. I took this opportunity to learn more about time use
-and discover what I had been missing in terms of visualization
-techniques.&lt;/p&gt;
-&lt;p&gt;The plots I created are organized by region, so let’s review which
-regions belong where on the US Map from the website of &lt;a
-href="https://www.parkchasers.com/find-your-park/parks-by-region/"&gt;Park
-Chasers&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img
-src="https://i0.wp.com/www.parkchasers.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-15-at-6.17.26-AM.png?fit=791%2C602&amp;amp;ssl=1" /&gt;&lt;/p&gt;
-&lt;p&gt;Now that we can identify regions on the map, let’s start with a pie
-chart. I know the data science community might disapprove—pie charts (&lt;a
-href="https://medium.com/analytics-vidhya/dont-use-pie-charts-in-data-analysis-6c005723e657"&gt;1&lt;/a&gt;),
-but I wanted to experiment with inserting an image as a background and
-overlaying a plot on it. The compass seems perfect for this. The first
-plot shows that the most visited parks in 2023 were in the Intermountain
-(34.8%) and Pacific West (23.32%) regions, which is logical since they
-include Yellowstone, Grand Canyon, Yosemite, and Olympic National Park.
-Conversely, the Alaska region, with only 1.5%, features fascinating
-wilderness areas but is remote, less accessible, and has harsher
-climates than other continental parks. Let’s look at the plot:&lt;/p&gt;
-&lt;p&gt;&lt;img src="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parksplots/plot_compass_final.PNG" /&gt;&lt;/p&gt;
-&lt;p&gt;Here’s the code for replication:&lt;/p&gt;
-&lt;pre class="r"&gt;&lt;code&gt;rm(list = ls())
-
-# Load Libraries ------------------------------------------------------------
-
-pacman::p_load(
-  ggplot2,         # Easily Install and Load the &amp;#39;Tidyverse&amp;#39;
-  grid,            # Improved Text Rendering Support for &amp;#39;ggplot2&amp;#39;
-  ggpath,          # Using Fonts More Easily in R Graphs
-  jpeg,           # Simple Tools for Examining and Cleaning Dirty Data
-  magick,             # Compact and Flexible Summaries of Data
-  ggimage,            # Scale Functions for Visualization
-  gganimate,         # Make Dealing with Dates a Little Easier
-  ggtext,              # Interpreted String Literals
-  stringr,               # Pixel Filters for &amp;#39;ggplot2&amp;#39; and &amp;#39;grid&amp;#39; # Pixel Filters for &amp;#39;ggplot2&amp;#39; and &amp;#39;grid&amp;#39; 
-  glue,
-  htmlwidgets,
-  webshot
-  )  
-
-# Configuration Plot ------------------------------------------------------
-
-font_add_google(&amp;quot;Oswald&amp;quot;, &amp;quot;title&amp;quot;)
-font_add_google(&amp;quot;Merriweather Sans&amp;quot;, &amp;quot;subtitle&amp;quot;)
-font_add_google(&amp;quot;Merriweather Sans&amp;quot;, &amp;quot;text&amp;quot;)
-font_add_google(&amp;quot;Noto Sans&amp;quot;, &amp;quot;caption&amp;quot;)
-showtext_auto(enable = TRUE)
-
-img = &amp;quot;C:/Users/User/Documents/GitHub/guada-blog/_posts/2025-01-05-visualizing-national-parks/plots/compass2.jpg&amp;quot;
-
-fa_path &amp;lt;- systemfonts::font_info(family = &amp;quot;Font Awesome 6 Brands Regular&amp;quot;)[[&amp;quot;path&amp;quot;]]
-font_add(family = &amp;quot;fa-brands&amp;quot;, regular = fa_path)
-
-subtitle_text &amp;lt;- str_glue(&amp;quot;Although visits started as early as 1904, the NPS has been tracking them monthly since 1979 \n in 63 parks across the USA. In 2023 alone, the different parks received more than 9.2 million visits, \n distributed as shown in the plot.&amp;quot;)
-
-caption_text &amp;lt;-paste0(&amp;quot;\n \n \n \n  Source: National Park Service | Graphics by @guadag12&amp;quot;)
-
-region_colors &amp;lt;-  c(&amp;quot;Alaska&amp;quot; = &amp;quot;#B0C4DE&amp;quot;, &amp;quot;Intermountain&amp;quot; = &amp;quot;#EDC9AF&amp;quot;, 
-                    &amp;quot;Midwest&amp;quot; = &amp;quot;#6B8E23&amp;quot;, &amp;quot;Northeast&amp;quot; = &amp;quot;#708090&amp;quot;, 
-                    &amp;quot;Pacific West&amp;quot; = &amp;quot;#DEB887&amp;quot;, &amp;quot;Southeast&amp;quot; = &amp;quot;#5F9EA0&amp;quot;)
-
-theme_update(
-  plot.title.position   = &amp;quot;plot&amp;quot;,
-  plot.caption.position = &amp;quot;plot&amp;quot;,
-  legend.position       = &amp;#39;plot&amp;#39;,
-  plot.background       = element_rect(fill = bkg_col, color = bkg_col),
-  panel.background      = element_rect(fill = bkg_col, color = bkg_col),
-  plot.margin           = margin(t = 10, r = 20, b = 10, l = 20),
-  
-  axis.title.x          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
-                                       color = text_col, family = &amp;quot;text&amp;quot;, face = &amp;quot;bold&amp;quot;, hjust = 0.5),
-  axis.title.y          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
-                                       color = text_col, family = &amp;quot;text&amp;quot;, face = &amp;quot;bold&amp;quot;, hjust = 0.5,
-                                       angle = 90),  
-  axis.text.y           =  element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
-  axis.text.x           = element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
-  axis.ticks.x          = element_line(color = text_col),  # Show x-axis ticks
-  panel.grid            = element_blank(),
-  strip.text            = element_blank() # Remove strip text 
-)
-
-region_colors &amp;lt;-  c(&amp;quot;Alaska&amp;quot; = &amp;quot;#B0C4DE&amp;quot;, &amp;quot;Intermountain&amp;quot; = &amp;quot;#EDC9AF&amp;quot;, 
-                    &amp;quot;Midwest&amp;quot; = &amp;quot;#6B8E23&amp;quot;, &amp;quot;Northeast&amp;quot; = &amp;quot;#708090&amp;quot;, 
-                    &amp;quot;Pacific West&amp;quot; = &amp;quot;#DEB887&amp;quot;, &amp;quot;Southeast&amp;quot; = &amp;quot;#5F9EA0&amp;quot;)
-
-# Plot --------------------------------------------------------------------
-
-NPData$Region &amp;lt;- factor(NPData$Region, levels = c( &amp;quot;Alaska&amp;quot;,&amp;quot;Pacific West&amp;quot;,
-                                                  &amp;quot;Intermountain&amp;quot;,  
-                                                  &amp;quot;Southeast&amp;quot;, &amp;quot;Northeast&amp;quot;, &amp;quot;Midwest&amp;quot;))
-
-p &amp;lt;-NPData %&amp;gt;%
-  group_by(Region) %&amp;gt;%
-  summarise(total_visit = sum(RecreationVisits)) %&amp;gt;%
-  mutate(prop = total_visit / sum(total_visit) * 100) %&amp;gt;%
-  mutate(ypos = cumsum(prop) - 0.7 * prop) %&amp;gt;%
-  mutate(ypos_mod = case_when(
-    round(ypos, 1) == 0.450 ~ -10,
-    round(ypos, 1) == 87.1 ~ 12.9 ,
-    round(ypos, 1) == 65.3 ~ 28.7 ,
-    round(ypos, 1) == 53.0 ~ 45.0,
-    round(ypos, 1) == 40.7 ~ 58.3,
-    round(ypos, 1) == 11.9  ~ 80.1,
-    TRUE ~ ypos
-  )) %&amp;gt;%
-  ggplot( aes(x=&amp;quot;&amp;quot;, y=prop, fill=Region)) +
-  with_inner_glow(
-  geom_bar(stat=&amp;quot;identity&amp;quot;, width=0.01, alpha =.95) ,
-  color = &amp;quot;gray10&amp;quot;, sigma = 15
-  ) +
-  coord_polar(&amp;quot;y&amp;quot;, start=0) + 
-  theme_void() +
-  labs(
-    title = &amp;quot;The Story of Recreation Visits&amp;quot;,
-    subtitle = subtitle_text,
-    caption = &amp;quot;Source: National Park Service | Graphics by @guadag12&amp;quot;
-  ) +
-  scale_fill_manual(values = region_colors) +  
-  force_panelsizes(rows = unit(2, &amp;quot;in&amp;quot;), cols = unit(3.5, &amp;quot;in&amp;quot;)) +
-  theme(
-    plot.background = element_rect(fill = &amp;quot;transparent&amp;quot;, colour = NA),
-    panel.background = element_rect(fill = &amp;quot;transparent&amp;quot;, colour = NA), 
-    plot.margin = unit(c(-1.3, 1.7, 0, 0), &amp;quot;cm&amp;quot;),
-    panel.spacing = unit(c(0.5, 0, 0, 0), &amp;quot;cm&amp;quot;),
-    legend.position = &amp;quot;none&amp;quot;,
-    plot.title = element_text(family = &amp;quot;title&amp;quot;, size = 20, face = &amp;quot;bold&amp;quot;, vjust = 13,hjust = -10),
-    plot.subtitle = element_text(family = &amp;quot;subtitle&amp;quot;, size = 9, vjust = 20, hjust = 0.5),
-    plot.caption = element_text(family = &amp;quot;caption&amp;quot;, size = 10, vjust = -15),
-  )
-ggbackground(p + geom_text(
-  aes(y = ypos_mod,  label = paste(Region, &amp;quot;\n (&amp;quot;, sprintf(&amp;quot;%.1f%%&amp;quot;, prop), &amp;quot;)&amp;quot;), group = Region, angle = 10), 
-  size = 2.5,
-  check_overlap = F, 
-  color = &amp;quot;#2F4F4F&amp;quot;, family = &amp;quot;text&amp;quot;) , img)
-
-webshot::install_phantomjs(force = T)
-webshot(&amp;quot;http://localhost:31220/session/preview.html&amp;quot;, file = &amp;quot;viewer_screenshot.png&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In addition to incorporating a compass into the background, creating
-this visualization posed a unique challenge: I needed the regions
-displayed on the compass to align with their actual geographic
-coordinates. Fortunately, this is a well-known issue, and it can be
-resolved by setting the correct order for the ‘Region’ variable and
-converting it into a factor. This method ensures that each region is
-accurately positioned according to real-world directions:&lt;/p&gt;
-&lt;p&gt;This first plot helps us to know which National Parks were most
-visited in 2023. However, it is not enough to understand how people
-spend their time. What if we use a line plot to observe the evolution of
-recreational visits to National Parks, differentiated by region?&lt;/p&gt;
-&lt;p&gt;Inspired by &lt;a
-href="https://x.com/sponce1/status/1838881981351821547"&gt;this
-visualization&lt;/a&gt;, the second plot includes this information but with a
-twist: the names of the parks appear in gigantic letters on the plot and
-have beautiful images that represents better each region:&lt;/p&gt;
-&lt;p&gt;&lt;img src="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parksplots/final_plot_number_2.PNG" /&gt;&lt;/p&gt;
-&lt;p&gt;This second plot displays the trends in recreational visits (in
-millions) to National Parks across various U.S. regions from 1980 to
-2023. Each line represents a region and shows how visitation has changed
-over 40 years. Notably, all regions have seen an increase in the number
-of visitors over the decades, particularly around 2010 and just before
-the pandemic. The pandemic led to a significant reduction in visits,
-followed by a rebound, possibly as lockdowns increased people’s desire
-to spend more time in nature.&lt;/p&gt;
-&lt;p&gt;For this second visualization, the initial plot was created using R.
-Afterwards, it was exported to Inkscape, a graphic design software, to
-add images and enhance its visual appeal. If you are interesting to
-know, the original plot generated in R &lt;a
-href="https://github.com/guadag12/guada-blog/raw/main/_posts/2025-01-05-visualizing-national-parks/plots/plot_2.PNG"&gt;looks
-like this&lt;/a&gt;. Here’s the code for replication:&lt;/p&gt;
-&lt;pre class="r"&gt;&lt;code&gt;options(scipen = 999)
-rm(list =ls())
-
-pacman::p_load(
-  tidyverse,         # Easily Install and Load the &amp;#39;Tidyverse&amp;#39;
-  ggtext,            # Improved Text Rendering Support for &amp;#39;ggplot2&amp;#39;
-  showtext,          # Using Fonts More Easily in R Graphs
-  janitor,           # Simple Tools for Examining and Cleaning Dirty Data
-  skimr,             # Compact and Flexible Summaries of Data
-  scales,            # Scale Functions for Visualization
-  lubridate,         # Make Dealing with Dates a Little Easier
-  glue,              # Interpreted String Literals
-  ggfx               # Pixel Filters for &amp;#39;ggplot2&amp;#39; and &amp;#39;grid&amp;#39; # Pixel Filters for &amp;#39;ggplot2&amp;#39; and &amp;#39;grid&amp;#39; 
-)  
-camcorder::gg_record(
-  dir    = here::here(&amp;quot;temp_plots&amp;quot;),
-  device = &amp;quot;png&amp;quot;,
-  width  =  7.5,
-  height =  5,
-  units  = &amp;quot;in&amp;quot;,
-  dpi    = 320
-)
-
-### |- resolution ----
-showtext_opts(dpi = 320, regular.wt = 300, bold.wt = 800)
-
-
-# Transformation ----------------------------------------------------------
-
-NPData&amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv&amp;quot;)
-NPData_groupby &amp;lt;- NPData %&amp;gt;%
-  group_by(Region, Year) %&amp;gt;%
-  summarise(total_visits = sum(RecreationVisits))
-
-unique(NPData_groupby$Region)
-labels &amp;lt;- tibble(
-    label =  c(&amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;,&amp;quot;&amp;quot;),
-  player = c(&amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;,
-             &amp;quot;&amp;quot;),
-  #label = c(&amp;quot;Alaska&amp;quot;, &amp;quot;Intermountain&amp;quot;, &amp;quot;Midwest&amp;quot;, &amp;quot;Northeast&amp;quot;, &amp;quot;Pacific West&amp;quot;,
-  #          &amp;quot;Southeast&amp;quot;),
-  #player = c(&amp;quot;Alaska&amp;quot;, &amp;quot;Intermountain&amp;quot;, &amp;quot;Midwest&amp;quot;, &amp;quot;Northeast&amp;quot;, &amp;quot;Pacific West&amp;quot;,
-  #           &amp;quot;Southeast&amp;quot;),
-  x = c(2000, 2000, 2000, 2000, 2000, 2000), 
-  y = c(0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001) 
-)
-
-# Configuration Plot -----------------------------------------------------------
-
-#loadfonts(device = &amp;quot;win&amp;quot;)  # Usa device = &amp;quot;win&amp;quot; para Windows, &amp;quot;quartz&amp;quot; para Mac, y &amp;quot;cairo&amp;quot; para Linux
-
-bkg_col      &amp;lt;- colorspace::lighten(&amp;#39;#ffffff&amp;#39;, 0.05)    
-title_col    &amp;lt;- &amp;quot;gray20&amp;quot;           
-subtitle_col &amp;lt;- &amp;quot;gray20&amp;quot;     
-caption_col  &amp;lt;- &amp;quot;gray30&amp;quot;   
-text_col     &amp;lt;- &amp;quot;gray20&amp;quot;    
-col_palette  &amp;lt;- paletteer::paletteer_d(&amp;quot;peRReo::don&amp;quot;)[c(1:6)]
-
-### |-  titles and caption ----
-# text
-title_text    &amp;lt;- str_glue(&amp;quot;The evolution of Recreational Visits to National Parks&amp;quot;)
-subtitle_text &amp;lt;- str_glue(&amp;quot;How the number of visits to national parks has evolved over the last 45 years in the US&amp;quot;)
-caption_text &amp;lt;-paste0(&amp;quot;Source: National Park Service | Graphics by @guadag12&amp;quot;)
-
-### fonts ----
-font_add_google(&amp;quot;Oswald&amp;quot;, &amp;quot;title&amp;quot;)
-font_add_google(&amp;quot;Merriweather Sans&amp;quot;, &amp;quot;subtitle&amp;quot;)
-font_add_google(&amp;quot;Merriweather Sans&amp;quot;, &amp;quot;text&amp;quot;)
-font_add_google(&amp;quot;Noto Sans&amp;quot;, &amp;quot;caption&amp;quot;)
-showtext_auto(enable = TRUE)
-
-### plot theme ----
-theme_set(theme_minimal(base_size = 14, base_family = &amp;quot;text&amp;quot;))                
-
-theme_update(
-  plot.title.position   = &amp;quot;plot&amp;quot;,
-  plot.caption.position = &amp;quot;plot&amp;quot;,
-  legend.position       = &amp;#39;plot&amp;#39;,
-  plot.background       = element_rect(fill = bkg_col, color = bkg_col),
-  panel.background      = element_rect(fill = bkg_col, color = bkg_col),
-  plot.margin           = margin(t = 10, r = 20, b = 10, l = 20),
-  
-   axis.title.x         = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
-                                       color = text_col, family = &amp;quot;text&amp;quot;, face = &amp;quot;bold&amp;quot;, hjust = 0.5),
-  axis.title.y          = element_text(margin = margin(10, 0, 0, 0), size = rel(1.1), 
-                                       color = text_col, family = &amp;quot;text&amp;quot;, face = &amp;quot;bold&amp;quot;, hjust = 0.5,
-                                       angle = 90),  
-  axis.text.y           = element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
-  axis.text.x           = element_text(color = text_col, family = &amp;quot;text&amp;quot;, size = rel(0.9)),
-  axis.ticks.x          = element_line(color = text_col),  # Show x-axis ticks
-  panel.grid            = element_blank(),
-  strip.text            = element_blank() # Remove strip text 
-)
-
-
-
-
-# Plot --------------------------------------------------------------------
-
-region_colors &amp;lt;-  c(&amp;quot;Alaska&amp;quot; = &amp;quot;#B0C4DE&amp;quot;, &amp;quot;Intermountain&amp;quot; = &amp;quot;#EDC9AF&amp;quot;, 
-                   &amp;quot;Midwest&amp;quot; = &amp;quot;#6B8E23&amp;quot;, &amp;quot;Northeast&amp;quot; = &amp;quot;#708090&amp;quot;, 
-                    &amp;quot;Pacific West&amp;quot; = &amp;quot;#DEB887&amp;quot;, &amp;quot;Southeast&amp;quot; = &amp;quot;#5F9EA0&amp;quot;)
-NPData_groupby &amp;lt;- NPData_groupby %&amp;gt;% rename(player=Region)
-plot &amp;lt;- ggplot(NPData_groupby, aes(x = Year, y = total_visits)) +
-  Reference text layer
-  as_reference(
-     geom_text(
-       data = labels, aes(x = x, y = y, label = label),
-       inherit.aes = FALSE,
-       family = &amp;quot;title&amp;quot;, colour = &amp;quot;gray10&amp;quot;, size = rel(10), hjust = 0.5, vjust = 0,
-
-   ),
-    id = &amp;quot;text&amp;quot;
-   ) +
-  geom_area(aes(fill = player, color = player),
-                     alpha = 1, show.legend = FALSE#,
-                    # bw = 25,
-                    # kernel = &amp;quot;epanechnikov&amp;quot;
-        )+ 
-  # Blending the text with the density plot
-   with_inner_glow(
-     with_blend(
-       geom_area(aes(fill = player, color = player),
-                    alpha = 1, show.legend = FALSE#,
-                   # bw = 25,
-                   # kernel = &amp;quot;epanechnikov&amp;quot;
-       ),
-       bg_layer = &amp;quot;text&amp;quot;, blend_type = &amp;quot;xor&amp;quot;
-     ),
-     color = &amp;quot;gray10&amp;quot;, sigma = 15
-   ) +
-  
-  # Labs
-  labs(
-    x = &amp;quot;Year&amp;quot;,
-    y = &amp;quot;Total Visits&amp;quot;,
-    title = title_text,
-    subtitle = subtitle_text,
-    caption = caption_text
-  ) +
-  
-  # Scales
-  scale_x_continuous() +
-  scale_y_continuous( labels = label_number(suffix = &amp;quot; M&amp;quot;, scale = 1e-6)) +
-  scale_fill_manual(values = col_palette) +
-  scale_color_manual(values = col_palette) +
-  coord_cartesian(clip = &amp;quot;off&amp;quot;) +
-  scale_fill_manual(values = region_colors) +  
-
-  
-  # Facet
-  facet_wrap(~player, ncol = 2, scales = &amp;quot;free&amp;quot;) +
-  
-  # Facet
-  theme(
-    plot.title = element_text(
-      size = rel(1.55),
-      family = &amp;quot;title&amp;quot;,
-      face = &amp;quot;bold&amp;quot;,
-      color = title_col,
-      lineheight = 1.1,
-      margin = margin(t = 5, b = 5)
-    ),
-    plot.subtitle = element_text(
-      size = rel(0.85),
-      family = &amp;quot;subtitle&amp;quot;,
-      color = subtitle_col,
-      lineheight = 1.1,
-      margin = margin(t = 5, b = 5)
-    ),
-    plot.caption = element_markdown(
-      size = rel(0.50),
-      family = &amp;quot;caption&amp;quot;,
-      color = caption_col,
-      lineheight = 1.1,
-      hjust = 0.5,
-      halign = 1,
-      margin = margin(t = 5, b = 5)
-    )
-  )
-
-plot&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In conclusion, it is wonderful to see that more people are spending
-their time outside and this exploration is critical during 2010 and
-after the pandemic, as it created a new necessity of connecting more
-with nature.&lt;/p&gt;
-&lt;p&gt;Last but not least, I want to share with you a a photo of me after a
-4-hour, 14-km trek at the &lt;a href="https://refugiomeiling.com/"&gt;Otto
-Meiling Refuge&lt;/a&gt; in Nahuel Huapi National Park, Argentina:&lt;/p&gt;
-&lt;p&gt;&lt;img src="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parksplots/Meiling.jpg" /&gt;&lt;/p&gt;
-&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
-      <distill:md5>2fc9b05f43bbf07559834ac53ca5b163</distill:md5>
-      <guid>www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks</guid>
-      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
-      <media:content url="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks/plots/final_plot_number_2.png" medium="image" type="image/png" width="1119" height="736"/>
-    </item>
+    <lastBuildDate>Tue, 20 May 2025 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Introduction to Selenium with Twitter Data</title>
       <dc:creator>Guada Gonzalez</dc:creator>
       <link>www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data</link>
-      <description>Let's scrape Twitter data using Selenium</description>
+      <description>
+
+
+&lt;p&gt;Scraping means ‘to gather, collect’ and it’s a very important tool
+that we social scientists have to acquire innovative and valuable
+information that not everyone has access to.&lt;/p&gt;
+&lt;p&gt;In general, we scrape web pages using two methods. One is based on
+HTML code, which is simpler, and the other is based on Javascript, which
+is a bit more complex. For scraping HTML, there are very good tutorials
+like this, this, and this, using packages like Beautifulsoup in Python
+and rvest in R. In this case, we will use Selenium in Python to obtain
+the number of followers and followings that legislators have in
+Argentina.&lt;/p&gt;
+&lt;p&gt;It’s not necessary to know Javascript to use Selenium, but it is
+necessary to be able to identify, in this case, classes within the
+source codes of the websites. That is, to understand a little bit of
+HTML and CSS.&lt;/p&gt;
+&lt;p&gt;Disclaimer to expand the issue:&lt;/p&gt;
+&lt;p&gt;In HTML, elements have an ID and a class. An “ID” is ___ and a class
+is “__“. In this case, IDs are indicated with”#” in front and classes
+with a dot “.” in front.&lt;/p&gt;
+&lt;p&gt;Downloading the number of followers and followings of legislators.
+For this, we will first try with a single account and then incorporate
+it into a loop.&lt;/p&gt;
+&lt;p&gt;For this, the following packages are necessary:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;import random
+import BeautifulSoup
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+import re
+import json&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Thirdly, we call the driver. What is this?_&lt;strong&gt; &lt;/strong&gt; When we
+run it automatically, we’ll see that an internet tab opens: [Image]&lt;/p&gt;
+&lt;p&gt;Then we specify the URL we want to scrape together with the get()
+function that will send us to the web. In this case, for example, we
+want to scrape my Twitter account.&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;driver_ = webdriver.Chrome()
+
+url = &amp;#39;https://twitter.com/guadag12&amp;#39;
+driver_.get(url)
+sleep(2)  # Adding sleep to ensure page loads. Consider using WebDriverWait for better practice.
+
+WebDriverWait(driver_, 10).until(
+    EC.presence_of_all_elements_located((By.CSS_SELECTOR, &amp;quot;.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1loqt21&amp;quot;))
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once we run it, we need to see how it opens the new tab. ! Warning:
+It’s always good practice to give seconds of rest between visiting a
+website and scraping it, so we give the browser time to load and
+likewise, we don’t overload the website. Using the “sleep()” function
+implies being responsible with scraping use because ultimately, it’s a
+tool that forces the extraction of information in a context where we
+don’t necessarily ask the company for information. So let’s be
+responsible and respectful and put a sleep occasionally.&lt;/p&gt;
+&lt;p&gt;Then we search on the web for the id/class of the element we want to
+scrape. In this case, as we want the number of followers and followings,
+we use this:&lt;/p&gt;
+&lt;p&gt;We use the “find_elements()” function and ask it to bring us an
+element determined by a CSS feature such as class, and we specify the
+class as a string: [Image]&lt;/p&gt;
+&lt;p&gt;What it will automatically do is bring that data, and then we ask it
+to print it, and it will return something like this.&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;h4_elements = driver_.find_elements(By.CSS_SELECTOR, &amp;quot;.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1loqt21&amp;quot;)
+type_projects = [element.text.strip() for element in h4_elements]
+print(type_projects)
+
+parsed_numbers = [parse_number(num) for num in type_projects]
+
+following = parsed_numbers[0]
+followers = parsed_numbers[1]
+
+user_data_new = {
+    &amp;quot;User&amp;quot;: url,
+    &amp;quot;Following&amp;quot;: following,
+    &amp;quot;Followers&amp;quot;: followers
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once we finish, we close the session:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;driver_.quit()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;LOOP with Twitter accounts of Argentine legislators:&lt;/p&gt;
+&lt;p&gt;What if we want to extract data from a large number of accounts? We
+need to Bring the dataset with the accounts of Argentine legislators
+Create an empty list to fill in later and Perform a for loop where in
+each iteration the information of each user is obtained&lt;/p&gt;
+&lt;p&gt;But before showing how the code would look like to do this, it’s
+important to know first that there are cases where legislators appear
+with “1.1k followers” or “1.3M followers” (millions). What we want to do
+is replace those “k” or “M” with the corresponding number of zeros. In
+this regard, this function is created to be used within the loop:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;def parse_number(text):
+    # Remove any non-numeric characters except for comma and dot
+    num_only = &amp;#39;&amp;#39;.join([c for c in text if c.isdigit() or c in [&amp;#39;,&amp;#39;, &amp;#39;.&amp;#39;]])
+
+    # Check for the presence of &amp;#39;mil&amp;#39; or &amp;#39;M&amp;#39; and handle accordingly
+    if &amp;#39;mil&amp;#39; in text:
+        # If there is a comma, like &amp;#39;127,4&amp;#39;, convert it to &amp;#39;127400&amp;#39;
+        if &amp;#39;,&amp;#39; in num_only:
+            whole, fraction = num_only.split(&amp;#39;,&amp;#39;)
+            num = f&amp;quot;{whole}{fraction}&amp;quot; + &amp;#39;0&amp;#39;*(3 - len(fraction))  # Add zeros to complete &amp;#39;mil&amp;#39;
+        else:
+            num = num_only.replace(&amp;#39;.&amp;#39;, &amp;#39;&amp;#39;) + &amp;#39;000&amp;#39;  # Directly add &amp;#39;000&amp;#39; for &amp;#39;mil&amp;#39;
+    elif &amp;#39;M&amp;#39; in text:
+        # If there is a comma, like &amp;#39;3,5&amp;#39;, convert it to &amp;#39;3500000&amp;#39;
+        if &amp;#39;,&amp;#39; in num_only:
+            whole, fraction = num_only.split(&amp;#39;,&amp;#39;)
+            num = f&amp;quot;{whole}{fraction}&amp;quot; + &amp;#39;0&amp;#39;*(6 - len(fraction))  # Add zeros to complete &amp;#39;M&amp;#39;
+        else:
+            num = num_only.replace(&amp;#39;.&amp;#39;, &amp;#39;&amp;#39;) + &amp;#39;000000&amp;#39;  # Directly add &amp;#39;000000&amp;#39; for &amp;#39;M&amp;#39;
+    else:
+        # If no &amp;#39;mil&amp;#39; or &amp;#39;M&amp;#39;, just remove comma or dot
+        num = num_only.replace(&amp;#39;.&amp;#39;, &amp;#39;&amp;#39;).replace(&amp;#39;,&amp;#39;, &amp;#39;&amp;#39;)
+
+    return int(num)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, this is how the final loop would look like:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;users = [&amp;quot;LucilaCrexell&amp;quot;,&amp;quot;romeroxsalta&amp;quot;,&amp;quot;EdithTerenzi&amp;quot;,&amp;quot;JuanManzurOK&amp;quot;,&amp;quot;Florelop&amp;quot;,&amp;quot;jfrejal&amp;quot;,&amp;quot;sergiounac&amp;quot;,&amp;quot;ClaudiaLAZamora&amp;quot;,&amp;quot;josenedersde&amp;quot;,&amp;quot;negrojoao&amp;quot;,&amp;quot;palibensusan&amp;quot;,&amp;quot;LuciaCorpacci&amp;quot;,&amp;quot;marcelewan&amp;quot;,&amp;quot;mendozsandra&amp;quot;,&amp;quot;GerardoSenador&amp;quot;,&amp;quot;pilattivergara&amp;quot;,&amp;quot;marianorecalde&amp;quot;,&amp;quot;antoniorodasok&amp;quot;,&amp;quot;CarmenAlvarezR&amp;quot;,&amp;quot;alfredodeangeli&amp;quot;,&amp;quot;MartinGoerling&amp;quot;,&amp;quot;HualaVictoria&amp;quot;,&amp;quot;ljuez&amp;quot;,&amp;quot;lupetagliaferri&amp;quot;,&amp;quot;Arce_Carlos_&amp;quot;,&amp;quot;decutrojas&amp;quot;,&amp;quot;bartoloabdala&amp;quot;,&amp;quot;brunooliverasj&amp;quot;,&amp;quot;PaoltroniF&amp;quot;,&amp;quot;beatriz_avilaok&amp;quot;,&amp;quot;josemacarambia&amp;quot;,&amp;quot;NataliaGadano&amp;quot;,&amp;quot;AndyCristina07&amp;quot;,&amp;quot;monicasilvarn&amp;quot;,&amp;quot;wadodecorrido&amp;quot;,&amp;quot;ditulliojuli&amp;quot;,&amp;quot;aliciakirchner&amp;quot;,&amp;quot;CarolinaMoises&amp;quot;,&amp;quot;fernandosalino&amp;quot;,&amp;quot;martindonate&amp;quot;,&amp;quot;EugeniaDureTDF&amp;quot;,&amp;quot;anabelfsagasti&amp;quot;,&amp;quot;garcialarraburu&amp;quot;,&amp;quot;noragimenezok&amp;quot;,&amp;quot;ElOsoLeavy&amp;quot;,&amp;quot;LinaresCarlosCR&amp;quot;,&amp;quot;Oscar_Parrilli&amp;quot;,&amp;quot;sapag_silvia&amp;quot;,&amp;quot;espinolacamau&amp;quot;,&amp;quot;EdgardoKueider&amp;quot;,&amp;quot;alevigo&amp;quot;,&amp;quot;GabiValenzuel&amp;quot;,&amp;quot;PeteCoVischi&amp;quot;,&amp;quot;mariana_juri&amp;quot;,&amp;quot;rodysuarez&amp;quot;,&amp;quot;MaxiAbad&amp;quot;,&amp;quot;famaflavio&amp;quot;,&amp;quot;Dkroneberger&amp;quot;,&amp;quot;carolinalosada&amp;quot;,&amp;quot;GugaLusto&amp;quot;,&amp;quot;Senadora_Olalla&amp;quot;,&amp;quot;VZimmermannOK&amp;quot;,&amp;quot;blancopabloda&amp;quot;]
+
+driver_ = webdriver.Chrome()
+
+combined_data = []
+
+for i in users:
+    try:
+        url = &amp;#39;https://twitter.com/&amp;#39; + i
+        driver_.get(url)
+        sleep(2)  # Adding sleep to ensure page loads. Consider using WebDriverWait for better practice.
+
+        WebDriverWait(driver_, 10).until(
+            EC.presence_of_all_elements_located((By.CSS_SELECTOR, &amp;quot;.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1loqt21&amp;quot;))
+        )
+
+        h4_elements = driver_.find_elements(By.CSS_SELECTOR, &amp;quot;.css-1rynq56.r-bcqeeo.r-qvutc0.r-37j5jr.r-a023e6.r-rjixqe.r-16dba41.r-1loqt21&amp;quot;)
+        type_projects = [element.text.strip() for element in h4_elements]
+        print(type_projects)
+
+        parsed_numbers = [parse_number(num) for num in type_projects]
+
+        following = parsed_numbers[0]
+        followers = parsed_numbers[1]
+
+        user_data_new = {
+            &amp;quot;User&amp;quot;: url,
+            &amp;quot;Following&amp;quot;: following,
+            &amp;quot;Followers&amp;quot;: followers
+        }
+        combined_data.append(user_data_new)
+        print(f&amp;quot;Finished user {i}&amp;quot;)
+
+    except Exception as e:
+        print(f&amp;quot;Error processing user {i}: {e}&amp;quot;)
+    sleep(random.uniform(3.0, 5.0))
+
+
+# Close the driver after finishing the loop
+driver_.quit()
+
+# Saving the dictionary as a JSON file
+with open(&amp;#39;C:/Users/User/Documents/GitHub/selenium-scraping-followers/twitter_followers_hsn.json&amp;#39;, &amp;#39;w&amp;#39;) as json_file:
+    json.dump(combined_data, json_file)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And in this file, you can observe the final data:&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;library(readr)
+rm(list = ls())
+library(readr)
+data_followers_twitter_hsn &amp;lt;- read_csv(&amp;quot;~/GitHub/guada-blog/_posts/2024-03-03-introduction-to-selenium-with-twitter-data/data/data_followers_twitter_hsn.csv&amp;quot;)
+data_followers_twitter_hsn &amp;lt;-as.data.frame(data_followers_twitter_hsn)
+head(data_followers_twitter_hsn)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This has been everything. Thank you for getting here and reading to
+the end,&lt;/p&gt;
+&lt;p&gt;Leave comments for any questions,&lt;/p&gt;
+&lt;p&gt;Guada&lt;/p&gt;
+&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+      <distill:md5>caef7b671bdde0f550abc1db2f03a166</distill:md5>
       <guid>www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data</guid>
-      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
+      <media:content url="www.github.com/guadag12/posts/2024-03-03-introduction-to-selenium-with-twitter-data/selenium_logo.png" medium="image" type="image/png" width="1200" height="1254"/>
+    </item>
+    <item>
+      <title>Mapping Visitor Trends in U.S. National Parks</title>
+      <dc:creator>Guada Gonzalez</dc:creator>
+      <link>www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks</link>
+      <description>Ever wondered how our visits to national parks fulfill deep-seated desires for adventure, tranquility, and a return to nature? Let’s explore this question with my visualizations for the 2025 Data Viz Championship.</description>
+      <guid>www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks</guid>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
+      <media:content url="www.github.com/guadag12/posts/2025-01-05-visualizing-national-parks/plots/final_plot_number_2.png" medium="image" type="image/png" width="1119" height="736"/>
     </item>
     <item>
       <title>Analyzing political candidates with politicxsentwitteR!</title>

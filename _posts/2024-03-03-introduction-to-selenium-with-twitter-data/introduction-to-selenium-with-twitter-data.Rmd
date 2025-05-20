@@ -118,7 +118,7 @@ Perform a for loop where in each iteration the information of each user is obtai
 
 But before showing how the code would look like to do this, it's important to know first that there are cases where legislators appear with "1.1k followers" or "1.3M followers" (millions). What we want to do is replace those "k" or "M" with the corresponding number of zeros. In this regard, this function is created to be used within the loop:
 
-```{python}
+```{python, eval = FALSE}
 
 def parse_number(text):
     # Remove any non-numeric characters except for comma and dot
@@ -150,7 +150,7 @@ def parse_number(text):
 
 Now, this is how the final loop would look like:
 
-```{python}
+```{python, eval = FALSE}
 users = ["LucilaCrexell","romeroxsalta","EdithTerenzi","JuanManzurOK","Florelop","jfrejal","sergiounac","ClaudiaLAZamora","josenedersde","negrojoao","palibensusan","LuciaCorpacci","marcelewan","mendozsandra","GerardoSenador","pilattivergara","marianorecalde","antoniorodasok","CarmenAlvarezR","alfredodeangeli","MartinGoerling","HualaVictoria","ljuez","lupetagliaferri","Arce_Carlos_","decutrojas","bartoloabdala","brunooliverasj","PaoltroniF","beatriz_avilaok","josemacarambia","NataliaGadano","AndyCristina07","monicasilvarn","wadodecorrido","ditulliojuli","aliciakirchner","CarolinaMoises","fernandosalino","martindonate","EugeniaDureTDF","anabelfsagasti","garcialarraburu","noragimenezok","ElOsoLeavy","LinaresCarlosCR","Oscar_Parrilli","sapag_silvia","espinolacamau","EdgardoKueider","alevigo","GabiValenzuel","PeteCoVischi","mariana_juri","rodysuarez","MaxiAbad","famaflavio","Dkroneberger","carolinalosada","GugaLusto","Senadora_Olalla","VZimmermannOK","blancopabloda"]
 
 driver_ = webdriver.Chrome()
@@ -200,20 +200,16 @@ with open('C:/Users/User/Documents/GitHub/selenium-scraping-followers/twitter_fo
 
 And in this file, you can observe the final data:
 
-```{r}
+```{r, eval = FALSE}
 library(readr)
 rm(list = ls())
 library(readr)
-data_followers_twitter_hsn <- read_csv("_posts/2024-03-03-introduction-to-selenium-with-twitter-data/data/data_followers_twitter_hsn.csv")
+data_followers_twitter_hsn <- read_csv("~/GitHub/guada-blog/_posts/2024-03-03-introduction-to-selenium-with-twitter-data/data/data_followers_twitter_hsn.csv")
 data_followers_twitter_hsn <-as.data.frame(data_followers_twitter_hsn)
 head(data_followers_twitter_hsn)
 ```
 
-For example, if we want to see which block has the highest number of followers on Twitter according to the number of block members, we see that:
 
-```{python}
-
-```
 
 This has been everything. Thank you for getting here and reading to the end,
 
