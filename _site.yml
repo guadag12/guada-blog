@@ -22,8 +22,8 @@ navbar:
       href: https://github.com/guadag12
     - icon: fa fa-linkedin
       href: https://www.linkedin.com/in/guadag12/
-    - text: ""
-      href: static/template.html
+##   - text: ""
+##      href: static/template.html
 output: distill::distill_article
 twitter:
   site: "@guadag12"

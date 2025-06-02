@@ -1,21 +1,21 @@
 ---
-title: "Quarto UMD template!"
-subtitle: "Make your presentations more proffesional with this UMD theme!"
+title: "Not All Moderates Are Equal"
+subtitle: "Clickstream Evidence from Argentina’s 2021 Election"
 author: 
-  - name: "<h4><strong>Xiuling Zhang</strong></h4>"
+  - name: "<h4><strong>Guadalupe González</strong></h4>"
     email: "guadag12@umd.edu<br></br>"
-date: 09/25/2024
+date: 05/06/2024
 date-format: "MMM D, YYYY"
 bibliography: references.bib
 execute: 
   echo: true
 format: 
   revealjs:
-    favicon: "selenium.png" # Especifica la ruta a tu archivo favicon
+    favicon: "selenium.png" 
     width: 1600
     height: 900
-    incremental: false
-    footer: "<div class='custom-footer'><span>goterps R package</span><img src='https://github.com/guadag12/repo_datasets/raw/master/logo-umd/umd.png' class='footer-logo' /></div>"
+    incremental: true
+    footer: "<div class='custom-footer'><span>Not All Moderates Are Equal</span><img src='https://github.com/guadag12/repo_datasets/raw/master/logo-umd/umd.png' class='footer-logo' /></div>"
     theme: [style.scss]
     link-external-newwindow: true
     df-print: kable
@@ -29,53 +29,36 @@ format:
 from: markdown+emoji
 ---
 
-## Quarto
-
-::: {.fragment}
-
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>. Here we will see different ways of customize your presentation using UMD theme! 
-
+::: {.columns}
+::: {.column width="50%"}
+![](img/23.jpeg){.middle}
+:::
+::: {.column width="50%"}
+<!-- leave empty so the width is preserved -->
+:::
 :::
 
-::: {.fragment}
-If you are using Generative AI to make this presentation pay attention to this recommendations of @perkel2023chatgpt.
-::: 
+---
+
+::: {.columns}
+::: {.column width="50%"}
+![](img/23.jpeg){.middle}
+:::
+::: {.column width="50%"}
+![](img/22.png){.middle}
+:::
+:::
 
 ---
 
-# HEADING 1
+## {auto-animate=true}
 
-## HEADING 2
+## What the literature said so far?
 
-### HEADING 3
+## {auto-animate=true}
 
-#### HEADING 4
+## What the literature said so far?
 
-##### HEADING 5
-
-###### HEADING 6
-
----
-
-Words can be **bold**, _italicized_, <u>underlined</u>, ~~strikethrough~~, <span class="highlight-word">highlighted words</span>, insert code: `head()`,  or even [hyperlinked](https://umd.edu/)!
-
----
-
-Bullets can be used for ordered or unordered lists:
-
-## Ordered lists:
-
-::: {.incremental}
-
-1. ordered list
-2. item 2
-    i) sub-item 1
-         A.  sub-sub-item 1
-::: 
-
----
-
-## Unordered lists:
 
 :::: {.columns}
 
@@ -83,15 +66,14 @@ Bullets can be used for ordered or unordered lists:
 
 ::: {.incremental}
 
+::: {style="font-size: 1.3em;"}
 
-* My name is Guada
-* I'm a Phd Student at UMD!
-* I'm from Argentina:
-  + It is a really nice place in South America
-  + We have the best: 
-    - asado (barbicue), 
-    - dulce de leche (caramel sauce) and 
-    - empanadas
+- @campbell1960american establish that *Moderates and independents* tend to *show lower political interest*, less information, and more *unstable attitudes*...
+
+- @klar2016independent shows that *not all moderates are equal* and *we can distinguish* between *moderates* that are *interested in politics* and moderates that are not.
+
+:::
+
 :::
 
 :::
@@ -104,228 +86,360 @@ Bullets can be used for ordered or unordered lists:
 
 ---
 
-## Task lists
+## What the literature said so far?
 
-- [ ] Task 1
-- [x] Task 2
+:::: {.columns}
 
----
+::: {.column width="50%"}
 
-## Images
+::: {style="font-size: 1.3em;"}
 
-Images can be added in Quarto in different ways:
+- @campbell1960american establish that *Moderates and independents* tend to *show lower political interest*, less information, and more *unstable attitudes*...
 
-::: {.r-stack}
-![](img/testudo.jpg){.fragment  width="750" height="600"}
-
-![](img/testudo2.jpg){.fragment  width="600" height="750"}
-
-![](img/testudo3.jpg){.fragment  width="600" height="750"}
-
-![](img/testudo4.jpg){.fragment  width="600" height="750"}
-
+- @klar2016independent shows that *not all moderates are equal* and *we can distinguish* between *moderates* that are *interested in politics* and moderates that are not.
 
 :::
 
----
+:::
 
-## Show your R code!
+:::{.column width="50%"}
 
-Code can be embebed in Quarto like this: 
+![](img/18.png)
 
+:::
 
-```{r}
-result <- 1 + 1
-result
-```
-
-
----
-
-## O don't show it, show the results only!
-
-We can hide the code and show the results only:
-
-```{r}
-cat("Go terps!")
-```
+::::
 
 ---
 
 ## {auto-animate=true}
 
-::: {style="margin-top: 200px; font-size: 3em; color: red;"}
-Create columns to explain a topic
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+Research question
 :::
 
 ## {auto-animate=true}
 
+::: {style="margin-top: 100px;"}
+Research question
+:::
 
+::: {style="margin-top: 200px; font-size: 2.1em; color: red;"}
 
-::: columns
-::: {.column width="40%"}
-
-### Did you know that Montgomery County has the highest enrollment at UMD?
-
+To what extent do politically interested moderates consume more diverse political information than uninterested moderates, as measured by entropy in clickstream data during Argentina’s 2021 election?
 
 :::
 
-::: {.column width="60%"}
 
-![](img/county_map.png)
 
-Source: Office of Institutional Research, Planning & Assessment at University of Maryland
+---
+
+## Clickstream Data (Browsing History)
+
+![](img/19.png)
+
+---
+
+## Clickstream Data (Browsing History)
+
+![](img/20.png)
+
+---
+
+## Clickstream Data (Browsing History)
+
+![](img/21.png)
+
+---
+
+## How was the process?:
+
+::: {style="font-size: 1.5em;"}
+
+::: {.incremental}
+
+So I:
+
+1. Filter the ones that are news portal
+
+2. Scrape each url to get the title, description and the body of the news
+
+3. Calculate information gain from all of them and,
+
+4. Merge with my moderates data.
 
 :::
+
 :::
 
 
 ---
 
-## Inverse Slide {.inverse}
+## {auto-animate=true}
 
-This slide has dramatically different styling with an inverse color scheme.
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
 
-- The background is yellow.
-- The text is grey.
-
-
----
-
-## Add tabsets to explain more in depth some issue!
-
-::: {.panel-tabset .nav-pills}
-
-### Tab Number 1
-
-This is tab number 1 . Check some **fun facts**🌟 
-
-### Fun Fact 1
-
-![](https://i.gifer.com/UyM4.gif){fig-align="center" width="800px"}
-
-### Fun Fact 2
-
-![](https://wtffunfact.com/wp-content/uploads/2019/06/fun-facts-more-of-wtf-fun-facts-here-not-a-random-facts.gif){fig-align="center" width="800px"}
+But how we identify a 'moderate' voter?
 
 :::
 
 ---
 
-## We can add notes!
 
-::: {.fragment}
-
-::: {.callout-note}
-Note that there are five types of callouts, including:
-`note`, `warning`, `important`, `tip`, and `caution`.
-:::
-
-:::
-
-::: {.fragment}
-
-::: {.callout-tip}
-## Tip with Title
-
-This is an example of a callout with a title.
-:::
-
-:::
-
-::: {.fragment}
-
-::: {.callout-important}
-## This is an important message
-
-Use this when you are showing important information.
-:::
-
-:::
+![](img/1.png){.center}
+---
 
 
-::: {.fragment}
+![](img/2.png)
+--- 
 
-::: {.callout-caution}
-## Caution
 
-Use this when the viewer have to pay attention to something.
+![](img/3.png)
 
-:::
-
-:::
 
 ---
 
-## goterps R package has also a theme in ggplot2!
+# How can we measure how much informative it is a text?
 
-```{r, eval=FALSE}
-library(ggplot2)
-ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
-  geom_point(size = 4) +
-  goterps_theme() +
-  scale_fill_manual(values = goterps_palette_d()) +
-  labs(title = "Scatter Plot of Iris Data Colored by Species",
-       x = "Sepal Length",
-       y = "Sepal Width")
+![](img/entropy.png){fig-align="center"}
+
+    
+---
+
+## {auto-animate=true}
+
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+What is entropy?
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+What is entropy?
+
+:::
+
+::: {style="margin-top: 200px; font-size: 2.1em; color: red;"}
+
+
+Entropy is a way to **measure how predictable or uncertain** something is. In the context of news consumption, it tells us **how diverse or concentrated the information exposure** is.
+
+:::
+
+
+
+---
+
+![](img/4.png) 
+
+---
+
+![](img/5.png)
+
+---
+
+## How can we measure entropy?
+
+<br>
+<br>
+<br>
+ 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+$$
+Entropy = - \sum_{i=1}^{n} p_i log_2(p_i)
+$$
+Where:
+
+- $p_i$  is the proportion of attention or consumption to source/topic $i$.
+
+
+:::
+
+:::{.column width="50%"}
+
+
+```{python, eval = FALSE}
+def shannon_entropy(text):
+    # Tokenize the text
+    words = text.split()
+    word_counts = Counter(words)
+    total_words = len(words)
+    
+    entropy = 0.0
+    for count in word_counts.values():
+        p = count / total_words
+        entropy -= p * math.log2(p)
+    return entropy
 ```
 
-![](https://github.com/guadag12/goterps/raw/main/img/scatter_plain.png)
+:::
+
+::::
+
+---
+
+## {auto-animate=true}
+
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+
+For Example...
+
+:::
+
+## {auto-animate=true}
+
+:::  {style="font-size: 1em;"}
+
+For Example...
+
+:::
+
+![](img/8.png)
+
+---
+
+
+![](img/9.png)
+---
+
+![](img/10.png)
+---
+
+![](img/11.png)
+
+---
+
+## {auto-animate=true}
+
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
+
+So, we can expect that...
+
+:::
+
+## {auto-animate=true}
+
+:::  {style="font-size: 1em;"}
+
+So, we can expect that...
+
+:::
+
+![](img/6.png)
+---
+
+:::  {style="font-size: 1em;"}
+
+So, we can expect that...
+
+:::
+
+![](img/7.png)
+
+---
+
+## Linear Regression
+
+<br>
+<br>
+<br>
+
+
+
+$$
+\log(\text{entropy}_i) = \beta_0 + \beta_1 \cdot \text{political interest}_i + \beta_2 \cdot \text{Age}_i + \\ \beta_3 \cdot \text{Gender}_i + \beta_4 \cdot \text{Education}_i + \beta_5 \cdot \text{Work}_i + \varepsilon_i
+$$
 
 
 ---
 
-## Have palette of colors for discrete variables: 
+## {auto-animate=true}
 
-```{r, eval=FALSE}
-ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
-  geom_point(size = 4) +
-  scale_color_manual(values = goterps_palette_d(3)) +
-  goterps_theme() +
-  scale_fill_manual(values = goterps_palette_d()) +
-  labs(title = "Scatter Plot of Iris Data Colored by Species",
-       x = "Sepal Length",
-       y = "Sepal Width",
-       color = "Species")
-```
+:::  {style="margin-top: 200px; font-size: 3em; color: red;"}
 
-![](https://github.com/guadag12/goterps/raw/main/img/scatter_discrete_plot.png)
+Some (parcial) results...
+
+:::
+
+## {auto-animate=true}
+
+:::  {style="font-size: 1em;"}
+
+Some (parcial) results...
+
+:::
+
+
+![](img/13.png)
+---
+
+![](img/14.png)
+---
+
+![](img/15.png)
+
+---
+
+## Regression in a plot
+
+![](img/16.png)
+
+---
+
+## Regression in a plot
+
+![](img/17.png)
 
 
 ---
 
-## And have palette of colors for continuous variables: 
-
-```{r, eval=FALSE}
-library(ggplot2)
-p1 <- ggplot(iris[iris$Species == "setosa",], aes(x = Sepal.Width, y = Sepal.Length, color = Sepal.Length)) +
-  geom_point(size = 4) +
-  scale_color_gradientn(colors = goterps_palette_c("yellow",5)) +
-  labs(x = "Sepal Width", y = "Sepal Length",
-       title = "Scatter Plot of Iris Data Colored by Species") +
-  goterps_theme() +
-  theme(plot.title = element_text(hjust = 0.5))
-
-p2 <-ggplot(iris[iris$Species == "versicolor",], aes(x = Sepal.Width, y = Sepal.Length, color = Sepal.Length)) +
-  geom_point(size = 4) +
-  scale_color_gradientn(colors = goterps_palette_c("red",5)) +
-  labs(x = "Sepal Width", y = "Sepal Length") +
-  goterps_theme() +
-  theme(plot.title = element_text(hjust = 0.5))
-
-p3 <-ggplot(iris[iris$Species == "virginica",], aes(x = Sepal.Width, y = Sepal.Length, color = Sepal.Length)) +
-  geom_point(size = 4) +
-  scale_color_gradientn(colors = goterps_palette_c("grey",5)) +
-  labs(x = "Sepal Width", y = "Sepal Length") +
-  goterps_theme() +
-  theme(plot.title = element_text(hjust = 0.5))
-
-grid.arrange(p1, p2, p3)
-```
-
-![](https://github.com/guadag12/goterps/raw/main/img/scatter_continuous_plot.png)
+## Conclusions 
 
 
+::: {.incremental}
+
+:::  {style="font-size: 1.5em;"}
+
+
+1. Use clickstream data to measure political interest and information it is a possibility.
+
+2. There are moderates that are interest in politics.
+
+3. There is a difference in the consumption of news by moderates with political interest and without.
+
+4. Moderates with high political interest tend to review news with more information / diversity of information on
+
+:::
+
+:::
+
+---
+
+## Limitations & next steps
+
+:::  {style="font-size: 1.5em;"}
+
+::: {.incremental}
+
+1. 'Moderates' as category that reflects ideological autoperception it is not the best approach.
+
+2. 'Entropy' as indicator has some flaws: what about repeat information or quality of information?
+
+3. Correlation it is not causation.. is it possible to make causal claim that political interest decrease the effect on looking for information?
+
+:::
+
+:::
+
+---
+
+## Appendix
+
+![](img/12.png)
 
 ---
 
@@ -347,4 +461,9 @@ grid.arrange(p1, p2, p3)
 
 [`r fontawesome::fa("github")` \@guadag12](http://github.com/guadag12)
 :::
+
+
+
+  
+
 

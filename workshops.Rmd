@@ -11,7 +11,7 @@ Looking to learn R for the first time or dive deeper into social network analysi
 
 The 'goterps' R package is specially designed for students and faculty at the University of Maryland, offering downloadable templates for creating presentations with the university logo and applying the university theme in ggplot2 visualizations. This workshop will provide comprehensive guidance on navigating the package in R, detailing the various functionalities available and demonstrating how to effectively utilize these resources in academic presentations.  You can find more information about the package [here](https://github.com/guadag12/goteRps)
 
-* [Example of the Themed Presentation here](https://guadagonzalez.com/static/template#/title-slide)
+* [See an example of the themed presentation here](https://guadagonzalez.com/static/template#/title-slide)
 
 ### [Web Scraping and Data Collection Using RSelenium](https://github.com/guadag12/selenium-r-workshop)
 
