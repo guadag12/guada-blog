@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="gun_owners_voting (3)_files/libs/clipboard/clipboard.min.js"></script>
+<script src="gun_owners_voting (3)_files/libs/quarto-html/tabby.min.js"></script>
+<script src="gun_owners_voting (3)_files/libs/quarto-html/popper.min.js"></script>
+<script src="gun_owners_voting (3)_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="gun_owners_voting (3)_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="gun_owners_voting (3)_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="gun_owners_voting (3)_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="gun_owners_voting (3)_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.56">
+
+  <meta name="author" content="PSYC743 — Social Cognition | Spring 2026">
+  <title>The Gun as Cognitive Artifact</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="gun_owners_voting (3)_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="gun_owners_voting (3)_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="gun_owners_voting (3)_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="gun_owners_voting (3)_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="gun_owners_voting (3)_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="gun_owners_voting (3)_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="gun_owners_voting (3)_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">The Gun as Cognitive Artifact</h1>
+  <p class="subtitle">Explaining Gun Owners’ Political Participation in Argentina</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+PSYC743 — Social Cognition | Spring 2026 
+</div>
+</div>
+</div>
+
+</section>
+<section id="section" class="slide level2" data-background-color="#1C2B4A">
+<h2></h2>
+<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:85vh; text-align:center; padding: 0 80px;">
+<p style="font-size:2.2em; font-weight:800; line-height:1.25; color:#FFFFFF !important; margin:0 0 20px 0;">
+Why do gun owners vote<br>more than non-gun owners?
+</p>
+<p style="font-size:1.05em; color:#A8BFDB !important; font-style:italic; margin:0 0 30px 0;">
+It’s not just policy preference — it’s a cognitive story
+</p>
+</div>
+<aside class="notes">
+<p>Open with the puzzle. Gun owners are a minority but punch above their weight electorally. Today I argue the answer lives inside social cognition.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="similar-findings" class="slide level2" data-background-color="#F7F9FC">
+<h2>Similar Findings…</h2>
+<div style="margin-top:30px;">
+<p style="font-size:0.80em; line-height:1.6; margin-bottom:14px;">
+Gun owners are only <strong>8% of the sample</strong> — yet they vote at <strong style="color:#C0392B;">90%</strong> vs.&nbsp;<strong>80%</strong> for non-owners across all Argentine general elections from 2015 to 2023.
+</p>
+<div style="background:#FDEDEC; border-left:4px solid #C0392B; padding:10px 14px; border-radius:6px; font-size:0.78em; line-height:1.6;">
+<p>This <strong>+10 pp gap</strong> holds after controlling for age, gender, district.</p>
+</div>
+</div>
+<div class="fragment" style="margin-top:80px;">
+<p style="font-size:0.76em; color:#C0392B; font-style:italic; margin-top:10px; margin-bottom:0;">
+This pattern has also been seen in US for the last 50 years. <span style="font-size:0.85em; color:#7F8C8D;"> (Joslyn, 2020) </span>
+</p>
+</div>
+<aside class="notes">
+<p>Show the data first. Let the gap land. Then pivot: “But here’s the puzzle…”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="but-different" class="slide level2" data-background-color="#F7F9FC">
+<h2>But Different</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p style="font-size:0.88em; font-weight:700; color:#1C2B4A; margin:0 0 10px 0;">
+The usual explanations don’t apply here
+</p>
+<!-- Item 1: appears clean first (index 1), struck out on next click (index 2) -->
+<div class="fragment" data-fragment-index="1">
+<div style="background:#F5F5F5; border:1px solid #E0E0E0; border-radius:6px; padding:10px 14px; margin-bottom:8px;">
+<p class="fragment strike" data-fragment-index="2" style="font-size:0.80em; color:#444; margin:0;">
+Second Amendment culture &amp; constitutional identity <span style="font-size:0.82em; color:#888; font-weight:400; margin-left:6px;">(Shapira &amp; Simon, 2018; Lacombe et al., 2024)</span>
+</p>
+<p class="fragment" data-fragment-index="2" style="font-size:0.72em; color:#C0392B; margin:4px 0 0 0; font-weight:600;">
+✗ Argentina has no Second Amendment
+</p>
+</div>
+</div>
+<!-- Item 2: appears clean (index 3), struck out (index 4) -->
+<div class="fragment" data-fragment-index="3">
+<div style="background:#F5F5F5; border:1px solid #E0E0E0; border-radius:6px; padding:10px 14px; margin-bottom:8px;">
+<p class="fragment strike" data-fragment-index="4" style="font-size:0.80em; color:#444; margin:0;">
+Organised gun-rights lobby (NRA-type groups) <span style="font-size:0.82em; color:#888; font-weight:400; margin-left:6px;">(Lacombe et al., 2024)</span>
+</p>
+<p class="fragment" data-fragment-index="4" style="font-size:0.72em; color:#C0392B; margin:4px 0 0 0; font-weight:600;">
+✗ No equivalent organisation in Argentina
+</p>
+</div>
+</div>
+<!-- Item 3: appears clean (index 5), struck out (index 6) -->
+<div class="fragment" data-fragment-index="5">
+<div style="background:#F5F5F5; border:1px solid #E0E0E0; border-radius:6px; padding:10px 14px; margin-bottom:8px;">
+<p class="fragment strike" data-fragment-index="6" style="font-size:0.80em; color:#444; margin:0;">
+Collective political identity around gun ownership <span style="font-size:0.82em; color:#888; font-weight:400; margin-left:6px;">(Higginbotham, 2025; Buttrick, 2020)</span>
+</p>
+<p class="fragment" data-fragment-index="6" style="font-size:0.72em; color:#C0392B; margin:4px 0 0 0; font-weight:600;">
+✗ Gun owners don’t act as a political group
+</p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="7">
+<div style="background:#1C2B4A; border-radius:8px; padding:18px 20px; margin-top:10px;">
+<p style="font-size:0.88em; font-weight:700; color:#FFFFFF; margin:0 0 10px 0;">
+So what is driving this?
+</p>
+<p style="font-size:0.80em; color:#A8BFDB; line-height:1.65; margin:0 0 10px 0;">
+The effect must be <strong style="color:#FFFFFF;">individual</strong> and <strong style="color:#FFFFFF;">psychological</strong> — bottom-up, without group coordination.
+</p>
+<p style="font-size:0.78em; color:#E8A09A; font-style:italic; margin:0;">
+→ Gun ownership changes how individuals think,<br>not how groups organise.
+</p>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>Click through each crossed-out item one by one. Pause after each. Then reveal the right panel: “So if none of these apply — what’s left? The answer has to be individual and cognitive.” This sets up the mechanism slide perfectly.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="my-proposed-mechanism" class="slide level2" data-background-color="#F7F9FC">
+<h2>My Proposed Mechanism</h2>
+<p style="font-size:0.9em; font-weight:700; color:#1C2B4A; margin-bottom:8px;">
+The Argument
+</p>
+<p style="font-size:0.80em; margin-bottom:10px;">
+In Argentina, gun owners <strong>do not act collectively</strong>. Ownership reshapes cognition and generates an effect on turnout in three ways:
+</p>
+<ol style="font-size:0.80em; line-height:1.7; margin:0; padding-left:1.2em;">
+<div class="fragment">
+<li>
+<strong>“The world is a dangerous place”:</strong> this isn’t just a belief, it’s a <em>motivated construal</em>. The gun works as a coping mechanism that reinforces the very threat perception that justified it. Guns makes security issues chronically salient and fueling further motivated reasoning about risk. <span style="font-size:0.85em; color:#7F8C8D;">(Buttrick, 2020; Bryan et al., 2023; Stroebe et al., 2017; Shapira &amp; Simon, 2018)</span>
+</li>
+</div>
+<div class="fragment">
+<li>
+<strong>Psychological ownership:</strong> he gun becomes an <em>artifact of the self</em>. It extends identity, increases the <em>cognitive availability</em> of threat, and makes security salient in ways that reshape the self-schema. Owning changes perceiving. <span style="font-size:0.85em; color:#7F8C8D;">(Higgins et al., 1982; Pierce et al., 2003; Buttrick, 2020; Shapira &amp; Simon, 2018; Kessler, 2015)</span>
+</li>
+</div>
+<div class="fragment">
+<li>
+<strong>Anger, not fear:</strong> once threat is salience and construed as someone’s <em>fault</em>, attribution kicks in. The emotion shifts from fear, which paralyses, to anger, which demands action. It’s not anxiety or fear that drives gun owners to the polls… it’s the attribution of responsability towards the state. <span style="font-size:0.85em; color:#7F8C8D;">(Berkowitz &amp; LePage, 1987; Drakulich &amp; Baranauskas, 2021; Goldberg et al., 1999; Lerner &amp; Bateson, 2012; Keltner, 2001; Lacombe et al., 2024)</span>
+</li>
+</div>
+</ol>
+<div class="fragment">
+<p style="font-size:0.76em; color:#C0392B; font-style:italic; margin-top:10px; margin-bottom:0;">
+→ “The world is dangerous” (construal) &nbsp;→&nbsp; the gun becomes part of the self (ownership) &nbsp;→&nbsp; “The world is dangerous” (salience) &nbsp;→&nbsp; State failed to protect me (attribution) &nbsp;→&nbsp; Anger &nbsp;→&nbsp; Increases political participation
+</p>
+</div>
+<aside class="notes">
+<p>Key point: this is NOT a collective identity story. Gun owners in Argentina don’t organize as a group. The mechanism is individual and cognitive: owning a gun makes threat chronically salient, threat gets attributed to state failure rather than bad luck, and that attribution generates anger — a mobilizing emotion — rather than fear, which tends to suppress participation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-i-cognitive-psychology" class="slide level2" data-background-color="#F7F9FC">
+<h2>Section I — Cognitive Psychology</h2>
+<p style="font-size:0.85em; font-weight:700; color:#1C2B4A; margin:0 0 2px 0;">
+Psychological Ownership
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0;">
+Pierce, Kostova &amp; Dirks, 2003
+</p>
+<p style="font-size:0.80em; margin:0 0 12px 0;">
+Objects become extensions of the self. They reshape identity, filter information, and redefine what feels personally at stake. The gun is not just a tool. It is an <em>artifact of the self</em>.
+</p>
+<p style="font-size:0.85em; font-weight:700; color:#1C2B4A; margin:0 0 2px 0;">
+Weapons as Cognition-Eliciting Stimuli
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0;">
+Berkowitz &amp; LePage, 1967
+</p>
+<p style="font-size:0.80em; margin:0 0 12px 0;">
+The mere presence of a weapon increases aggressive cognition, even without intent. Owning a gun keeps threat <em>cognitively available</em>, making danger feel more frequent and real.
+</p>
+<p style="font-size:0.85em; font-weight:700; color:#1C2B4A; margin:0 0 2px 0;">
+Chronic Accessibility Shapes Perception
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0;">
+Higgins, King &amp; Mavin, 1982
+</p>
+<p style="font-size:0.80em; margin:0;">
+Chronically accessible constructs bias how people interpret ambiguous information, and persist weeks later. Once threat is accessible, it colors everything.
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0; margin-top:12px;">
+Kelley, 1973
+</p>
+<p style="font-size:0.80em; margin:0;">
+Causal attribution is a cognitive process. People follow systematic rules to decide <em>who</em> is responsible for negative outcomes. This is where cognition meets politics.
+</p>
+</section>
+<section id="section-ii-social-psychology" class="slide level2" data-background-color="#F7F9FC">
+<h2>Section II — Social Psychology</h2>
+<p style="font-size:0.85em; font-weight:700; color:#1C2B4A; margin:0 0 2px 0;">
+Gun Ownership as Threat Construal
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0;">
+Stroebe, Leander &amp; Kruglanski, 2017; Buttrick, 2020
+</p>
+<p style="font-size:0.80em; margin:0 0 12px 0;">
+Gun ownership is driven by, and reinforces, the belief that the world is dangerous. It works as a <em>coping mechanism</em> that locks in the very threat construal that motivated it.
+</p>
+<p style="font-size:0.85em; font-weight:700; color:#1C2B4A; margin:0 0 2px 0;">
+Identity Redefinition Through Ownership
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0;">
+Shapira &amp; Simon, 2018
+</p>
+<p style="font-size:0.80em; margin:0 0 12px 0;">
+People <em>learn</em> to need a gun. Ownership is a social process that gradually reshapes identity, worldview, and what feels threatening. The self becomes reorganised around the logic of protection.
+</p>
+<p style="font-size:0.85em; font-weight:700; color:#1C2B4A; margin:0 0 2px 0;">
+Crime Victimization and Political Participation
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0;">
+Bateson, 2012
+</p>
+<p style="font-size:0.80em; margin:0;">
+Victimization increases participation. Emotions matters. Fear broadens risk aversion and suppresses action. Anger narrows focus, assigns blame, and <em>mobilises</em>.
+</p>
+</section>
+<section id="section-iii-the-social-cognitive-interface" class="slide level2" data-background-color="#F7F9FC">
+<h2>Section III — The Social-Cognitive Interface</h2>
+<p style="font-size:0.85em; font-weight:700; color:#1C2B4A; margin:0 0 2px 0;">
+Anger is More Common Than Fear when we talk about crime
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0;">
+Drakulich &amp; Baranauskas, 2021
+</p>
+<p style="font-size:0.80em; margin:0 0 12px 0;">
+Empirically, anger, not fear, is the primary affective reaction to the prospect of crime. Anger is a <em>social</em> emotion rooted in perceived wrongs. It connects individual threat perception to broader attributions about who is responsible.
+</p>
+<p style="font-size:0.85em; font-weight:700; color:#1C2B4A; margin:0 0 2px 0;">
+Unpunished Wrongdoing Lowers Attribution Thresholds
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0;">
+Goldberg, Lerner &amp; Tetlock, 1999
+</p>
+<p style="font-size:0.80em; margin:0 0 12px 0;">
+When perpetrators go unpunished, people become <em>intuitive prosecutors</em>.
+</p>
+<p style="font-size:0.85em; font-weight:700; color:#1C2B4A; margin:0 0 2px 0;">
+Motivated Cognition Drives Political Action
+</p>
+<p style="font-size:0.77em; color:#5A6A7A; font-style:italic; margin:0 0 4px 0;">
+Jost et al., 2003; Lacombe et al., 2024
+</p>
+<p style="font-size:0.80em; margin:0;">
+Threat and uncertainty fuel motivated social cognition that translates into political behavior. Social disruption and gun buying predict anti-system beliefs — the cognitive and affective pieces converge into action.
+</p>
+</section>
+<section id="conclusions" class="slide level2" data-background-color="#F7F9FC">
+<h2>Conclusions</h2>
+<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:85vh; text-align:center; padding: 0 100px;">
+<p style="font-size:1.05em; color:#1C2B4A; line-height:1.8; margin:60px 0 40px 0;">
+Gun owners in Argentina vote more.<br> We can’t explain that with <em>law</em>, <em>culture</em>, or <em>organization</em>.
+</p>
+<div class="fragment">
+<p style="font-size:1.05em; color:#1C2B4A; line-height:1.8; margin:0 0 40px 0;">
+What we can explain it with is <strong style="color:#5A6A7A;">cognition</strong> —<br> specifically, the way a physical object reshapes<br>how threat is perceived, attributed, and felt.
+</p>
+</div>
+<div class="fragment">
+<p style="font-size:1.05em; color:#1C2B4A; line-height:1.8; margin:0 0 50px 0;">
+The gun doesn’t just protect people.<br> <strong style="color:#5A6A7A;">It makes them angry.</strong>
+</p>
+</div>
+<div class="fragment">
+<p style="font-size:3.2em; font-weight:900; color:#1C2B4A; letter-spacing:0.04em; margin:0;">
+And anger votes.
+</p>
+</div>
+</div>
+</section>
+<section id="annotated-bibliographys-references" class="slide level2" data-background-color="#F7F9FC">
+<h2>Annotated Bibliography’s References</h2>
+<div style="columns: 2; column-gap: 36px; font-size:0.68em; line-height:1.65;">
+<p><strong>Section I — Cognitive Psychology</strong></p>
+<p>Berkowitz, L., &amp; LePage, A. (1967). Weapons as aggression-eliciting stimuli. <em>Journal of Personality and Social Psychology, 7</em>(2), 202–207.</p>
+<p>Higgins, E. T., King, G. A., &amp; Mavin, G. H. (1982). Individual construct accessibility and subjective impressions and recall. <em>Journal of Personality and Social Psychology, 43</em>(1), 35–47.</p>
+<p>Kelley, H. H. (1973). The processes of causal attribution. <em>American Psychologist, 28</em>, 107–128.</p>
+<p>Pierce, J. L., Kostova, T., &amp; Dirks, K. T. (2003). The state of psychological ownership: Integrating and extending a century of research. <em>Review of General Psychology, 7</em>(1), 84–107.</p>
+<p><strong>Section II — Social Psychology</strong></p>
+<p>Bateson, R. (2012). Crime victimization and political participation. <em>American Political Science Review, 106</em>(3), 570–587.</p>
+<p>Buttrick, N. (2020). Protective gun ownership as a coping mechanism. <em>Perspectives on Psychological Science, 15</em>(4), 835–855.</p>
+<p>Lerner, J. S., &amp; Keltner, D. (2001). Fear, anger, and risk. <em>Journal of Personality and Social Psychology, 81</em>(1), 146–159.</p>
+<p>Shapira, H., &amp; Simon, S. J. (2018). Learning to need a gun. <em>Qualitative Sociology, 41</em>(1), 1–20.</p>
+<p>Stroebe, W., Leander, N. P., &amp; Kruglanski, A. W. (2017). Is it a dangerous world out there? The motivational bases of American gun ownership. <em>Personality and Social Psychology Bulletin, 43</em>(8), 1071–1085.</p>
+<p><strong>Section III — Social-Cognitive Interface</strong></p>
+<p>Drakulich, K., &amp; Baranauskas, A. (2021). Anger versus fear about crime: How common is it, where does it come from, and why does it matter? <em>Crime, Law and Social Change.</em></p>
+<p>Goldberg, J. H., Lerner, J. S., &amp; Tetlock, P. E. (1999). Rage and reason: The psychology of the intuitive prosecutor. <em>European Journal of Social Psychology, 29</em>(5–6), 781–795.</p>
+<p>Jost, J. T., Glaser, J., Kruglanski, A. W., &amp; Sulloway, F. J. (2003). Political conservatism as motivated social cognition. <em>Psychological Bulletin, 129</em>(3), 339–375.</p>
+<p>Lacombe, M. J., Simonson, M. D., Green, J., &amp; Druckman, J. N. (2024). Social disruption, gun buying, and anti-system beliefs. <em>Perspectives on Politics, 22</em>(4), 1100–1117.</p>
+</div>
+</section>
+<section id="references" class="slide level2" data-background-color="#F7F9FC">
+<h2>References</h2>
+<div style="columns: 2; column-gap: 36px; font-size:0.62em; line-height:1.7;">
+<p>Bateson, R. (2012). Crime victimization and political participation. <em>American Political Science Review, 106</em>(3), 570–587.</p>
+<p>Berkowitz, L., &amp; LePage, A. (1967). Weapons as aggression-eliciting stimuli. <em>Journal of Personality and Social Psychology, 7</em>(2), 202–207.</p>
+<p>Bryan, C. J., Bryan, A. O., &amp; Khazem, L. R. (2023). Heightened threat perceptions and reduced stability in anxiety and fear among US adults who carry handguns. <em>Journal of Anxiety Disorders, 99</em>, 102764.</p>
+<p>Buttrick, N. (2020). Protective gun ownership as a coping mechanism. <em>Perspectives on Psychological Science, 15</em>(4), 835–855.</p>
+<p>Drakulich, K., &amp; Baranauskas, A. (2021). Anger versus fear about crime: How common is it, where does it come from, and why does it matter? <em>Crime, Law and Social Change.</em></p>
+<p>Goldberg, J. H., Lerner, J. S., &amp; Tetlock, P. E. (1999). Rage and reason: The psychology of the intuitive prosecutor. <em>European Journal of Social Psychology, 29</em>(5–6), 781–795.</p>
+<p>Higginbotham, G. D. (2025). The dark side of safety. <em>Psychological Reports, 128</em>(1), 267–304.</p>
+<p>Higgins, E. T., King, G. A., &amp; Mavin, G. H. (1982). Individual construct accessibility and subjective impressions and recall. <em>Journal of Personality and Social Psychology, 43</em>(1), 35–47.</p>
+<p>Joslyn, M. R. (2020). <em>The gun gap</em>. Oxford University Press.</p>
+<p>Jost, J. T., Glaser, J., Kruglanski, A. W., &amp; Sulloway, F. J. (2003). Political conservatism as motivated social cognition. <em>Psychological Bulletin, 129</em>(3), 339–375.</p>
+<p>Kelley, H. H. (1973). The processes of causal attribution. <em>American Psychologist, 28</em>, 107–128.</p>
+<p>Kessler, G. (2015). <em>El sentimiento de inseguridad</em>. Siglo XXI.</p>
+<p>Lacombe, M. J. (2019). The political weaponization of gun owners. <em>The Journal of Politics, 81</em>(4).</p>
+<p>Lacombe, M. J., Simonson, M. D., Green, J., &amp; Druckman, J. N. (2024). Social disruption, gun buying, and anti-system beliefs. <em>Perspectives on Politics, 22</em>(4), 1100–1117.</p>
+<p>Lerner, J. S., &amp; Keltner, D. (2001). Fear, anger, and risk. <em>Journal of Personality and Social Psychology, 81</em>(1), 146–159.</p>
+<p>Pierce, J. L., Kostova, T., &amp; Dirks, K. T. (2003). The state of psychological ownership. <em>Review of General Psychology, 7</em>(1), 84–107.</p>
+<p>Shapira, H., &amp; Simon, S. J. (2018). Learning to need a gun. <em>Qualitative Sociology, 41</em>(1), 1–20.</p>
+<p>Stroebe, W., Leander, N. P., &amp; Kruglanski, A. W. (2017). Is it a dangerous world out there? <em>Personality and Social Psychology Bulletin, 43</em>(8), 1071–1085.</p>
+</div>
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+<p>PSYC743 Social Cognition | Final Presentation</p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="gun_owners_voting (3)_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="gun_owners_voting (3)_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="gun_owners_voting (3)_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="gun_owners_voting (3)_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="gun_owners_voting (3)_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="gun_owners_voting (3)_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="gun_owners_voting (3)_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="gun_owners_voting (3)_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="gun_owners_voting (3)_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="gun_owners_voting (3)_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 4.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
