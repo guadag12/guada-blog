@@ -1,0 +1,101 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Trebuchet MS", "Gill Sans", Calibri, sans-serif !default;
+$presentation-heading-font: "Georgia", "Cambria", serif !default;
+
+$body-bg: #F7F9FC !default;
+$body-color: #1C2B4A !default;
+$link-color: #2E4A7A !default;
+$presentation-heading-color: #1C2B4A !default;
+
+// Tighter font sizes so content doesn't overflow
+$presentation-font-size-root: 30px !default;
+$presentation-block-margin: 10px !default;
+$presentation-heading-line-height: 1.15 !default;
+
+/*-- scss:rules --*/
+
+// ── Slide headings ────────────────────────────────────────────────────────────
+.reveal h2 {
+  font-size: 1.3em !important;
+  font-weight: 700;
+  color: #1C2B4A;
+  border-bottom: 2px solid #C0392B;
+  padding-bottom: 5px;
+  margin-bottom: 14px !important;
+}
+
+.reveal h3 {
+  font-size: 1.0em !important;
+  font-weight: 700;
+  color: #2E4A7A;
+  margin-bottom: 6px;
+}
+
+// ── Body text ─────────────────────────────────────────────────────────────────
+.reveal p,
+.reveal li {
+  font-size: 0.82em;
+  line-height: 1.5;
+  color: #2C3E50;
+}
+
+// ── Fix: force white text on dark-background slides ──────────────────────────
+// Revealjs sometimes applies body-color on top of background-color slides.
+// We target the section element when a dark background is set.
+.reveal section[data-background-color="#1C2B4A"] p,
+.reveal section[data-background-color="#1C2B4A"] li,
+.reveal section[data-background-color="#1C2B4A"] h2,
+.reveal section[data-background-color="#1C2B4A"] h3,
+.reveal section[data-background-color="#1C2B4A"] span,
+.reveal section[data-background-color="#1C2B4A"] strong {
+  color: #FFFFFF !important;
+}
+
+// ── Inline HTML — make sure raw HTML inherits properly ────────────────────────
+.reveal section p[style],
+.reveal section li[style],
+.reveal section div[style] {
+  // let inline styles win — no override here
+}
+
+// ── Footer & slide number ─────────────────────────────────────────────────────
+.reveal .footer {
+  font-size: 0.62em;
+  color: #7F8C8D;
+}
+
+.reveal .slide-number {
+  color: #7F8C8D;
+  font-size: 0.65em;
+}
+
+// ── Column gap ────────────────────────────────────────────────────────────────
+.reveal .columns {
+  gap: 24px;
+}
+
+// ── Smaller utility class ─────────────────────────────────────────────────────
+.reveal .smaller p,
+.reveal .smaller li {
+  font-size: 0.72em;
+}
+
+.reveal .btn {
+  display: inline-block;
+  margin: 3px;
+  padding: 5px 12px;
+  background-color: #2E86C1;
+  color: white !important;
+  border-radius: 5px;
+  font-size: 0.95em;
+  text-decoration: none !important;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #1a5276;
+    color: white !important;
+    text-decoration: none !important;
+  }
+}

@@ -1,0 +1,351 @@
+---
+title: "Armed but Engaged"
+subtitle: "Explaining Gun Owners' Political Participation in Argentina"
+author: "Guadalupe A. Gonzalez"
+format:
+  revealjs:
+    bibliography: references.bib
+    csl: apa.csl  
+    theme: [default, custom.scss]
+    transition: fade
+    slide-number: true
+    footer: "GVPT888P — Comparative Political Institutions | Final Presentation"
+    width: 1280
+    height: 720
+    margin: 0.04
+    fig-align: center
+    echo: false
+    warning: false
+    message: false
+    self-contained: true
+    center: false
+    controls: true
+    progress: true
+    history: true
+    keyboard: true
+    overview: true
+    touch: true
+    loop: false
+    rtl: false
+    fragments: true
+    embedded: false
+    help: true
+    show-notes: false
+    auto-stretch: false
+---
+
+##  {background-color="#1C2B4A"}
+
+::: {style="font-size:3.2em; font-weight:800; line-height:1.3; color:#FFFFFF; font-family:Georgia, serif;"}
+Why do citizens who have privatized security maintain political engagement?
+:::
+
+
+## Gun Owners Vote More — In Two Very Different Contexts
+
+::: {.fragment .fade-out fragment-index="1" style="color: white; font-size: 1.8em; font-weight: 700; text-align: center; margin-top: 80px; line-height: 1.3; position: absolute; width: 100%;"}
+Gun owners vote **more** than non-owners
+:::
+
+::::::: {.fragment .fade-up .columns fragment-index="1" style="margin-top: 10px;"}
+::: {style="color: white; font-size: 0.75em; text-align: center; margin-bottom: 16px; width: 100%;"}
+Gun owners vote **more** than non-owners
+:::
+
+::: {.column width="47%"}
+**United States (1972–2016)**
+
+![](img/Joslyn%202020.png)
+:::
+
+:::: {.column width="53%"}
+::: {.fragment fragment-index="2"}
+**Buenos Aires (2015–2023)**
+
+![](img/turnout_buenosaires2.png)
+:::
+::::
+:::::::
+
+::: fig-note
+Left: @joslyn2020, U.S. 1972–2016. Right: National Electoral Court & ANMAC, Buenos Aires 2015–2023.
+:::
+
+## The Existing Literature Cannot Explain This
+
+::: columns
+::: {.column width="50%"}
+
+<p style="font-size:0.88em; font-weight:700; color:#1C2B4A; margin:0 0 10px 0;">The usual explanations don't apply here</p>
+
+<!-- Item 1: appears clean first (index 1), struck out on next click (index 2) -->
+<div class="fragment" data-fragment-index="1">
+<div style="background:#F5F5F5; border:1px solid #E0E0E0; border-radius:6px; padding:10px 14px; margin-bottom:8px;">
+<p class="fragment strike" data-fragment-index="2" style="font-size:0.80em; color:#444; margin:0;">
+  Second Amendment culture &amp; constitutional identity
+  <span style="font-size:0.82em; color:#888; font-weight:400; margin-left:6px;">(Shapira &amp; Simon, 2018; Lacombe et al., 2024)</span>
+</p>
+<p class="fragment" data-fragment-index="2" style="font-size:0.72em; color:#C0392B; margin:4px 0 0 0; font-weight:600;">✗ Argentina has no Second Amendment</p>
+</div>
+</div>
+
+<!-- Item 2: appears clean (index 3), struck out (index 4) -->
+<div class="fragment" data-fragment-index="3">
+<div style="background:#F5F5F5; border:1px solid #E0E0E0; border-radius:6px; padding:10px 14px; margin-bottom:8px;">
+<p class="fragment strike" data-fragment-index="4" style="font-size:0.80em; color:#444; margin:0;">
+  Organised gun-rights lobby (NRA-type groups)
+  <span style="font-size:0.82em; color:#888; font-weight:400; margin-left:6px;">(Lacombe et al., 2024)</span>
+</p>
+<p class="fragment" data-fragment-index="4" style="font-size:0.72em; color:#C0392B; margin:4px 0 0 0; font-weight:600;">✗ No equivalent organisation in Argentina</p>
+</div>
+</div>
+
+<!-- Item 3: appears clean (index 5), struck out (index 6) -->
+<div class="fragment" data-fragment-index="5">
+<div style="background:#F5F5F5; border:1px solid #E0E0E0; border-radius:6px; padding:10px 14px; margin-bottom:8px;">
+<p class="fragment strike" data-fragment-index="6" style="font-size:0.80em; color:#444; margin:0;">
+  Collective political identity around gun ownership
+  <span style="font-size:0.82em; color:#888; font-weight:400; margin-left:6px;">(Higginbotham, 2025; Buttrick, 2020)</span>
+</p>
+<p class="fragment" data-fragment-index="6" style="font-size:0.72em; color:#C0392B; margin:4px 0 0 0; font-weight:600;">✗ Gun owners don't act as a political group</p>
+</div>
+</div>
+
+:::
+
+::::: {.column width="50%"}
+:::: {.fragment data-fragment-index="7"}
+::: {style="background:#1C2B4A; border-radius:8px; padding:18px 20px; margin-top:10px;"}
+<p style="font-size:0.88em; font-weight:700; color:#FFFFFF; margin:0 0 10px 0;">
+
+So what is driving this?
+
+</p>
+
+<p style="font-size:0.80em; color:#fffcf5; line-height:1.65; margin:0 0 10px 0;">
+
+Every existing explanation requires either a **cultural identity** around guns or an **organizational infrastructure** that mobilizes owners collectively.
+
+</p>
+
+<p style="font-size:0.78em; color:#fffcf5; font-style:italic; margin:0;">
+
+→ Argentina has neither.
+
+</p>
+:::
+::::
+:::::
+:::::::::::::
+
+## Where Do Gun Owners Live?
+
+![Per-capita gun ownership across census tracts in Buenos Aires](img/Mapplot4.png){width="70%"}
+
+## Where Do Gun Owners Live?
+
+![Per-capita gun ownership across census tracts in Buenos Aires](img/barrios%20mapa.png){width="70%"}
+
+## Patterns
+
+- Highest density near administrative boundaries of *villas* and *barrios populares*
+
+- Random: Spatial clustering suggests a boundary-driven logic, not purely income-based sorting
+
+
+- The strategy: Use the administrative boundary as a geographic discontinuity (RDD)
+
+## The Mechanism
+
+::::::::::::::: columns
+:::: {.column width="32%"}
+::: fragment
+### 1. Substitution
+
+Citizens do not delegate their security in the state anymore. They privatize their security [@kessler2009; @yashar2018]
+:::
+::::
+
+::::: {.column width="2%"}
+:::: fragment
+::: arrow-center
+→
+:::
+::::
+:::::
+
+:::: {.column width="32%"}
+::: fragment
+### 2. The Paradox
+
+Although, the same citizens who armed themselves in rejection of the state continue to vote, donate, and engage politically. Why would someone who replaced the state still invest in it? [@joslyn2020]
+:::
+::::
+
+::::: {.column width="2%"}
+:::: fragment
+::: arrow-center
+→
+:::
+::::
+:::::
+
+:::: {.column width="32%"}
+::: fragment
+### 3. Engaged Toleration
+
+They participate because of strategic tolerance: enough engagement to keep the state functional, no more. [@holland2017; @levi1988]
+:::
+::::
+:::::::::::::::
+
+## Inverted Forbearance
+
+::::::::::::: columns
+:::::: {.column width="47%"}
+#### Holland's Forbearance [-@holland2017]
+
+::: fragment
+**State → Citizens**
+:::
+
+::: {.fragment}
+-  When the state cannot or will not enforce its own rules, it tolerates non-compliance rather than confronting it, preserving the relationship at the cost of enforcement
+
+[@holland2017, @brinks2020]
+:::
+
+::: {.fragment}
+**Result:** Ongoing institutional relationship maintained through strategic non-enforcement
+:::
+::::::
+
+:::: {.column width="6%"}
+::: fragment
+⇄
+:::
+::::
+
+:::::: {.column width="47%"}
+::: fragment
+#### Inverted Forbearance
+
+**Citizens → State**
+:::
+
+::: fragment
+- Gun owners do not abandon the state politically because they still believe in a **minimal version of it**, one that maintains basic order, even if it failed at security. They tolerate the gap between the state they have and the state they want.
+:::
+
+::: fragment
+**Result:** Stable participation, without enthusiasm, not exit. Citizens engaging with a state they have partially replaced but not fully rejected.
+:::
+::::::
+:::::::::::::
+
+## Research Design
+
+:::::: columns
+::: {.column width="52%"}
+### Design Logic
+
+**Running variable**\
+Signed distance to the administrative boundary of the nearest *barrio popular*/villa\
+(inside \< 0, outside \> 0)
+
+**Cutoff**\
+The official administrative limit
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="44%"}
+### Outcomes
+
+**Primary:** Gun ownership rate per census tract
+
+**Secondary:** Turnout · Donations · Hearing attendance
+:::
+::::::
+
+:::::::::
+
+
+
+## Limitations and next steps:
+
+::: fragment
+1. Data Collection in villas but also at Camara Nacional Electoral
+:::
+
+::: fragment
+2. Does "inverted forbearance" the best term to describe an increase in participation modest?
+:::
+::: fragment
+3. There are ongoing projects to continue study the relationship between the state and gun owners:
+:::
+
+::: fragment
+a. Working paper @gonzalez2026]
+b. Natural Experiment on Historical Legacies with Sebastian Cortesi.
+c. Interviews with Gun Owners soon in Argentina!
+:::
+
+## References {.smaller}
+
+::: {#refs}
+:::
+
+
+## Preliminary Evidence
+
+::::: columns
+::: {.column width="50%"}
+**Donation Distribution**
+
+![](img/avg_donation.png){width="100%"}
+
+:::
+
+::: {.column width="50%"}
+**Effect of Gun Ownership on Turnout (DiD)**
+
+![](img/voted_did_m1_All_-_base.png)
+
+:::
+:::::
+
+
+## The Puzzle
+
+### What Theory Predicts
+
+**Citizens who privatize security should exit**
+
+[@hirschman1972]: when private substitutes exist, citizens disengage from the state
+
+::: {style="color:#a61707;"}
+-   **Less voting, less donating, less engagement**
+:::
+
+Crime shocks increases the exit from politics [@gonzalez2026] :::::
+
+::: {.column width="6%"}
+$\neq$
+:::
+
+### What We Actually See
+
+**Gun owners participate more, not less**
+
+-   Higher turnout than non-owners
+-   Higher donations than non-owners
+-   Stable engagement over time
+
+::: highlight-blue
+-   **Why do gun owners remain engaged?**
+:::
+
+This is the puzzle this paper solves.
+
